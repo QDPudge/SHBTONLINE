@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie ie9" lang="zh-CN" class="no-js"> <![endif]-->
+<!--[if !(IE)]><!-->
+<html lang="zh-CN" class="no-js">
+<!--<![endif]-->
+
+<head>
+
+    @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+
+    <script type="text/javascript">
+
+    </script>
+    @RenderSection("Head", required: false)
+</head>
+<!--Layout y高度溢出不应该设置为hidden-->
+<body class="main-layouts wrapper easyui-layout" data-options="fit:true" style="overflow-x: hidden; padding:1px ;  margin: 1px; border: 0px; background-color: whitesmoke;">
+    @RenderBody()
+</body>
+</html>
