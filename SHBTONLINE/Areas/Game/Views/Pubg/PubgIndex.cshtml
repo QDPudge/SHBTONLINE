@@ -6,19 +6,23 @@
 <script src="~/Scripts/pages/Game/Pubg/PubgIndex.js"></script>
 <link href="~/Content/Page/Game/PubgIndex.css" rel="stylesheet" />
 @*<img src="//game.gtimg.cn/images/pubg/act/a20171114feature/logo_b.png" width="100%" height="100%">*@
+    <!--  遮罩层 -->
+    <div id="shade">
+    </div>
+    <!-- 视频层 -->
+    <div id="videoBox" class="col-lg-12 col-md-12 col-sm-12" >
 
-<!--  遮罩层 -->
-<div id="shade">
-</div>
-<!-- 视频层 -->
-<div id="videoBox" >
-
-    <h2 class="">
-        <img class="logo_a" src="//game.gtimg.cn/images/pubg/act/a20171114feature/logo_b.png" >
-    </h2>
-    <video id="video1" class="video" src="http://videooc.tc.qq.com/vcloud1022.tc.qq.com/1022_a4a7a8041ed64eddb2465d8ea5c9bc45.f0.mp4?vkey=C622D64FCC2AEFC977BDA88986E451D30696B6119F69D46265E078A459B071F21A50BB853F8FA6E3C75D8DB769C7B52ABA52911B178E156ADAAF8A868EA7D8A3BDC127E72CC8ADA62ADD60B8A39FD39AFA0BC7329D6AE0B9&amp;sha=0" autoplay="" loop=""></video>
-</div>
-
+        <h2 class="">
+            <img class="logo_a" src="//game.gtimg.cn/images/pubg/act/a20171114feature/logo_2b.png" >
+        </h2>
+        <video id="video1" class="video" src="http://videooc.tc.qq.com/vcloud1022.tc.qq.com/1022_a4a7a8041ed64eddb2465d8ea5c9bc45.f0.mp34?vkey=C622D64FCC2AEFC977BDA88986E451D30696B6119F69D46265E078A459B071F21A50BB853F8FA6E3C75D8DB769C7B52ABA52911B178E156ADAAF8A868EA7D8A3BDC127E72CC8ADA62ADD60B8A39FD39AFA0BC7329D6AE0B9&amp;sha=0" autoplay="" loop="loop"></video>
+    </div>
+    <div id="player_list">
+        <div id="RubickLee" class="player_img layui-col-xs4 layui-col-sm4 layui-col-md1">
+            <img src="~/Content/img/player/RubickLee.png" />
+            <p> RubickLee</p>
+        </div>
+    </div>
 <footer >
     <p>&copy; @DateTime.Now.Year - MoreCreative   </p>
 </footer>

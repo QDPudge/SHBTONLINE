@@ -7,12 +7,14 @@
     <title>SHBT | 苏赫巴托  - 装X是给自己最好的礼物</title>
     @*<link rel="shortcut icon"  href="~/Content/drugs-sh.ico" />*@
     <link rel="shortcut icon" href="favicon.ico" />
-    @Styles.Render("~/Content/css")
+        @Styles.Render("~/Content/css")
+        @Styles.Render("~/Content/Layuicss")
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/modernizr")
-
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/Content/LayuiJS")
+    <link href="~/Content/Page/index.css" rel="stylesheet" />
     <script src="~/Content/skplayer/dist/skPlayer.min.js"></script>
     <script src="~/Scripts/pages/index.js"></script>
 </head>
@@ -49,7 +51,7 @@
         //});
 
     </script>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top top-bar">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -88,10 +90,12 @@
             </div>
         </div>
     </div>
-    <div id="src" style="width:100%;height:100%">
-        <iframe id="mainFrame" name="mainFrame" width="100%" height="100%" class=""
-                frameborder="0" scrolling="auto" src="@Url.Content("~/Web/Main")" style="border:none;margin:0;"></iframe>
+    <div class="bottom main-custom-content">
+        <div id="src" class="content-wrapper">
+            <iframe id="mainFrame" name="mainFrame" width="100%" height="100%"
+                    frameborder="0" scrolling="auto" src="@Url.Content("~/Web/Main")" style="border:none;margin:0;overflow:hidden"></iframe>
 
+        </div>
     </div>
 </body>
 </html>

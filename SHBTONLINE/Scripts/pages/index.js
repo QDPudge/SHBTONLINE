@@ -1,10 +1,11 @@
 ﻿$(function () {
-    $("#src").css("width", document.body.clientWidth);
-    $("#src").css("height", document.body.scrollHeight - 60);
-    $(window).resize(function () {
-        $("#src").css("width", document.body.clientWidth);
-        $("#src").css("height", document.body.scrollHeight);
-    });
+    autoheight();
+    //$("#src").css("width", document.body.clientWidth);
+    //$("#src").css("height", document.body.scrollHeight - 60);
+    //$(window).resize(function () {
+    //    $("#src").css("width", document.body.clientWidth);
+    //    $("#src").css("height", document.body.scrollHeight );
+    //});
 });
 //刷新Frame页面
 function RefreshFrame(url) {
@@ -69,5 +70,70 @@ function openIFrame(url, iscache) {
     }
     $("#mainFrame").attr("src", url);
     $("#mainFrame").show();
+
+}
+
+/************************
+/*	WINDOW RESIZE
+/************************/
+
+$(window).bind("resize", autoheight);
+
+function resizeResponse() {
+    if ($(window).width() < (992 - scrollWidth)) {
+        if ($('.left-sidebar').hasClass('minified')) {
+            $('.left-sidebar').removeClass('minified');
+            $('.left-sidebar').addClass('init-minified');
+        }
+
+    } else {
+        if ($('.left-sidebar').hasClass('init-minified')) {
+            $('.left-sidebar')
+            .removeClass('init-minified')
+            .addClass('minified');
+        }
+    }
+
+    autoheight();
+}
+
+/**
+ * 获取滚动条宽度
+ * @returns int
+ */
+function getScrollbarWidth () {
+    var oP = document.createElement('p'),
+    styles = {
+        width: '100px',
+        height: '100px',
+        overflowY: 'scroll'
+    }, i;
+
+    for (i in styles) oP.style[i] = styles[i];
+    document.body.appendChild(oP);
+    var scrollbarWidth = oP.offsetWidth - oP.clientWidth;
+    $(oP).remove();
+    return scrollbarWidth;
+}
+
+/**
+ * 自动设定高度
+ */
+function autoheight() {
+    var minHeight = document.body.clientHeight - $('.top-bar').outerHeight(true);//- $('footer.footer').outerHeight(true)
+    //获取滚动条宽度
+    var scrollWidth = getScrollbarWidth();
+    // //菜单若虚移除滚动条 注释下行代码 left sidebar
+    if ($(window).width() >= (992 - scrollWidth)) {
+        //$(".left-sidebar").css({ 'height': minHeight });
+
+        //setTimeout(function () {
+        //    $('#for-slimscroll-wrapper').slimScroll({
+        //        height: "auto",
+        //        wheelStep: 5
+        //    });
+        //}, 300);
+    }
+    $('#src').css({ 'max-height': minHeight, height: minHeight });
 
 }

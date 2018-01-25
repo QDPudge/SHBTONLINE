@@ -26,6 +26,29 @@ namespace SHBTONLINE
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/Layuicss").Include(
+                      "~/Content/layui/css/layui.css",
+                      "~/Content/layui/css/layui.mobilecss",
+                      "~/Content/layui/css/modules/laydate/default/layui.css"));
+
+            bundles.Add(new ScriptBundle("~/Content/LayuiJS").Include(
+                      "~/Content/layui/layui.js",
+                      "~/Content/layui/lay/modules/carousel.js",
+                      "~/Content/layui/lay/modules/code.js",
+                      "~/Content/layui/lay/modules/element.js",
+                      "~/Content/layui/lay/modules/flow.js",
+                      "~/Content/layui/lay/modules/form.js",
+                      "~/Content/layui/lay/modules/laydate.js",
+                      "~/Content/layui/lay/modules/layedit.js",
+                      "~/Content/layui/lay/modules/layer.js",
+                      "~/Content/layui/lay/modules/laypage.js",
+                      "~/Content/layui/lay/modules/laytpl.js",
+                      "~/Content/layui/lay/modules/mobile.js",
+                      "~/Content/layui/lay/modules/table.js",
+                      "~/Content/layui/lay/modules/tree.js",
+                      "~/Content/layui/lay/modules/upload.js",
+                      "~/Content/layui/lay/modules/util.js"));
         }
     }
 }
