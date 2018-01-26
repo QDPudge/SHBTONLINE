@@ -6,10 +6,35 @@
 
 <head>
 
-    @Styles.Render("~/Content/css")
+        @Styles.Render("~/Content/css")
+        @*@Styles.Render("~/Content/Layuicss")*@
+    <link href="~/Content/layui/css/modules/laydate/default/laydate.css" rel="stylesheet" />
+    <link href="~/Content/layui/css/modules/layer/default/layer.css" rel="stylesheet" />
+    <link href="~/Content/layui/css/modules/code.css" rel="stylesheet" />
+    <link href="~/Content/layui/css/layui.css" rel="stylesheet" />
+    <link href="~/Content/layui/css/layui.mobile.css" rel="stylesheet" />
+    <script src="~/Content/layui/layui.all.js"></script>
+    <script src="~/Content/layui/layui.js"></script>
+    <script src="~/Content/layui/lay/modules/carousel.js"></script>
+    <script src="~/Content/layui/lay/modules/code.js"></script>
+    <script src="~/Content/layui/lay/modules/element.js"></script>
+    <script src="~/Content/layui/lay/modules/flow.js"></script>
+    <script src="~/Content/layui/lay/modules/form.js"></script>
+    <script src="~/Content/layui/lay/modules/jquery.js"></script>
+    <script src="~/Content/layui/lay/modules/laydate.js"></script>
+    <script src="~/Content/layui/lay/modules/layedit.js"></script>
+    <script src="~/Content/layui/lay/modules/layer.js"></script>
+    <script src="~/Content/layui/lay/modules/laypage.js"></script>
+    <script src="~/Content/layui/lay/modules/laytpl.js"></script>
+    <script src="~/Content/layui/lay/modules/mobile.js"></script>
+    <script src="~/Content/layui/lay/modules/table.js"></script>
+    <script src="~/Content/layui/lay/modules/tree.js"></script>
+    <script src="~/Content/layui/lay/modules/upload.js"></script>
+    <script src="~/Content/layui/lay/modules/util.js"></script>
         @Scripts.Render("~/bundles/modernizr")
         @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
+            @Scripts.Render("~/bundles/bootstrap")
+            @*@Scripts.Render("~/Content/LayuiJS")*@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +46,7 @@
     @RenderSection("Head", required: false)
 </head>
 <!--Layout y高度溢出不应该设置为hidden-->
-<body class="main-layouts wrapper easyui-layout" data-options="fit:true" style="overflow-x: hidden; padding:1px ;  margin: 1px; border: 0px; background-color: whitesmoke;">
+<body class="main-layouts wrapper easyui-layout" data-options="fit:true" style="height:100%; overflow-x: hidden; padding:1px ;  margin: 1px; border: 0px; background-color: whitesmoke;">
     @RenderBody()
 </body>
 </html>

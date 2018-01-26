@@ -16,9 +16,9 @@ namespace SHBTONLINE.Areas.Game.Controllers
         {
             return View();
         }
-        public JsonResult GetUserInfo(string time)
+        public JsonResult GetUserInfo(string time,string Name)
         {
-            var Url = "https://api.xiaoheihe.cn/game/pubg/get_player_overview/?nickname=RubickLee&region=&season=&heybox_id=767045&imei=356156077945624&os_type=Android&os_version=7.0&version=1.1.14&_time=" + time;
+            var Url = "https://api.xiaoheihe.cn/game/pubg/get_player_overview/?nickname="+ Name+"&region=&season=&heybox_id=767045&imei=356156077945624&os_type=Android&os_version=7.0&version=1.1.14&_time=" + time;
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
             request.Method = "GET";
             request.UserAgent = " Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36 ApiMaxJia/1.0";

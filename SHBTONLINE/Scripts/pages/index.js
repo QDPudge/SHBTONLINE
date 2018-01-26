@@ -120,7 +120,7 @@ function getScrollbarWidth () {
  * 自动设定高度
  */
 function autoheight() {
-    var minHeight = document.body.clientHeight - $('.top-bar').outerHeight(true);//- $('footer.footer').outerHeight(true)
+    var minHeight = document.body.clientHeight - $('.top-bar').outerHeight(true)+68;//- $('footer.footer').outerHeight(true)
     //获取滚动条宽度
     var scrollWidth = getScrollbarWidth();
     // //菜单若虚移除滚动条 注释下行代码 left sidebar

@@ -5,7 +5,6 @@ namespace SHBTONLINE
 {
     public class BundleConfig
     {
-        // 有关绑定的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
@@ -30,7 +29,9 @@ namespace SHBTONLINE
             bundles.Add(new StyleBundle("~/Content/Layuicss").Include(
                       "~/Content/layui/css/layui.css",
                       "~/Content/layui/css/layui.mobilecss",
-                      "~/Content/layui/css/modules/laydate/default/layui.css"));
+                      "~/Content/layui/css/modules/code.css",
+                      "~/Content/layui/css/modules/laydate/laydate.css",
+                      "~/Content/layui/css/modules/layder/default/layui.css"));
 
             bundles.Add(new ScriptBundle("~/Content/LayuiJS").Include(
                       "~/Content/layui/layui.js",

@@ -10,19 +10,79 @@
     <div id="shade">
     </div>
     <!-- 视频层 -->
-    <div id="videoBox" class="col-lg-12 col-md-12 col-sm-12" >
+    <div id="videoBox" class="" >
 
         <h2 class="">
-            <img class="logo_a" src="//game.gtimg.cn/images/pubg/act/a20171114feature/logo_2b.png" >
+            <img class="logo_a" src="//game.gtimg.cn/images/pubg/act/a20171114feature/logo_b.png" >
         </h2>
-        <video id="video1" class="video" src="http://videooc.tc.qq.com/vcloud1022.tc.qq.com/1022_a4a7a8041ed64eddb2465d8ea5c9bc45.f0.mp34?vkey=C622D64FCC2AEFC977BDA88986E451D30696B6119F69D46265E078A459B071F21A50BB853F8FA6E3C75D8DB769C7B52ABA52911B178E156ADAAF8A868EA7D8A3BDC127E72CC8ADA62ADD60B8A39FD39AFA0BC7329D6AE0B9&amp;sha=0" autoplay="" loop="loop"></video>
+        <video id="video1" class="video" src="http://videooc.tc.qq.com/vcloud1022.tc.qq.com/1022_a4a7a8041ed64eddb2465d8ea5c9bc45.f0.mp4?vkey=C622D64FCC2AEFC977BDA88986E451D30696B6119F69D46265E078A459B071F21A50BB853F8FA6E3C75D8DB769C7B52ABA52911B178E156ADAAF8A868EA7D8A3BDC127E72CC8ADA62ADD60B8A39FD39AFA0BC7329D6AE0B9&amp;sha=0" autoplay="" loop="loop"></video>
     </div>
     <div id="player_list">
-        <div id="RubickLee" class="player_img layui-col-xs4 layui-col-sm4 layui-col-md1">
+        <p>P L A Y E R</p>
+        <div id="RubickLee" class="player_img  layui-col-xs4 layui-col-sm4 layui-col-md1" onclick="javascript: loadNameMatch('RubickLee');">
             <img src="~/Content/img/player/RubickLee.png" />
             <p> RubickLee</p>
+        </div>
+        <div id="SHBT-PUDGE" class="player_img  layui-col-xs4 layui-col-sm4 layui-col-md1" onclick="javascript: loadNameMatch('SHBT-PUDGE');">
+            <img src="~/Content/img/player/pudge.png" />
+            <p> PUDGE</p>
+        </div>
+        <div id="Clowno0o" class="player_img  layui-col-xs4 layui-col-sm4 layui-col-md1" onclick="javascript: loadNameMatch('Clowno0o');">
+            <img src="~/Content/img/player/clo.jpg" />
+            <p> Clowno0o</p>
+        </div>
+        <div id="ming_001" class="player_img  layui-col-xs4 layui-col-sm4 layui-col-md1" onclick="javascript: loadNameMatch('ming_001');">
+            <img src="~/Content/img/player/RubickLee.png" />
+            <p> ming_001</p>
+        </div>
+
+        <div id="hua20091210" class="player_img  layui-col-xs4 layui-col-sm4 layui-col-md1" onclick="javascript: loadNameMatch('hua20091210');">
+            <img src="~/Content/img/player/RubickLee.png" />
+            <p> hua20091210</p>
+        </div>
+
+        <div id="MSH1993" class="player_img  layui-col-xs4 layui-col-sm4 layui-col-md1" onclick="javascript: loadNameMatch('MSH1993');">
+            <img src="~/Content/img/player/RubickLee.png" />
+            <p> MSH1993</p>
+        </div>
+        <div id="EarthShaker" class="player_img  layui-col-xs4 layui-col-sm4 layui-col-md1" onclick="javascript: loadNameMatch('SHBT-EarthShaker');">
+            <img src="~/Content/img/player/RubickLee.png" />
+            <p> EarthShaker</p>
         </div>
     </div>
 <footer >
     <p>&copy; @DateTime.Now.Year - MoreCreative   </p>
 </footer>
+<div id="player_info">
+    <div class="layui-collapse">
+        <div class="layui-colla-item">
+            <h2 class="layui-colla-title">最近赛季总体数据</h2>
+            <div class="layui-colla-content layui-show" >
+                <table id="total_match" class="table_info">
+                    
+                </table>
+            </div>
+        </div>
+        <div class="layui-colla-item">
+            <h2 class="layui-colla-title">各模式数据</h2>
+            <div class="layui-colla-content layui-show" id="every_mode">
+                <table id="score_detail" class="table_info"></table>
+            </div>
+        </div>
+        <div class="layui-colla-item">
+            <h2 class="layui-colla-title">队中位置分析</h2>
+            <div class="layui-colla-content layui-show">
+                暂未上线，施工中
+            </div>
+        </div>
+    </div>
+    <script>
+//注意：折叠面板 依赖 element 模块，否则无法进行功能性操作
+layui.use('element', function(){
+  var element = layui.element;
+
+  //…
+});
+    </script>
+
+</div>

@@ -11,3 +11,6 @@ html, body {
 .main-custom-content {
     position: relative;
 }
+.content-wrapper{
+    height:100%!important;
+}
