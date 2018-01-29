@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SHBTONLINE.Models.PUBG;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Net;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 
 namespace SHBTONLINE.Areas.Game.Controllers
 {
@@ -18,6 +20,8 @@ namespace SHBTONLINE.Areas.Game.Controllers
         }
         public JsonResult GetUserInfo(string time,string Name)
         {
+            //实例化一个能够序列化数据的类
+            JavaScriptSerializer js = new JavaScriptSerializer();
             var Url = "https://api.xiaoheihe.cn/game/pubg/get_player_overview/?nickname="+ Name+"&region=&season=&heybox_id=767045&imei=356156077945624&os_type=Android&os_version=7.0&version=1.1.14&_time=" + time;
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
             request.Method = "GET";
@@ -41,8 +45,9 @@ namespace SHBTONLINE.Areas.Game.Controllers
             string retString = myStreamReader.ReadToEnd();
             myStreamReader.Close();
             myResponseStream.Close();
-            
 
+            var ifno = js.Deserialize<heibox>(retString);
+       
             return Json(retString);
         }
     }
