@@ -6,7 +6,10 @@
 
 <head>
 
-        @Styles.Render("~/Content/css")
+            @Styles.Render("~/Content/css")
+            @Scripts.Render("~/bundles/modernizr")
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/bootstrap")
         @*@Styles.Render("~/Content/Layuicss")*@
     <link href="~/Content/layui/css/modules/laydate/default/laydate.css" rel="stylesheet" />
     <link href="~/Content/layui/css/modules/layer/default/layer.css" rel="stylesheet" />
@@ -31,9 +34,7 @@
     <script src="~/Content/layui/lay/modules/tree.js"></script>
     <script src="~/Content/layui/lay/modules/upload.js"></script>
     <script src="~/Content/layui/lay/modules/util.js"></script>
-        @Scripts.Render("~/bundles/modernizr")
-        @Scripts.Render("~/bundles/jquery")
-            @Scripts.Render("~/bundles/bootstrap")
+                @*<script src="~/Scripts/require.js"></script>*@
             @*@Scripts.Render("~/Content/LayuiJS")*@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

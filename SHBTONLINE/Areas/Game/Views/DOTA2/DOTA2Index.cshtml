@@ -4,7 +4,10 @@
     Layout = "~/Views/Shared/_LayoutIndex.cshtml";
 }
 <link href="~/Content/Page/Game/DOTA2Index.css" rel="stylesheet" />
+<script src="~/Content/chart/chartjs2.7.js"></script>
+<script src="~/Content/chart/t.js"></script>
 <script src="~/Scripts/pages/Game/DOTA2/DOTA2Index.js"></script>
+@*<script src="~/Content/chart/chart.js"></script>*@
 @*<img src="//game.gtimg.cn/images/pubg/act/a20171114feature/logo_b.png" width="100%" height="100%">*@
 <!--  遮罩层 -->
 <div id="shade">
@@ -13,9 +16,9 @@
 <div id="videoBox" class="">
 
     <h2 class="">
-        <img class="logo_a" src="//game.gtimg.cn/images/pubg/act/a20171114feature/logo_2b.png">
+        @*<img class="logo_a" src="//game.gtimg.cn/images/pubg/act/a20171114feature/logo_2b.png">*@
     </h2>
-    <video id="video1" class="video" src="http://videooc.tc.qq.com/vcloud1022.tc.qq.com/1022_a4a7a8041ed64eddb2465d8ea5c9bc45.f0.mp34?vkey=C622D64FCC2AEFC977BDA88986E451D30696B6119F69D46265E078A459B071F21A50BB853F8FA6E3C75D8DB769C7B52ABA52911B178E156ADAAF8A868EA7D8A3BDC127E72CC8ADA62ADD60B8A39FD39AFA0BC7329D6AE0B9&amp;sha=0" autoplay="" loop="loop"></video>
+    @*<video id="video1" class="video" src="http://videooc.tc.qq.com/vcloud1022.tc.qq.com/1022_a4a7a8041ed64eddb2465d8ea5c9bc45.f0.mp34?vkey=C622D64FCC2AEFC977BDA88986E451D30696B6119F69D46265E078A459B071F21A50BB853F8FA6E3C75D8DB769C7B52ABA52911B178E156ADAAF8A868EA7D8A3BDC127E72CC8ADA62ADD60B8A39FD39AFA0BC7329D6AE0B9&amp;sha=0" autoplay="" loop="loop"></video>*@
 </div>
 <div id="player_list">
     <p>P L A Y E R</p>
@@ -73,30 +76,37 @@
                         </div>
                     </div>
                     <div class="layui-colla-item">
-                        <h2 class="layui-colla-title">最近比赛数据</h2>
-                        <div class="layui-colla-content">
-                            <div class="layui-tab">
-                                <ul class="layui-tab-title">
-                                    <li class="layui-this">最近20场</li>
-                                    <li>最近100场</li>
-                                </ul>
-                                <div class="layui-tab-content">
-                                    <div class="layui-tab-item layui-show">
-                                        <table id="recent_game " class="table_info"></table>
-                                    </div>
-                                    <div class="layui-tab-item">内容2</div>
-                                </div>
-                            </div>
-                           
+                        <h2 class="layui-colla-title">最近比赛数据[点击标签可以筛选]</h2>
+                        <div class="layui-colla-content layui-show">
+                            <canvas id="match_radar" width="200" height="200"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="layui-tab-item">
                 <!--  最近战局  -->
+                <table id="history_match" class="table_info">
+                    <tr class="table_info_row">
+                        <td>英雄</td>
+                        <td>模式</td>
+                        <td>Level</td>
+                        <td>KDA</td>
+                        <td>结果</td>
+                        <td>时间</td>
+                    </tr>
+                </table>
             </div>
             <div class="layui-tab-item">
                 <!--  历史最佳  -->
+                <table id="history_max" class="table_info">
+                    <tr class="table_info_row">
+                        <td>英雄</td>
+                        <td>类型</td>
+                        <td>记录</td>
+                        <td>战绩</td>
+                        <td>时间</td>
+                    </tr>
+                </table>
             </div>
             <div class="layui-tab-item">
                 <!--  我的队友  -->
