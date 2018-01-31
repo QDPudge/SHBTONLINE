@@ -4,11 +4,13 @@
     height:100%;
 }
 .logo_a{
-    width:30%;
-     height:30%;
+    /*width:25%;
+     height:15%;*/
      position:absolute;
      top:10%;
-     left:34%;
+     left:40%;
+    min-height:252px;
+    min-width:155px;
      z-index:1010;
 }
 .player_img{

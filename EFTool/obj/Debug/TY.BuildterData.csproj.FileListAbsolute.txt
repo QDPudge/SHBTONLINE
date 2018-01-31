@@ -1,0 +1,10 @@
+E:\2017厦门隐患排查系统2\trunk\src\TY.ZZHidden.Plan\TY.BuildterData\bin\Debug\TY.BuildterData.dll.config
+E:\2017厦门隐患排查系统2\trunk\src\TY.ZZHidden.Plan\TY.BuildterData\bin\Debug\TY.BuildterData.dll
+E:\2017厦门隐患排查系统2\trunk\src\TY.ZZHidden.Plan\TY.BuildterData\bin\Debug\TY.BuildterData.pdb
+E:\2017厦门隐患排查系统2\trunk\src\TY.ZZHidden.Plan\TY.BuildterData\bin\Debug\EntityFramework.dll
+E:\2017厦门隐患排查系统2\trunk\src\TY.ZZHidden.Plan\TY.BuildterData\bin\Debug\EntityFramework.Extended.dll
+E:\2017厦门隐患排查系统2\trunk\src\TY.ZZHidden.Plan\TY.BuildterData\bin\Debug\TY.Framework.dll
+E:\2017厦门隐患排查系统2\trunk\src\TY.ZZHidden.Plan\TY.BuildterData\bin\Debug\TY.Framework.xml
+E:\2017厦门隐患排查系统2\trunk\src\TY.ZZHidden.Plan\TY.BuildterData\obj\Debug\TY.BuildterData.dll
+E:\2017厦门隐患排查系统2\trunk\src\TY.ZZHidden.Plan\TY.BuildterData\obj\Debug\TY.BuildterData.pdb
+E:\2017厦门隐患排查系统2\trunk\src\TY.ZZHidden.Plan\TY.BuildterData\obj\Debug\TY.BuildterData.csprojResolveAssemblyReference.cache

@@ -1,0 +1,23 @@
+﻿@using SHBTONLINE.Models.SystemModel;
+@if (SessionManager.Instance.UserInfoSession != null && !string.IsNullOrEmpty(SessionManager.Instance.UserInfoSession.userName))
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+    {
+        @Html.AntiForgeryToken()
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                @Html.ActionLink(@SessionManager.Instance.UserInfoSession.userName + "，欢迎", "UserInfo", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">注销</a></li>
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("注册", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("登录", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}
+
+
