@@ -19,7 +19,8 @@ function bindEvent() {
         layer.open({
             type: 1,
             title: false,
-            area: ['600px','500px'],
+            area: ['600','500'],
+            zIndex:99999,
             content: $('#player_info'), //这里content是一个DOM，注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响,
             success: function(layero, index){
                 $("#player_info").css("display", "block");

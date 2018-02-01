@@ -334,11 +334,12 @@
     <Content Include="Content\layui\lay\modules\tree.js" />
     <Content Include="Content\layui\lay\modules\upload.js" />
     <Content Include="Content\layui\lay\modules\util.js" />
-    <Content Include="Content\Page\Game\DOTA2Index.css" />
-    <Content Include="Content\Page\Game\PubgIndex.css" />
-    <Content Include="Content\Page\index.css" />
+    <Content Include="Css\Page\Game\DOTA2Index.css" />
+    <Content Include="Css\Page\Game\PubgIndex.css" />
+    <Content Include="Css\Page\index.css" />
     <Content Include="Content\skplayer\dist\skPlayer.min.js" />
     <Content Include="Content\skplayer\src\skPlayer.js" />
+    <Content Include="Css\Page\UserInfo.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -372,6 +373,7 @@
     <Content Include="Scripts\pages\Game\Pubg\PubgIndex.js" />
     <Content Include="Scripts\pages\index.js" />
     <Content Include="Scripts\pages\main.js" />
+    <Content Include="Scripts\pages\User\UserInfo.js" />
     <Content Include="Scripts\require.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -391,12 +393,18 @@
     <Content Include="Views\Web\Main.cshtml" />
     <Content Include="Views\Shared\_LayoutIndex.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Account\BaseInfo.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\ModifyPassword.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Social.cshtml" />
+    <Content Include="Views\Account\UserInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Game\Models\" />
+    <Folder Include="Content\Page\" />
     <Folder Include="Models\DOTA2\" />
-    <Folder Include="Views\Account\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
@@ -411,6 +419,14 @@
     <ProjectReference Include="..\CommonData\CommonData.csproj">
       <Project>{a82afc28-b5db-45c5-ba38-3fcbaa569652}</Project>
       <Name>CommonData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data.Domain\Data.Domain.csproj">
+      <Project>{3e325e83-548c-4266-b50c-bc407ba34803}</Project>
+      <Name>Data.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{fbb8ae5c-3596-48e3-993d-49f866d45e65}</Project>
+      <Name>Data</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

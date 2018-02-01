@@ -6,7 +6,10 @@
 
 <head>
 
-        @Styles.Render("~/Content/css")
+            @Styles.Render("~/Content/css")
+            @Scripts.Render("~/bundles/modernizr")
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/bootstrap")
         @*@Styles.Render("~/Content/Layuicss")*@
     <link href="~/Content/layui/css/modules/laydate/default/laydate.css" rel="stylesheet" />
     <link href="~/Content/layui/css/modules/layer/default/layer.css" rel="stylesheet" />
@@ -31,9 +34,7 @@
     <script src="~/Content/layui/lay/modules/tree.js"></script>
     <script src="~/Content/layui/lay/modules/upload.js"></script>
     <script src="~/Content/layui/lay/modules/util.js"></script>
-        @Scripts.Render("~/bundles/modernizr")
-        @Scripts.Render("~/bundles/jquery")
-            @Scripts.Render("~/bundles/bootstrap")
+                @*<script src="~/Scripts/require.js"></script>*@
             @*@Scripts.Render("~/Content/LayuiJS")*@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,7 +47,7 @@
     @RenderSection("Head", required: false)
 </head>
 <!--Layout y高度溢出不应该设置为hidden-->
-<body class="main-layouts wrapper easyui-layout" data-options="fit:true" style="height:100%; overflow-x: hidden; padding:1px ;  margin: 1px; border: 0px; background-color: whitesmoke;">
+<body class="main-layouts wrapper easyui-layout" data-options="fit:true" style="height:100%;margin-top:50px; overflow-x: hidden; padding:1px ;  margin: 1px; border: 0px; background-color: whitesmoke;">
     @RenderBody()
 </body>
 </html>

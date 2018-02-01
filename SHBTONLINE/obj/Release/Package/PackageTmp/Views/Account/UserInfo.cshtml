@@ -1,0 +1,24 @@
+﻿@model SHBTONLINE.Models.SystemModel.EditUserInfo
+@{
+    ViewBag.Title = "个人信息";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+<link href="~/Css/Page/UserInfo.css" rel="stylesheet" />
+<script src="~/Scripts/pages/User/UserInfo.js"></script>
+<div class="container user-container">
+
+    <div class="col-md-3 col-xs-3 ">
+            @*@Html.ActionLink("基本信息", "BaseInfo", "Account", new{ @class="list-group-item active"})*@
+        <a href="#" class="list-group-item active">基本信息</a>
+        <a href="#" class="list-group-item">密码修改</a>
+        <a href="#" class="list-group-item">账号安全</a>
+        <a href="#" class="list-group-item">社交</a>
+        <a href="#" class="list-group-item">游戏资源查看</a>
+    </div>
+    <div class="col-md-6 col-xs-8">
+        @*@Html.Partial("BaseInfo")*@
+        <div id="infoPartial">
+            @{ Html.RenderPartial("BaseInfo", Model); }
+        </div>
+    </div>
+    </div>

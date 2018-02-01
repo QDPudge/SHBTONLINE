@@ -1,4 +1,4 @@
-﻿
+﻿@using SHBTONLINE.Models.SystemModel;
 @{
     ViewBag.Title = "Main";
     Layout = "~/Views/Shared/_LayoutIndex.cshtml";
@@ -18,6 +18,13 @@
 
 
 </div>
+@if (SessionManager.Instance.UserInfoSession != null && !string.IsNullOrEmpty(SessionManager.Instance.UserInfoSession.userName)&&ViewBag.isload==0)
+{
+    <script>
+        //parent.location.reload();
+        top.document.location.href = 'http://localhost:64652/Home/Index?load=1';
+    </script>
+}
 <hr />
 <footer style="text-align:center">
     <p>&copy; @DateTime.Now.Year - MoreCreative   </p>

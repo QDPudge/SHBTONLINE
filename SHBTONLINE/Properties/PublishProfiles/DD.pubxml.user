@@ -13,13 +13,13 @@
       <publishTime>01/16/2018 14:41:46</publishTime>
     </File>
     <File Include="Areas/Game/Views/DOTA2/DOTA2Index.cshtml">
-      <publishTime>01/16/2018 14:41:41</publishTime>
+      <publishTime>02/01/2018 17:41:25</publishTime>
     </File>
     <File Include="Areas/Game/Views/GTA5/GTA5Index.cshtml">
       <publishTime>01/16/2018 14:41:51</publishTime>
     </File>
     <File Include="Areas/Game/Views/Pubg/PubgIndex.cshtml">
-      <publishTime>01/26/2018 15:59:54</publishTime>
+      <publishTime>02/01/2018 17:48:35</publishTime>
     </File>
     <File Include="Areas/Game/Views/Shared/_Layout.cshtml">
       <publishTime>01/17/2018 14:02:00</publishTime>
@@ -33,11 +33,41 @@
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>01/12/2018 11:14:47</publishTime>
     </File>
+    <File Include="bin/CommonData.dll">
+      <publishTime>02/01/2018 17:48:45</publishTime>
+    </File>
+    <File Include="bin/Data.dll">
+      <publishTime>02/01/2018 17:48:45</publishTime>
+    </File>
+    <File Include="bin/Data.Domain.dll">
+      <publishTime>02/01/2018 17:48:45</publishTime>
+    </File>
+    <File Include="bin/Data.DomainMap.dll">
+      <publishTime>02/01/2018 17:48:45</publishTime>
+    </File>
+    <File Include="bin/DnsClient.dll">
+      <publishTime>01/29/2018 09:53:51</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>01/31/2018 15:14:41</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>01/31/2018 15:14:41</publishTime>
+    </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>01/12/2018 11:14:52</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
       <publishTime>01/12/2018 11:14:47</publishTime>
+    </File>
+    <File Include="bin/MongoDB.Bson.dll">
+      <publishTime>01/29/2018 09:53:48</publishTime>
+    </File>
+    <File Include="bin/MongoDB.Driver.Core.dll">
+      <publishTime>01/29/2018 09:53:54</publishTime>
+    </File>
+    <File Include="bin/MongoDB.Driver.dll">
+      <publishTime>01/29/2018 09:53:56</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>01/12/2018 11:14:49</publishTime>
@@ -79,7 +109,13 @@
       <publishTime>01/12/2018 11:14:52</publishTime>
     </File>
     <File Include="bin/SHBTONLINE.dll">
-      <publishTime>01/26/2018 16:47:20</publishTime>
+      <publishTime>02/01/2018 17:48:46</publishTime>
+    </File>
+    <File Include="bin/System.Buffers.dll">
+      <publishTime>01/29/2018 09:53:50</publishTime>
+    </File>
+    <File Include="bin/System.Runtime.InteropServices.RuntimeInformation.dll">
+      <publishTime>01/29/2018 09:53:53</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
       <publishTime>01/12/2018 11:14:46</publishTime>
@@ -105,11 +141,194 @@
     <File Include="bin/WebGrease.dll">
       <publishTime>01/12/2018 11:14:48</publishTime>
     </File>
+    <File Include="bin/zh-Hans/System.Web.Helpers.resources.dll">
+      <publishTime>01/29/2018 09:53:36</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Mvc.resources.dll">
+      <publishTime>01/29/2018 09:53:36</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Optimization.resources.dll">
+      <publishTime>01/29/2018 09:53:36</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Razor.resources.dll">
+      <publishTime>01/29/2018 09:53:36</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Deployment.resources.dll">
+      <publishTime>01/29/2018 09:53:36</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Razor.resources.dll">
+      <publishTime>01/29/2018 09:53:36</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.resources.dll">
+      <publishTime>01/29/2018 09:53:36</publishTime>
+    </File>
     <File Include="Content/bootstrap.css">
       <publishTime>01/12/2018 11:14:36</publishTime>
     </File>
     <File Include="Content/bootstrap.min.css">
       <publishTime>01/12/2018 11:14:36</publishTime>
+    </File>
+    <File Include="Content/chart/chart.js">
+      <publishTime>01/30/2018 10:09:39</publishTime>
+    </File>
+    <File Include="Content/chart/chartjs2.7.js">
+      <publishTime>01/30/2018 11:09:31</publishTime>
+    </File>
+    <File Include="Content/chart/charts/Chart.Bar.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/charts/Chart.Bubble.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/charts/Chart.Doughnut.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/charts/Chart.Line.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/charts/Chart.PolarArea.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/charts/Chart.Radar.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/charts/Chart.Scatter.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/controllers/controller.bar.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/controllers/controller.bubble.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/controllers/controller.doughnut.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/controllers/controller.line.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/controllers/controller.polarArea.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/controllers/controller.radar.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/controllers/controller.scatter.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/core/core.animation.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/core/core.controller.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/core/core.datasetController.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/core/core.defaults.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/core/core.element.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/core/core.helpers.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/core/core.interaction.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/core/core.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/core/core.layouts.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/core/core.plugins.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/core/core.scale.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/core/core.scaleService.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/core/core.ticks.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/core/core.tooltip.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/elements/element.arc.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/elements/element.line.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/elements/element.point.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/elements/element.rectangle.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/elements/index.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/helpers/helpers.canvas.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/helpers/helpers.core.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/helpers/helpers.easing.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/helpers/helpers.options.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/helpers/index.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/platforms/platform.basic.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/platforms/platform.dom.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/platforms/platform.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/plugins/index.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/plugins/plugin.filler.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/plugins/plugin.legend.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/plugins/plugin.title.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/scales/scale.category.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/scales/scale.linear.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/scales/scale.linearbase.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/scales/scale.logarithmic.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/scales/scale.radialLinear.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/scales/scale.time.js">
+      <publishTime>01/28/2018 09:59:22</publishTime>
+    </File>
+    <File Include="Content/chart/t.js">
+      <publishTime>01/30/2018 16:06:35</publishTime>
     </File>
     <File Include="Content/drugs-sh.ico">
       <publishTime>01/12/2018 15:53:28</publishTime>
@@ -456,6 +675,18 @@
     <File Include="Content/skplayer/src/skPlayer.scss">
       <publishTime>12/07/2017 13:50:53</publishTime>
     </File>
+    <File Include="Css/Page/Game/DOTA2Index.css">
+      <publishTime>01/31/2018 09:29:14</publishTime>
+    </File>
+    <File Include="Css/Page/Game/PubgIndex.css">
+      <publishTime>01/26/2018 16:07:58</publishTime>
+    </File>
+    <File Include="Css/Page/index.css">
+      <publishTime>01/26/2018 08:57:26</publishTime>
+    </File>
+    <File Include="Css/Page/UserInfo.css">
+      <publishTime>11/10/2017 16:18:48</publishTime>
+    </File>
     <File Include="favicon.ico">
       <publishTime>01/12/2018 11:14:29</publishTime>
     </File>
@@ -475,7 +706,7 @@
       <publishTime>01/12/2018 11:14:29</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>01/12/2018 11:14:53</publishTime>
+      <publishTime>01/31/2018 15:14:44</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>01/12/2018 11:14:36</publishTime>
@@ -507,14 +738,23 @@
     <File Include="Scripts/modernizr-2.6.2.js">
       <publishTime>01/12/2018 11:14:47</publishTime>
     </File>
+    <File Include="Scripts/pages/Game/DOTA2/DOTA2Index.js">
+      <publishTime>01/30/2018 17:49:26</publishTime>
+    </File>
     <File Include="Scripts/pages/Game/Pubg/PubgIndex.js">
-      <publishTime>01/26/2018 15:26:34</publishTime>
+      <publishTime>01/29/2018 17:41:11</publishTime>
     </File>
     <File Include="Scripts/pages/index.js">
       <publishTime>01/26/2018 09:02:21</publishTime>
     </File>
     <File Include="Scripts/pages/main.js">
       <publishTime>01/16/2018 16:42:34</publishTime>
+    </File>
+    <File Include="Scripts/pages/User/UserInfo.js">
+      <publishTime>11/13/2017 17:01:46</publishTime>
+    </File>
+    <File Include="Scripts/require.js">
+      <publishTime>01/30/2018 10:24:45</publishTime>
     </File>
     <File Include="Scripts/respond.js">
       <publishTime>01/12/2018 11:14:48</publishTime>
@@ -523,7 +763,25 @@
       <publishTime>01/12/2018 11:14:48</publishTime>
     </File>
     <File Include="Scripts/_references.js">
-      <publishTime>01/25/2018 17:36:36</publishTime>
+      <publishTime>02/01/2018 17:40:18</publishTime>
+    </File>
+    <File Include="Views/Account/BaseInfo.cshtml">
+      <publishTime>02/01/2018 16:06:06</publishTime>
+    </File>
+    <File Include="Views/Account/Login.cshtml">
+      <publishTime>02/01/2018 17:47:11</publishTime>
+    </File>
+    <File Include="Views/Account/ModifyPassword.cshtml">
+      <publishTime>02/01/2018 16:06:29</publishTime>
+    </File>
+    <File Include="Views/Account/Register.cshtml">
+      <publishTime>02/01/2018 17:46:23</publishTime>
+    </File>
+    <File Include="Views/Account/Social.cshtml">
+      <publishTime>02/01/2018 16:06:36</publishTime>
+    </File>
+    <File Include="Views/Account/UserInfo.cshtml">
+      <publishTime>02/01/2018 17:40:35</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
       <publishTime>01/12/2018 11:14:29</publishTime>
@@ -532,7 +790,7 @@
       <publishTime>01/12/2018 11:14:29</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>01/26/2018 09:34:46</publishTime>
+      <publishTime>02/01/2018 17:41:51</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>01/12/2018 11:14:29</publishTime>
@@ -541,19 +799,22 @@
       <publishTime>01/17/2018 17:10:56</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutIndex.cshtml">
-      <publishTime>01/26/2018 16:59:19</publishTime>
+      <publishTime>02/01/2018 17:05:58</publishTime>
+    </File>
+    <File Include="Views/Shared/_LoginPartial.cshtml">
+      <publishTime>02/01/2018 16:43:28</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>01/12/2018 11:14:29</publishTime>
     </File>
     <File Include="Views/Web/Main.cshtml">
-      <publishTime>01/26/2018 12:25:39</publishTime>
+      <publishTime>02/01/2018 17:29:35</publishTime>
     </File>
     <File Include="Views/_ViewStart.cshtml">
       <publishTime>01/17/2018 17:10:33</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/12/2018 16:38:34</publishTime>
+      <publishTime>02/01/2018 17:48:47</publishTime>
     </File>
   </ItemGroup>
 </Project>

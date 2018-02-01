@@ -1,0 +1,14 @@
+E:\wangtest\SHBTONLINE\Data\bin\Debug\Data.dll.config
+E:\wangtest\SHBTONLINE\Data\bin\Debug\Data.dll
+E:\wangtest\SHBTONLINE\Data\bin\Debug\Data.pdb
+E:\wangtest\SHBTONLINE\Data\bin\Debug\Data.Domain.dll
+E:\wangtest\SHBTONLINE\Data\bin\Debug\Data.DomainMap.dll
+E:\wangtest\SHBTONLINE\Data\bin\Debug\EntityFramework.dll
+E:\wangtest\SHBTONLINE\Data\bin\Debug\EntityFramework.SqlServer.dll
+E:\wangtest\SHBTONLINE\Data\bin\Debug\Data.DomainMap.pdb
+E:\wangtest\SHBTONLINE\Data\bin\Debug\Data.Domain.pdb
+E:\wangtest\SHBTONLINE\Data\bin\Debug\EntityFramework.xml
+E:\wangtest\SHBTONLINE\Data\bin\Debug\EntityFramework.SqlServer.xml
+E:\wangtest\SHBTONLINE\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+E:\wangtest\SHBTONLINE\Data\obj\Debug\Data.dll
+E:\wangtest\SHBTONLINE\Data\obj\Debug\Data.pdb

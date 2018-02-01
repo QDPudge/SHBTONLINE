@@ -7,7 +7,7 @@ using CommonData;
 using Data.Domain;
 using SHBTONLINE.Common;
 using SHBTONLINE.Models.SystemModel;
-using TM.Data.Models;
+using Data;
 using SHBTONLINE.Models.PUBG;
 
 namespace SHBTONLINE.Controllers
@@ -20,7 +20,7 @@ namespace SHBTONLINE.Controllers
         /// <summary>
         /// 数据上下文对象
         /// </summary>
-        static HomeGameContext db = new HomeGameContext();
+        static SHBTONLINEContext db = new SHBTONLINEContext();
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {

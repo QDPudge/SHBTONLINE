@@ -1,0 +1,5 @@
+E:\wangtest\SHBTONLINE\Data.Domain\bin\Release\Data.Domain.dll
+E:\wangtest\SHBTONLINE\Data.Domain\bin\Release\Data.Domain.pdb
+E:\wangtest\SHBTONLINE\Data.Domain\obj\Release\Data.Domain.csprojResolveAssemblyReference.cache
+E:\wangtest\SHBTONLINE\Data.Domain\obj\Release\Data.Domain.dll
+E:\wangtest\SHBTONLINE\Data.Domain\obj\Release\Data.Domain.pdb

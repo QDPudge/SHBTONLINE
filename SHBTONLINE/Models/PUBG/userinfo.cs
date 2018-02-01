@@ -5,8 +5,4 @@ using System.Web;
 
 namespace SHBTONLINE.Models.PUBG
 {
-    public class userinfo
-    {
-
-    }
 }

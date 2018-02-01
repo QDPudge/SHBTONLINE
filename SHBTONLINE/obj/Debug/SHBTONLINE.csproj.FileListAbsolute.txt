@@ -55,3 +55,15 @@ E:\wangtest\SHBTONLINE\SHBTONLINE\bin\zh-Hans\System.Web.Razor.resources.dll
 E:\wangtest\SHBTONLINE\SHBTONLINE\bin\zh-Hans\System.Web.WebPages.resources.dll
 E:\wangtest\SHBTONLINE\SHBTONLINE\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 E:\wangtest\SHBTONLINE\SHBTONLINE\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+E:\wangtest\SHBTONLINE\SHBTONLINE\bin\CommonData.dll
+E:\wangtest\SHBTONLINE\SHBTONLINE\bin\Data.dll
+E:\wangtest\SHBTONLINE\SHBTONLINE\bin\Data.Domain.dll
+E:\wangtest\SHBTONLINE\SHBTONLINE\bin\EntityFramework.dll
+E:\wangtest\SHBTONLINE\SHBTONLINE\bin\EntityFramework.SqlServer.dll
+E:\wangtest\SHBTONLINE\SHBTONLINE\bin\Data.DomainMap.dll
+E:\wangtest\SHBTONLINE\SHBTONLINE\bin\CommonData.pdb
+E:\wangtest\SHBTONLINE\SHBTONLINE\bin\Data.Domain.pdb
+E:\wangtest\SHBTONLINE\SHBTONLINE\bin\Data.pdb
+E:\wangtest\SHBTONLINE\SHBTONLINE\bin\EntityFramework.xml
+E:\wangtest\SHBTONLINE\SHBTONLINE\bin\EntityFramework.SqlServer.xml
+E:\wangtest\SHBTONLINE\SHBTONLINE\bin\Data.DomainMap.pdb
