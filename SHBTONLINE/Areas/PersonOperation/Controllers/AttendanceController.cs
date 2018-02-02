@@ -8,10 +8,19 @@ namespace SHBTONLINE.Areas.PersonOperation.Controllers
 {
     public class AttendanceController : Controller
     {
-        // GET: PersonOperation/Attendance
-        public ActionResult Index()
+        /// GET: PersonOperation/Attendance
+        public ActionResult AttendanceView()
         {
             return View();
+        }
+
+        /// <summary>
+        /// 获取成员签到数据
+        /// </summary>
+        /// <returns></returns>
+        public JsonResult GetAttendance()
+        {
+            return null;
         }
     }
 }

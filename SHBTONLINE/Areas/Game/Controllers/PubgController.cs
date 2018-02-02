@@ -18,6 +18,12 @@ namespace SHBTONLINE.Areas.Game.Controllers
         {
             return View();
         }
+        /// <summary>
+        /// 获取用户信息
+        /// </summary>
+        /// <param name="time"></param>
+        /// <param name="Name"></param>
+        /// <returns></returns>
         public JsonResult GetUserInfo(string time,string Name)
         {
             //实例化一个能够序列化数据的类

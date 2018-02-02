@@ -346,6 +346,7 @@
     <Content Include="Content\layui\font\iconfont.woff" />
     <Content Include="Content\chart\chartjs2.7.js" />
     <Content Include="Areas\PersonOperation\Views\web.config" />
+    <Content Include="Areas\PersonOperation\Views\Attendance\AttendanceView.cshtml" />
     <None Include="Properties\PublishProfiles\DD.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -383,7 +384,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Game\Models\" />
     <Folder Include="Areas\PersonOperation\Models\" />
-    <Folder Include="Areas\PersonOperation\Views\Attendance\" />
     <Folder Include="Areas\PersonOperation\Views\Shared\" />
     <Folder Include="Models\DOTA2\" />
   </ItemGroup>
