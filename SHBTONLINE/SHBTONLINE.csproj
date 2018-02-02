@@ -149,6 +149,8 @@
     <Compile Include="Areas\Game\Controllers\GTA5Controller.cs" />
     <Compile Include="Areas\Game\Controllers\PubgController.cs" />
     <Compile Include="Areas\Game\GameAreaRegistration.cs" />
+    <Compile Include="Areas\PersonOperation\Controllers\AttendanceController.cs" />
+    <Compile Include="Areas\PersonOperation\PersonOperationAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\WebController.cs" />
     <Compile Include="Global.asax.cs">
@@ -343,6 +345,7 @@
     <Content Include="Content\layui\font\iconfont.ttf" />
     <Content Include="Content\layui\font\iconfont.woff" />
     <Content Include="Content\chart\chartjs2.7.js" />
+    <Content Include="Areas\PersonOperation\Views\web.config" />
     <None Include="Properties\PublishProfiles\DD.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -379,6 +382,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Game\Models\" />
+    <Folder Include="Areas\PersonOperation\Models\" />
+    <Folder Include="Areas\PersonOperation\Views\Attendance\" />
+    <Folder Include="Areas\PersonOperation\Views\Shared\" />
     <Folder Include="Models\DOTA2\" />
   </ItemGroup>
   <ItemGroup>
