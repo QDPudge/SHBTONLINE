@@ -48,6 +48,14 @@
       <HintPath>..\packages\DnsClient.1.0.7\lib\net45\DnsClient.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -149,8 +157,10 @@
     <Compile Include="Areas\Game\Controllers\GTA5Controller.cs" />
     <Compile Include="Areas\Game\Controllers\PubgController.cs" />
     <Compile Include="Areas\Game\GameAreaRegistration.cs" />
-    <Compile Include="Areas\PersonOperation\Controllers\AttendanceController.cs" />
-    <Compile Include="Areas\PersonOperation\PersonOperationAreaRegistration.cs" />
+    <Compile Include="Common\CookieHelper.cs" />
+    <Compile Include="Common\HashCode.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\WebController.cs" />
     <Compile Include="Global.asax.cs">
@@ -158,6 +168,9 @@
     </Compile>
     <Compile Include="Models\PUBG\heibox.cs" />
     <Compile Include="Models\PUBG\userinfo.cs" />
+    <Compile Include="Models\SystemModel\AccountModel.cs" />
+    <Compile Include="Models\SystemModel\AccountTicket.cs" />
+    <Compile Include="Models\SystemModel\SessionManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -321,11 +334,12 @@
     <Content Include="Content\layui\lay\modules\tree.js" />
     <Content Include="Content\layui\lay\modules\upload.js" />
     <Content Include="Content\layui\lay\modules\util.js" />
-    <Content Include="Content\Page\Game\DOTA2Index.css" />
-    <Content Include="Content\Page\Game\PubgIndex.css" />
-    <Content Include="Content\Page\index.css" />
+    <Content Include="Css\Page\Game\DOTA2Index.css" />
+    <Content Include="Css\Page\Game\PubgIndex.css" />
+    <Content Include="Css\Page\index.css" />
     <Content Include="Content\skplayer\dist\skPlayer.min.js" />
     <Content Include="Content\skplayer\src\skPlayer.js" />
+    <Content Include="Css\Page\UserInfo.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -345,8 +359,6 @@
     <Content Include="Content\layui\font\iconfont.ttf" />
     <Content Include="Content\layui\font\iconfont.woff" />
     <Content Include="Content\chart\chartjs2.7.js" />
-    <Content Include="Areas\PersonOperation\Views\web.config" />
-    <Content Include="Areas\PersonOperation\Views\Attendance\AttendanceView.cshtml" />
     <None Include="Properties\PublishProfiles\DD.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -361,6 +373,7 @@
     <Content Include="Scripts\pages\Game\Pubg\PubgIndex.js" />
     <Content Include="Scripts\pages\index.js" />
     <Content Include="Scripts\pages\main.js" />
+    <Content Include="Scripts\pages\User\UserInfo.js" />
     <Content Include="Scripts\require.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -379,13 +392,20 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Web\Main.cshtml" />
     <Content Include="Views\Shared\_LayoutIndex.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Account\BaseInfo.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\ModifyPassword.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Social.cshtml" />
+    <Content Include="Views\Account\UserInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Game\Models\" />
-    <Folder Include="Areas\PersonOperation\Models\" />
-    <Folder Include="Areas\PersonOperation\Views\Shared\" />
+    <Folder Include="Content\Page\" />
     <Folder Include="Models\DOTA2\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -394,6 +414,20 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonData\CommonData.csproj">
+      <Project>{a82afc28-b5db-45c5-ba38-3fcbaa569652}</Project>
+      <Name>CommonData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data.Domain\Data.Domain.csproj">
+      <Project>{3e325e83-548c-4266-b50c-bc407ba34803}</Project>
+      <Name>Data.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{fbb8ae5c-3596-48e3-993d-49f866d45e65}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
