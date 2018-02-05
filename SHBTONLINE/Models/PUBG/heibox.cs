@@ -24,12 +24,18 @@ namespace SHBTONLINE.Models.PUBG
         public string download_url { get; set; }
         public string follow_state { get; set; }
         public string fpp_default { get; set; }
-        public List<normal_score_detail> normal_score_detail { get; set; }
+        public List<inventory> inventory { get; set; }
+        public string inventory_count { get; set; }
+        public string inventory_open { get; set; }
+        public string inventory_value { get; set; }
+        //public List<normal_score_detail> normal_score_detail { get; set; }
         public overview normal_score_round { get; set; }
         public player_info player_info { get; set; }
         public overview player_rank_round { get; set; }
-        public overview radar_score { get; set; }
+        public List<overview> radar_score { get; set; }
+
         public string rating { get; set; }
+        public string this_season { get; set; }
         public string rating_mode_img { get; set; }
         public string rating_name { get; set; }
         public string rating_rank { get; set; }
@@ -90,6 +96,7 @@ namespace SHBTONLINE.Models.PUBG
     public class player_info
     {
         public string nickname { get; set; }
+        public string avatar { get; set; }
     }
     public class stats
     {
@@ -105,5 +112,19 @@ namespace SHBTONLINE.Models.PUBG
         public string region { get; set; }
         public string season { get; set; }
         public List<overview> values { get; set; }
+    }
+    public class inventory
+    {
+        public string icon_url { get; set; }
+        public string name { get; set; }
+        public string tradable { get; set; }
+        public price_info price_info { get; set; }
+    }
+    public class price_info
+    {
+        public string normal_price_num { get; set; }
+        public string rmb_normal_price_num { get; set; }
+        public string rmb_sale_price_num { get; set; }
+        public string sale_price_num { get; set; }
     }
 }

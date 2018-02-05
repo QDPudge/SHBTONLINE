@@ -81,6 +81,18 @@ function loadNameMatch(Name) {
                     cell1.innerHTML = oTr;
                 });
             });
+
+            var table3 = $("#inventory")[0];
+            $("#inventory").empty();
+            $.each(obj.result.inventory, function (k, v) {
+                if (k % 2 == 0) {
+                    oneRow = table3.insertRow();
+                }
+                //oneRow.style =
+                var infodiv = "<div class ='inventory'><img style='-webkit-user-select: none' src='" + v.icon_url + "'><p>" + v.name + "￥" + v.price_info.rmb_normal_price_num + "</p></div>"
+                cell1 = oneRow.insertCell();
+                cell1.innerHTML = infodiv;
+            });
         }
     });
 }

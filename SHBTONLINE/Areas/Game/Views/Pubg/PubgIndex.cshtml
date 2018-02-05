@@ -54,25 +54,38 @@
     <p>&copy; @DateTime.Now.Year - MoreCreative   </p>
 </footer>
 <div id="player_info">
-    <div class="layui-collapse">
-        <div class="layui-colla-item">
-            <h2 class="layui-colla-title">最近赛季总体数据</h2>
-            <div class="layui-colla-content layui-show" >
-                <table id="total_match" class="table_info">
-                    
+    <div class="layui-tab">
+        <ul class="layui-tab-title">
+            <li class="layui-this">战斗数据</li>
+            <li>队友分析</li>
+            <li>饰品一览</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+
+                <div class="layui-collapse">
+                    <div class="layui-colla-item">
+                        <h2 class="layui-colla-title">最近赛季总体数据</h2>
+                        <div class="layui-colla-content layui-show">
+                            <table id="total_match" class="table_info"></table>
+                        </div>
+                    </div>
+                    <div class="layui-colla-item">
+                        <h2 class="layui-colla-title">各模式数据</h2>
+                        <div class="layui-colla-content layui-show" id="every_mode">
+                            <table id="score_detail" class="table_info"></table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="layui-tab-item">
+                施工中
+            </div>
+            <div class="layui-tab-item">
+                <table id="inventory" class="table_info">
+
                 </table>
-            </div>
-        </div>
-        <div class="layui-colla-item">
-            <h2 class="layui-colla-title">各模式数据</h2>
-            <div class="layui-colla-content layui-show" id="every_mode">
-                <table id="score_detail" class="table_info"></table>
-            </div>
-        </div>
-        <div class="layui-colla-item">
-            <h2 class="layui-colla-title">队中位置分析</h2>
-            <div class="layui-colla-content layui-show">
-                暂未上线，施工中
             </div>
         </div>
     </div>

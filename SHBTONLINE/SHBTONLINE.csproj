@@ -157,6 +157,8 @@
     <Compile Include="Areas\Game\Controllers\GTA5Controller.cs" />
     <Compile Include="Areas\Game\Controllers\PubgController.cs" />
     <Compile Include="Areas\Game\GameAreaRegistration.cs" />
+    <Compile Include="Areas\PersonOperation\Controllers\AttendanceController.cs" />
+    <Compile Include="Areas\PersonOperation\PersonOperationAreaRegistration.cs" />
     <Compile Include="Common\CookieHelper.cs" />
     <Compile Include="Common\HashCode.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -359,6 +361,8 @@
     <Content Include="Content\layui\font\iconfont.ttf" />
     <Content Include="Content\layui\font\iconfont.woff" />
     <Content Include="Content\chart\chartjs2.7.js" />
+    <Content Include="Areas\PersonOperation\Views\Attendance\AttendanceView.cshtml" />
+    <Content Include="Areas\PersonOperation\Views\web.config" />
     <None Include="Properties\PublishProfiles\DD.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -403,6 +407,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Game\Models\" />
+    <Folder Include="Areas\PersonOperation\Models\" />
+    <Folder Include="Areas\PersonOperation\Views\Shared\" />
     <Folder Include="Content\Page\" />
     <Folder Include="Models\DOTA2\" />
     <Folder Include="Views\Base\" />
@@ -446,7 +452,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>64652</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
