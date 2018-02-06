@@ -19,7 +19,7 @@ function bindEvent() {
         layer.open({
             type: 1,
             title: false,
-            area: ['600','500'],
+            area: ['600px','500px'],
             zIndex:99999,
             content: $('#player_info'), //这里content是一个DOM，注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响,
             success: function(layero, index){
@@ -43,6 +43,8 @@ function loadNameMatch(Name) {
         success: function (data) {
             debugger;
             var obj = JSON.parse(data);
+            
+            $("#"+obj.result.player_info.nickname)[0].src=obj.result.player_info.avatar;
             var table = $("#total_match")[0];
             $("#total_match").empty();
             $.each(obj.result.radar_score, function (k, v) {

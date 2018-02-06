@@ -51,7 +51,10 @@ namespace SHBTONLINE.Models.SystemModel
         [DataType(DataType.Password)]
         [Display(Name = "密码")]
         public string Password { get; set; }
-
+        [Display(Name = "绝地求生ID")]
+        public string PubgID { get; set; }
+        [Display(Name = "刀塔2数字ID")]
+        public string DOTA2ID { get; set; }
         [DataType(DataType.Password)]
         [Display(Name = "确认密码")]
         [Compare("Password", ErrorMessage = "密码和确认密码不匹配。")]
@@ -83,6 +86,11 @@ namespace SHBTONLINE.Models.SystemModel
         public string MateName { get; set; }
         [Display(Name = "密钥")]
         public string Key { get; set; }
+        [Display(Name = "绝地求生ID")]
+        public string PubgID { get; set; }
+        [Display(Name = "刀塔2数字ID")]
+        public string DOTA2ID { get; set; }
+        public string IMG { get; set; }
     }
     /// <summary>
     /// 修改密码页面

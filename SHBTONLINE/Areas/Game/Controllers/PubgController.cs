@@ -1,4 +1,5 @@
 ﻿using SHBTONLINE.Models.PUBG;
+using Data;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,15 +9,27 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
+using SHBTONLINE.Areas.Game.Models.PubgModel;
 
 namespace SHBTONLINE.Areas.Game.Controllers
 {
     public class PubgController : Controller
     {
+        //public SHBTONLINEContext db;
         // GET: Game/Pubg
         public ActionResult PubgIndex()
         {
-            return View();
+            PlayerListForm mode = new PlayerListForm();
+            using (var db = new SHBTONLINEContext() )
+            {
+                var query = db.userinfoes.Where(p => !string.IsNullOrEmpty(p.PubgID)).Select(p=>new PlayerList {
+                    Name=p.Name,
+                    PubgID=p.PubgID,
+                    IMG=p.IMG
+                }).ToList();
+                mode.PlayerList = query;
+            }
+            return View(mode);
         }
         /// <summary>
         /// 获取用户信息
@@ -53,8 +66,18 @@ namespace SHBTONLINE.Areas.Game.Controllers
             myResponseStream.Close();
 
             var ifno = js.Deserialize<heibox>(retString);
-       
-            return Json(retString);
+            using (var db=new SHBTONLINEContext())
+            {
+                var query = db.userinfoes.Where(p => p.PubgID == Name).FirstOrDefault();
+                if (query!=null&&query.IMG!= ifno.result.player_info.avatar)
+                {
+                    query.IMG = ifno.result.player_info.avatar;
+                    db.userinfoes.Attach(query);
+                    db.Entry(query).Property(x => x.IMG).IsModified = true;
+                    db.SaveChanges();
+                }
+            }
+                return Json(retString);
         }
     }
 }

@@ -15,8 +15,8 @@
                     //加载完之后隐藏进度条
 
                 }); break;
-            case "账号安全":
-                $("#infoPartial").load("/Account/BaseInfo", function () {
+            case "信息修改":
+                $("#infoPartial").load("/Account/EditUserInfo", function () {
 
                     //加载完之后隐藏进度条
 

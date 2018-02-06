@@ -51,6 +51,10 @@ namespace Data.DomainMap
             this.Property(t => t.MateName)
                 .HasMaxLength(200);
 
+            this.Property(t => t.IMG)
+                .HasMaxLength(200);
+            
+
             this.Property(t => t.PrivateKey)
                 .IsFixedLength()
                 .HasMaxLength(36);
@@ -76,6 +80,7 @@ namespace Data.DomainMap
             this.Property(t => t.RemainRoll).HasColumnName("RemainRoll");
             this.Property(t => t.PrivateKey).HasColumnName("PrivateKey");
             this.Property(t => t.SteamID).HasColumnName("SteamID");
+            this.Property(t => t.IMG).HasColumnName("IMG");            
             this.Property(t => t.PubgID).HasColumnName("PubgID");
             this.Property(t => t.DOTA2ID).HasColumnName("DOTA2ID");
         }

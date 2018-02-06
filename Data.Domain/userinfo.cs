@@ -50,6 +50,11 @@ namespace  Data.Domain
         /// </summary>
         public string MateLoginName { get; set; }
         /// <summary>
+        /// [IMG]
+        /// </summary>
+        public string IMG { get; set; }
+        
+        /// <summary>
         /// [MateName]
         /// </summary>
         public string MateName { get; set; }

@@ -1,0 +1,84 @@
+﻿@model SHBTONLINE.Models.SystemModel.RegisterViewModel
+@{
+    ViewBag.Title = "编辑用户信息";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+<script>
+    function funcOk(data) {
+        alert(data);
+    }
+    function funcFial() {
+        alert("你的网不球行了，GG")
+    }
+    $(function () {
+        $("#submit").on("click", function () {
+            $.post('SavePassword', $("#form0").serialize(), function (data) {
+                alert(data.r);
+                if(data.s=="ok"){
+                    $("#infoPartial").load("/Account/BaseInfo", function () {
+
+                        //加载完之后隐藏进度条
+
+                    });
+                }
+            });
+        });
+    });
+</script>
+@using (Ajax.BeginForm("SaveUserEdit", "Account", new AjaxOptions() { OnBegin = "", OnSuccess = "funcOk", OnFailure = "funcFial" }, new { @class = "form-horizontal" }))
+{
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label login-field" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+    </div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.DOTA2ID, new { @class = "col-md-2 control-label login-field" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(m => m.DOTA2ID, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.DOTA2ID, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+
+<div class="form-group">
+    @Html.LabelFor(m => m.PubgID, new { @class = "col-md-2 control-label login-field" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(m => m.PubgID, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.PubgID, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.userName, new { @class = "col-md-2 control-label login-field" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(m => m.userName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.userName, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label login-field" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.LoginName, new { @class = "col-md-2 control-label login-field" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(m => m.LoginName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.LoginName, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-btn-group bottom-action text-center">
+    <button type="button" id="submit" class="btn btn-primary">确认修改</button>
+</div>
+}
+
+

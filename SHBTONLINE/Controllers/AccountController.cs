@@ -179,6 +179,8 @@ namespace SHBTONLINE.Controllers
                             LoginName = model.LoginName,
                             Name = model.userName,
                             PSW = model.Password,
+                            DOTA2ID=model.DOTA2ID,
+                            PubgID=model.PubgID,
                             PrivateKey = Guid.NewGuid().ToString()
                         };
                         var bty = HashCode.EncryptWithMD5(model.Password);
@@ -227,6 +229,52 @@ namespace SHBTONLINE.Controllers
         /// 个人信息页
         /// </summary>
         /// <returns></returns>
+        public ActionResult EditUserInfo()
+        {
+            var query = db.userinfoes.Where(p => p.LoginName == SessionManager.Instance.UserInfoSession.LoginName).Select(p => new RegisterViewModel
+            {
+                Email = p.Email,
+                LoginName = p.LoginName,
+                userName = p.Name,
+                DOTA2ID=p.DOTA2ID,
+                PubgID=p.PubgID
+            }).First();
+            return View(query);
+        }       
+        /// <summary>
+        /// 修改个人资料
+        /// </summary>
+        /// <param name="mode"></param>
+        /// <returns></returns>
+        public JsonResult SaveUserEdit(RegisterViewModel mode)
+        {
+            ReturnJson r = new ReturnJson() { s = "ok", r = "修改成功！请牢记密码！" };
+            var querypsw = db.userinfoes.Where(p => p.LoginName == SessionManager.Instance.UserInfoSession.LoginName).FirstOrDefault();
+                try
+                {
+                    querypsw.DOTA2ID = mode.DOTA2ID;
+                querypsw.PubgID = mode.PubgID;
+                querypsw.Email = mode.Email;
+                querypsw.Name = mode.userName;
+                db.userinfoes.Attach(querypsw);
+                db.Entry(querypsw).Property(x => x.DOTA2ID).IsModified = true;
+                db.Entry(querypsw).Property(x => x.PubgID).IsModified = true;
+                db.Entry(querypsw).Property(x => x.Email).IsModified = true;
+                db.Entry(querypsw).Property(x => x.Name).IsModified = true;
+                db.SaveChanges();
+                    return Json(r);
+                }
+                catch (Exception ex)
+                {
+                    r.r = "修改失败，" + ex.Message;
+                    r.s = "error";
+                    return Json(r);
+                }
+        }
+        /// <summary>
+        /// 个人信息页
+        /// </summary>
+        /// <returns></returns>
         public ActionResult BaseInfo()
         {
             var query = db.userinfoes.Where(p => p.LoginName == SessionManager.Instance.UserInfoSession.LoginName).Select(p => new EditUserInfo
@@ -234,7 +282,10 @@ namespace SHBTONLINE.Controllers
                 Email = p.Email,
                 LoginName = p.LoginName,
                 userName = p.Name,
-                MateName = p.MateName
+                MateName = p.MateName,
+                DOTA2ID=p.DOTA2ID,
+                PubgID=p.PubgID,
+                Key=p.PrivateKey
             }).First();
             return PartialView(query);
         }
