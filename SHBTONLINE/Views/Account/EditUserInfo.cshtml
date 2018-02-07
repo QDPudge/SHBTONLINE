@@ -1,4 +1,4 @@
-﻿@model SHBTONLINE.Models.SystemModel.RegisterViewModel
+﻿@model SHBTONLINE.Models.SystemModel.EditUserInfo
 @{
     ViewBag.Title = "编辑用户信息";
     Layout = "~/Views/Shared/_LayoutIndex.cshtml";
@@ -12,7 +12,7 @@
     }
     $(function () {
         $("#submit").on("click", function () {
-            $.post('SavePassword', $("#form0").serialize(), function (data) {
+            $.post('SaveUserEdit', $("#form0").serialize(), function (data) {
                 alert(data.r);
                 if(data.s=="ok"){
                     $("#infoPartial").load("/Account/BaseInfo", function () {

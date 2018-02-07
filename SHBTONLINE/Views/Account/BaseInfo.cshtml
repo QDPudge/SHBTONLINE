@@ -1,4 +1,4 @@
-﻿@model SHBTONLINE.Models.SystemModel.EditUserInfo
+﻿               @model SHBTONLINE.Models.SystemModel.EditUserInfo
 @{
     ViewBag.Title = "基础信息";
     Layout = "~/Views/Shared/_LayoutIndex.cshtml";
@@ -22,10 +22,10 @@
 
     </div>
 
-    <div class="form-display">
+    @*<div class="form-display">
             @Html.LabelFor(f => f.MateName)：@Model.MateName
 
-        </div>
+        </div>*@
 
 <div class="form-display">
     @Html.LabelFor(f => f.DOTA2ID)：@Model.DOTA2ID

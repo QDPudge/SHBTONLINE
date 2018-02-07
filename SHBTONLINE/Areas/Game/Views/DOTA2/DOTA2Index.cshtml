@@ -1,4 +1,4 @@
-﻿
+﻿@using SHBTONLINE.Areas.Game.Models.DOTAModel
 @{
     ViewBag.Title = "DOTA2Index";
     Layout = "~/Views/Shared/_LayoutIndex.cshtml";
@@ -22,8 +22,15 @@
     <img  src="//www.dota2.com.cn/dac/2018/images/bg-section2.jpg">
 </div>
 <div id="player_list">
-    <p>P L A Y E R</p>
-    <div  class="player_img  layui-col-xs4 layui-col-sm4 layui-col-md1" onclick="javascript: loadNameMatch('144312768');">
+    <p>战 队 成 员</p>
+    @foreach (var item in Model.PlayerList)
+    {
+        <div class="player_img  layui-col-xs4 layui-col-sm4 layui-col-md1" onclick="javascript: loadNameMatch('@item.DOTA2ID');">
+            <img id="@item.DOTA2ID" src="@item.IMG" />
+            <p> @item.Name</p>
+        </div>
+    }
+    @*<div  class="player_img  layui-col-xs4 layui-col-sm4 layui-col-md1" onclick="javascript: loadNameMatch('144312768');">
         <img id="WYH_img" src="~/Content/img/player/RubickLee.png" />
         <p id="WYH"> 王一航</p>
     </div>
@@ -60,7 +67,7 @@
     <div id="Chen" class="player_img  layui-col-xs4 layui-col-sm4 layui-col-md1" onclick="javascript: loadNameMatch('1724633154');">
         <img src="~/Content/img/player/RubickLee.png" />
         <p> 教练.Chen</p>
-    </div>
+    </div>*@
 </div>
 <footer>
     <p>&copy; @DateTime.Now.Year - MoreCreative   </p>

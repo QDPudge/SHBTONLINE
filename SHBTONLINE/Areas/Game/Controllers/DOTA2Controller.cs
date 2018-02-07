@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Data;
+using SHBTONLINE.Areas.Game.Models.DOTAModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -15,7 +17,18 @@ namespace SHBTONLINE.Areas.Game.Controllers
         // GET: Game/DOTA2
         public ActionResult DOTA2Index()
         {
-            return View();
+            PlayerListForm mode = new PlayerListForm();
+            using (var db = new SHBTONLINEContext())
+            {
+                var query = db.userinfoes.Where(p => !string.IsNullOrEmpty(p.DOTA2ID)).Select(p => new PlayerList
+                {
+                    Name = p.Name,
+                    DOTA2ID = p.DOTA2ID,
+                    IMG = p.IMG
+                }).ToList();
+                mode.PlayerList = query;
+            }
+            return View(mode);
         }
         public JsonResult GetUserInfo(string ID)
         {
