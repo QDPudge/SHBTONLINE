@@ -7,16 +7,20 @@
     <title>SHBT | 苏赫巴托  - 装X是给自己最好的礼物</title>
     @*<link rel="shortcut icon"  href="~/Content/drugs-sh.ico" />*@
     <link rel="shortcut icon" href="favicon.ico" />
-        @Styles.Render("~/Content/css")
-        @Styles.Render("~/Content/Layuicss")
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/Layuicss")
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-        @Scripts.Render("~/bundles/modernizr")
-            @Scripts.Render("~/Content/LayuiJS")
-            <link href="~/Css/Page/index.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Content/LayuiJS")
+
+    <script src="~/Content/layui/layui.js"></script>
+    <link href="~/Css/Page/index.css" rel="stylesheet" />
     <script src="~/Content/skplayer/dist/skPlayer.min.js"></script>
     <script src="~/Scripts/pages/index.js"></script>
+    <script src="~/Scripts/SHBTBase.js"></script>
+
 </head>
 <body>
     <div id="skPlayer" style="display:none"></div>
@@ -98,6 +102,32 @@
                     frameborder="0" scrolling="auto" src="@Url.Content("~/Web/Main?load="+ViewBag.isload)" style="border:none;margin:0;overflow:hidden"></iframe>
 
         </div>
+    </div>
+    <div id="XXS">
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <div class="layui-collapse">
+                    <div class="layui-colla-item">
+
+                        <h2 class="layui-colla-title">生涯平均数据</h2>
+                        <div class="layui-colla-content layui-show">
+                            <table id="AtendanceInfo" class="table_info">
+
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            //注意：折叠面板 依赖 element 模块，否则无法进行功能性操作
+            layui.use('element', function () {
+                var element = layui.element;
+
+                //…
+            });
+        </script>
     </div>
 </body>
 </html>

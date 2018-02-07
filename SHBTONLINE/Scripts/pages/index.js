@@ -137,3 +137,25 @@ function autoheight() {
     $('#src').css({ 'max-height': minHeight, height: minHeight });
 
 }
+
+function Attendance() {
+    layer.open({
+        type: 1,
+        title: false,
+        area: ['600', '800'],
+        zIndex: 99999,
+        content: $('#XXS'), 
+        success: function (layero, index) {
+            $("#XXS").css("display", "block");
+        },
+        cancel: function (index, layero) {
+            $("#XXS").css("display", "none");
+            layer.close(index)
+        }
+    });
+}
+
+function LoadAttendInfo() {
+
+
+}
