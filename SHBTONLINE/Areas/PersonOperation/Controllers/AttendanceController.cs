@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Data;
+using SHBTONLINE.Areas.PersonOperation.Models.Attendance;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -20,7 +22,20 @@ namespace SHBTONLINE.Areas.PersonOperation.Controllers
         /// <returns></returns>
         public JsonResult GetAttendance()
         {
-            return null;
+            using (var db = new SHBTONLINEContext())
+            {
+                AttendModel model = new AttendModel();
+                //查询人员以及签到日期
+                var query = db.AttendanceInfos.Where(p => !string.IsNullOrEmpty(p.ID)).Select(p => new AttendList
+                {
+                    ID=p.ID,
+                    Name = p.AD_LoginName,
+                    AttendTime = p.AD_AttendTime,
+                }).ToList();
+                model.AttendList = query;
+                //返回给签到记录
+                return Json(query);
+            }
         }
     }
 }

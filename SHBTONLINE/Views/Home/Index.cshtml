@@ -19,7 +19,6 @@
     <link href="~/Css/Page/index.css" rel="stylesheet" />
     <script src="~/Content/skplayer/dist/skPlayer.min.js"></script>
     <script src="~/Scripts/pages/index.js"></script>
-    <script src="~/Scripts/SHBTBase.js"></script>
 
 </head>
 <body>
@@ -103,13 +102,13 @@
 
         </div>
     </div>
-    <div id="XXS">
+    <div id="XXS" style="display:none">
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
                 <div class="layui-collapse">
                     <div class="layui-colla-item">
-
-                        <h2 class="layui-colla-title">生涯平均数据</h2>
+                        <h2 class="layui-colla-title">人员签到情况</h2>
+                        <button  onclick="javascript: LoadAttendInfo();">签到</button>
                         <div class="layui-colla-content layui-show">
                             <table id="AtendanceInfo" class="table_info">
 

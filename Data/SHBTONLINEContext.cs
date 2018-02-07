@@ -37,6 +37,12 @@ namespace Data
         /// </summary>
         public DbSet<userinfo> userinfoes { get; set; }
 
+
+        /// <summary>
+        /// 签到记录
+        /// </summary>
+        public DbSet<AttendanceInfo> AttendanceInfos { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new userinfoMap());

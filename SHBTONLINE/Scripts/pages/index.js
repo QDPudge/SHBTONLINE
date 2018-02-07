@@ -156,6 +156,14 @@ function Attendance() {
 }
 
 function LoadAttendInfo() {
-
-
+    debugger;
+    $.ajax({
+        type: 'POST',
+        data: {},
+        url: "/PersonOperation/Attendance/GetAttendance",
+        async: false,
+        success: function (data) {
+            
+        }
+    });
 }
