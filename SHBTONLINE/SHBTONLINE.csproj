@@ -157,6 +157,7 @@
     <Compile Include="Areas\Game\Controllers\GTA5Controller.cs" />
     <Compile Include="Areas\Game\Controllers\PubgController.cs" />
     <Compile Include="Areas\Game\GameAreaRegistration.cs" />
+    <Compile Include="Areas\Game\Models\DOTAModel\PlayerList.cs" />
     <Compile Include="Areas\Game\Models\PubgModel\PlayerList.cs" />
     <Compile Include="Areas\PersonOperation\Controllers\AttendanceController.cs" />
     <Compile Include="Areas\PersonOperation\PersonOperationAreaRegistration.cs" />

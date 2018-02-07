@@ -221,6 +221,9 @@ namespace SHBTONLINE.Controllers
                 LoginName = p.LoginName,
                 userName = p.Name,
                 MateName = p.MateName,
+                DOTA2ID=p.DOTA2ID,
+                PubgID=p.PubgID,
+                IMG=p.IMG,
                 Key = p.PrivateKey
             }).First();
             return View(query);
@@ -231,7 +234,7 @@ namespace SHBTONLINE.Controllers
         /// <returns></returns>
         public ActionResult EditUserInfo()
         {
-            var query = db.userinfoes.Where(p => p.LoginName == SessionManager.Instance.UserInfoSession.LoginName).Select(p => new RegisterViewModel
+            var query = db.userinfoes.Where(p => p.LoginName == SessionManager.Instance.UserInfoSession.LoginName).Select(p => new EditUserInfo
             {
                 Email = p.Email,
                 LoginName = p.LoginName,
@@ -246,9 +249,9 @@ namespace SHBTONLINE.Controllers
         /// </summary>
         /// <param name="mode"></param>
         /// <returns></returns>
-        public JsonResult SaveUserEdit(RegisterViewModel mode)
+        public JsonResult SaveUserEdit(EditUserInfo mode)
         {
-            ReturnJson r = new ReturnJson() { s = "ok", r = "修改成功！请牢记密码！" };
+            ReturnJson r = new ReturnJson() { s = "ok", r = "修改成功！" };
             var querypsw = db.userinfoes.Where(p => p.LoginName == SessionManager.Instance.UserInfoSession.LoginName).FirstOrDefault();
                 try
                 {
@@ -285,6 +288,7 @@ namespace SHBTONLINE.Controllers
                 MateName = p.MateName,
                 DOTA2ID=p.DOTA2ID,
                 PubgID=p.PubgID,
+                IMG=p.IMG,
                 Key=p.PrivateKey
             }).First();
             return PartialView(query);
