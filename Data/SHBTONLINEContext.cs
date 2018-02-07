@@ -40,6 +40,7 @@ namespace Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new userinfoMap());
+            modelBuilder.Configurations.Add(new AttendanceInfoMap());
         }
     }
 }
