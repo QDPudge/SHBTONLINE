@@ -31,7 +31,7 @@ namespace Data.Domain
         /// </summary>
         public string ID { get; set; }
         /// <summary>
-        /// [AD_Id]
+        /// 人员ID
         /// </summary>
         public string AD_Id { get; set; }
         /// <summary>
