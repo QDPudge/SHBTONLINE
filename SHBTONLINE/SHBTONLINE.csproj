@@ -160,6 +160,7 @@
     <Compile Include="Areas\Game\Models\DOTAModel\PlayerList.cs" />
     <Compile Include="Areas\Game\Models\PubgModel\PlayerList.cs" />
     <Compile Include="Areas\PersonOperation\Controllers\AttendanceController.cs" />
+    <Compile Include="Areas\PersonOperation\Models\Attendance\AttendModel.cs" />
     <Compile Include="Areas\PersonOperation\PersonOperationAreaRegistration.cs" />
     <Compile Include="Common\CookieHelper.cs" />
     <Compile Include="Common\HashCode.cs" />
@@ -409,7 +410,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\PersonOperation\Models\" />
     <Folder Include="Areas\PersonOperation\Views\Shared\" />
     <Folder Include="Content\Page\" />
     <Folder Include="Models\DOTA2\" />

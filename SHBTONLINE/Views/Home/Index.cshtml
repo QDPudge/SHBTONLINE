@@ -19,7 +19,6 @@
     <link href="~/Css/Page/index.css" rel="stylesheet" />
     <script src="~/Content/skplayer/dist/skPlayer.min.js"></script>
     <script src="~/Scripts/pages/index.js"></script>
-    <script src="~/Scripts/SHBTBase.js"></script>
 
 </head>
 <body>
@@ -55,6 +54,14 @@
         //});
 
     </script>
+    <style>
+    .rich_media {  
+        width: 500px;  
+        margin-left: auto;  
+        margin-right: auto;  
+        padding: 20px;  
+    }  
+    </style>
     <div class="navbar navbar-inverse navbar-fixed-top top-bar">
         <div class="container">
             <div class="navbar-header">
@@ -103,18 +110,32 @@
 
         </div>
     </div>
-    <div id="XXS">
+    <div id="XXS" style="display:none">
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
                 <div class="layui-collapse">
                     <div class="layui-colla-item">
-
-                        <h2 class="layui-colla-title">生涯平均数据</h2>
+                        <h2 class="layui-colla-title">人员签到情况</h2>
+                        <button  onclick="javascript: LoadAttendInfo();">签到</button>
                         <div class="layui-colla-content layui-show">
-                            <table id="AtendanceInfo" class="table_info">
+                            <div class="rich_media">
+                                <div id="page-content">
+                                    <div style="text-align: center;background-color: #2FAA00;height: 50px;margin-bottom: 20px;">
+                                        <span style="cursor: pointer;font-weight: 600;font-size: 20px;color: #fff;height: 50px;line-height: 50px;">每日签到</span>
+                                        <input type="hidden" id="userId" value="${user.id }" />
+                                    </div>
+                                    <div class="container-fluid">
+                                        <div class="row-fluid" id="calendar">
 
-
-                            </table>
+                                        </div>
+                                        <div id="btnDiv" style="display: none;">
+                                            <div class="row-fluid text-center">
+                                                <span id="sing_for_number" class="btn btn-default">签到</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
                         </div>
                     </div>
                 </div>
