@@ -20,17 +20,17 @@ namespace SHBTONLINE.Areas.PersonOperation.Controllers
         /// 获取成员签到数据
         /// </summary>
         /// <returns></returns>
-        public JsonResult GetAttendance()
+        public JsonResult GetAttendance(string Name)
         {
             using (var db = new SHBTONLINEContext())
             {
                 AttendModel model = new AttendModel();
-                //查询人员以及签到日期
-                var query = db.AttendanceInfos.Where(p => !string.IsNullOrEmpty(p.ID)).Select(p => new AttendList
+                //查询人员以及签到日期(条件为签到人员名字与登录名相同)
+                var query = db.AttendanceInfos.Where(p =>p.AD_LoginName==Name).Select(p => new AttendList
                 {
-                    ID=p.ID,
-                    Name = p.AD_LoginName,
-                    AttendTime = p.AD_AttendTime,
+                    //ID = p.ID,
+                    //Name = p.AD_LoginName,
+                    AttendTime = p.AD_AttendTime,//个人签到时间集合
                 }).ToList();
                 model.AttendList = query;
                 //返回给签到记录
