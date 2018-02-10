@@ -34,7 +34,7 @@ namespace Data.DomainMap
                 .HasMaxLength(36);
 
             this.Property(t => t.AD_Id)
-                .HasMaxLength(20);
+                .HasMaxLength(36);
 
             this.Property(t => t.AD_LoginName)
                 .HasMaxLength(100);

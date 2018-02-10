@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using SHBTONLINE.Models.SystemModel;
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -60,7 +61,12 @@
         margin-left: auto;  
         margin-right: auto;  
         padding: 20px;  
-    }  
+    }
+        .on {
+        background-image:url(../../Content/img/cssimg/qiandao_icon.png);
+        background-size:36px 36px;
+        background-repeat:no-repeat;
+        }
     </style>
     <div class="navbar navbar-inverse navbar-fixed-top top-bar">
         <div class="container">
@@ -116,7 +122,6 @@
                 <div class="layui-collapse">
                     <div class="layui-colla-item">
                         <h2 class="layui-colla-title">人员签到情况</h2>
-                        <button  onclick="javascript: LoadAttendInfo();">签到</button>
                         <div class="layui-colla-content layui-show">
                             <div class="rich_media">
                                 <div id="page-content">
@@ -128,9 +133,9 @@
                                         <div class="row-fluid" id="calendar">
 
                                         </div>
-                                        <div id="btnDiv" style="display: none;">
+                                        <div id="btnDiv">
                                             <div class="row-fluid text-center">
-                                                <span id="sing_for_number" class="btn btn-default">签到</span>
+                                                <span id="sing_for_number" class="btn btn-default" onclick="javascript: SaveAttendInfo('@SessionManager.Instance.UserInfoSession.userName');">签到</span>
                                             </div>
                                         </div>
                                     </div>

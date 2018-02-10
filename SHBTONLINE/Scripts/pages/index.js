@@ -137,37 +137,59 @@ function autoheight() {
     $('#src').css({ 'max-height': minHeight, height: minHeight });
 
 }
-
-function Attendance() {
+//加载表格数据
+function Attendance(name) {
     layer.open({
         type: 1,
         title: false,
-        area: ['533px', '500px'],
+        area: ['533px', '517px'],
         zIndex: 99999,
         content: $('#XXS'), 
         success: function (layero, index) {
             $("#XXS").css("display", "block");
+            LoadAttendInfo(name);
+            $("#btnDiv").css("display","block")
         },
         cancel: function (index, layero) {
             $("#XXS").css("display", "none");
+            $("#btnDiv").css("display", "none")
             layer.close(index)
         }
     });
 }
-
-function LoadAttendInfo() {
-    debugger;
+//获取登录信息（签到信息）
+function LoadAttendInfo(name) {
     $.ajax({
         type: 'POST',
-        data: {},
+        data: {Name: name},
         url: "/PersonOperation/Attendance/GetAttendance",
         async: false,
         success: function (signList) {
-            debugger;
             //获取当前时间
             var current = new Date();
             var str = calUtil.drawCal(current.getFullYear(), current.getMonth() + 1, signList);
             $("#calendar").html(str);
+        }
+    });
+}
+//保存签到信息（重新加载数据）
+function SaveAttendInfo(name)
+{
+    $.ajax({
+        type: 'POST',
+        data: { LoginName: name },
+        url: "/PersonOperation/Attendance/UpAttendanceData",
+        async: false,
+        success: function (data) {
+            if (data.s == "ok") {
+                alert(data.r)
+                LoadAttendInfo(name);
+            }
+            else
+            {
+                alert(data.r);
+                LoadAttendInfo(name);
+            }
         }
     });
 }
@@ -215,10 +237,11 @@ var calUtil = {
     ifHasSigned: function (signList, day) {
         var signed = false;
         $.each(signList, function (index, item) {
-            var date = new Date(item.signDate);
+            var time = new Date(parseInt(item.AttendTime.replace("/Date(", "").replace(")/", ""), 10));
+            var date = new Date(time);
             if (date.getDate() == day) {
                 signed = true;
-                return false;
+                return signed;
             }
         });
         return signed;

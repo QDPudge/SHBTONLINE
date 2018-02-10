@@ -67,7 +67,8 @@ namespace Data.DomainMap
 
             this.Property(t => t.DOTA2ID)
                 .HasMaxLength(200);
-
+            this.Property(t => t.SCrrency)
+                .HasMaxLength(100);
             // Table & Column Mappings
             this.ToTable("userinfo");
             this.Property(t => t.ID).HasColumnName("ID");
@@ -83,6 +84,7 @@ namespace Data.DomainMap
             this.Property(t => t.IMG).HasColumnName("IMG");            
             this.Property(t => t.PubgID).HasColumnName("PubgID");
             this.Property(t => t.DOTA2ID).HasColumnName("DOTA2ID");
+            this.Property(t => t.SCrrency).HasColumnName("SCrrency");
         }
     }
 }
