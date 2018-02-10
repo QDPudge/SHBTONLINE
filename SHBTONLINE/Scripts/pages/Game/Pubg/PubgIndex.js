@@ -41,7 +41,6 @@ function loadNameMatch(Name) {
         url: "GetUserInfo?time=" + date + "&Name=" + Name,
         async: false,
         success: function (data) {
-            debugger;
             var obj = JSON.parse(data);
             
             $("#"+obj.result.player_info.nickname)[0].src=obj.result.player_info.avatar;
