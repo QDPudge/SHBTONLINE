@@ -13,7 +13,7 @@
                     <span class="text">欢迎 @SessionManager.Instance.UserInfoSession.userName </span>
                 </a>
             </li>
-            <li><a href="javascript:void(0);" class="js-sub-menu-toggle" onclick="Attendance()">签到</a></li>
+            <li><a href="javascript:void(0);" class="js-sub-menu-toggle" onclick="Attendance('@SessionManager.Instance.UserInfoSession.userName')">签到</a></li>
             <li><a href="javascript:document.getElementById('logoutForm').submit()">注销</a></li>
         </ul>
     }

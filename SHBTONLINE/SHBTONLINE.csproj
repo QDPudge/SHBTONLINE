@@ -235,6 +235,7 @@
     <Content Include="Content\chart\scales\scale.time.js" />
     <Content Include="Content\chart\t.js" />
     <Content Include="Content\drugs-sh.ico" />
+    <Content Include="Content\img\cssimg\qiandao_icon.png" />
     <Content Include="Content\img\player\clo.jpg" />
     <Content Include="Content\img\player\pudge.png" />
     <Content Include="Content\img\player\RubickLee.png" />
