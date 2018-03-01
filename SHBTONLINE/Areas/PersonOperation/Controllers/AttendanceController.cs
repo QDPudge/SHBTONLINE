@@ -52,9 +52,9 @@ namespace SHBTONLINE.Areas.PersonOperation.Controllers
                     try
                     {
                         var userinfo = db.userinfoes.Where(a => a.Name == LoginName).FirstOrDefault();
-                        var queryAttend = db.AttendanceInfos.Where(p => p.AD_LoginName == LoginName ).ToList();
+                        var queryAttend = db.AttendanceInfos.Where(p => p.AD_LoginName == LoginName).Where(p=>p.AD_AttendTime.Value.Year==DateTime.Now.Year&&p.AD_AttendTime.Value.Month==DateTime.Now.Month&& p.AD_AttendTime.Value.Day == DateTime.Now.Day).ToList();
                         //说明未签到
-                        if (queryAttend.Count() != 1)
+                        if (queryAttend.Count() < 1)
                         {
                             //签到数据绑定。
                             AttendanceInfo model = new AttendanceInfo()
