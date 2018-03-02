@@ -48,4 +48,9 @@ namespace SHBTONLINE.Models.SystemModel
 
 
     }
+    public class WechatSession
+    {
+        public string session_key { get; set; }
+        public string openid { get; set; }
+    }
 }

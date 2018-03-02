@@ -65,6 +65,9 @@ namespace Data.DomainMap
             this.Property(t => t.PubgID)
                 .HasMaxLength(200);
 
+            this.Property(t => t.WechatID)
+                .HasMaxLength(200);
+            
             this.Property(t => t.DOTA2ID)
                 .HasMaxLength(200);
             this.Property(t => t.SCrrency)
@@ -84,6 +87,7 @@ namespace Data.DomainMap
             this.Property(t => t.IMG).HasColumnName("IMG");            
             this.Property(t => t.PubgID).HasColumnName("PubgID");
             this.Property(t => t.DOTA2ID).HasColumnName("DOTA2ID");
+            this.Property(t => t.WechatID).HasColumnName("WechatID");            
             this.Property(t => t.SCrrency).HasColumnName("SCrrency");
         }
     }

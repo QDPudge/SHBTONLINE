@@ -67,6 +67,7 @@ namespace SHBTONLINE.Models.SystemModel
         public string Password { get; set; }
         public string MateName { get; set; }
         public string MateLoginName { get; set; }
+        public string WechatID { get; set; }
         public string Key { get; set; }
     }
     /// <summary>
@@ -90,6 +91,8 @@ namespace SHBTONLINE.Models.SystemModel
         public string PubgID { get; set; }
         [Display(Name = "刀塔2数字ID")]
         public string DOTA2ID { get; set; }
+        [Display(Name = "微信")]
+        public string WechatID { get; set; }
         public string IMG { get; set; }
     }
     /// <summary>

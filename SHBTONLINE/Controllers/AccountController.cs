@@ -9,6 +9,10 @@ using SHBTONLINE.Common;
 using SHBTONLINE.Models.SystemModel;
 using Data;
 using SHBTONLINE.Models.PUBG;
+using System.Web.Script.Serialization;
+using System.Net;
+using System.IO;
+using System.Text;
 
 namespace SHBTONLINE.Controllers
 {
@@ -55,6 +59,7 @@ namespace SHBTONLINE.Controllers
                 info.MateName = query[0].MateName;
                 info.LoginName = query[0].LoginName;
                 info.Key = query[0].PrivateKey;
+                info.WechatID = query[0].WechatID;
                 //SessionManager.Instance.UserInfoSession = new UserLoginInfo();
                 // Console.WriteLine(myreader.GetInt32(0) + "," + myreader.GetString(1) + "," + myreader.GetString(2));
                 FillLoginInfo(info, model);
@@ -67,6 +72,42 @@ namespace SHBTONLINE.Controllers
                 return View(model);
             }
         }
+        /// <summary>
+        /// 登录
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [AllowAnonymous]
+        public JsonResult MobileLogin(LoginViewModel model)
+        {
+            ReturnJson r = new ReturnJson() { s="ok"};
+            int count = 0;
+            var bty = HashCode.EncryptWithMD5(model.Password);
+            model.Password = bty;
+            var query = db.userinfoes.Where(p => p.LoginName == model.LoginName && p.PSW == bty).ToList();
+            count = query.Count;
+            if (count>0)
+            {
+                r.r = new  {
+                    loginname=query[0].LoginName,
+                    avatar = query[0].IMG,
+                    dota2id= query[0].DOTA2ID,
+                    pubgid= query[0].PubgID,
+                    key= query[0].PrivateKey,
+                    sb= query[0].SCrrency,
+                    name= query[0].Name,
+                    wechatid=string.IsNullOrEmpty(query[0].WechatID)?false:true
+                };
+            }
+            else
+            {
+                r.s = "error";
+                r.r = "帐号或密码错误";
+            }
+            return Json(r);
+        }
+ 
         /// <summary>
         /// 填充用户登录信息
         /// </summary>
@@ -395,6 +436,68 @@ namespace SHBTONLINE.Controllers
                 r.r = "抱歉，出了点问题，" + ex.Message;
             }
             return Json(r);
+        }
+        /// <summary>
+        /// 绑定微信号
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [AllowAnonymous]
+        public JsonResult BindWechat(LoginViewModel model)
+        {
+            ReturnJson r = new ReturnJson() { s = "ok" };
+            int count = 0;
+            var bty = HashCode.EncryptWithMD5(model.Password);
+            model.Password = bty;
+            var query = db.userinfoes.Where(p => p.LoginName == model.LoginName && p.PSW == bty).ToList();
+            count = query.Count;
+            if (count > 0)
+            {
+                r.r = "登陆成功";
+            }
+            else
+            {
+                r.s = "error";
+                r.r = "帐号或密码错误";
+            }
+            return Json(r);
+        }
+        /// <summary>
+        /// 微信登录状态获取
+        /// </summary>
+        /// <param name="JSCODE"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public string GetWechatLoginState(string JSCODE,string LoginName)
+        {
+            var AppID = System.Configuration.ConfigurationSettings.AppSettings["AppID"];
+            var AppSecret = System.Configuration.ConfigurationSettings.AppSettings["AppSecret"];
+            //实例化一个能够序列化数据的类
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            var Url = "https://api.weixin.qq.com/sns/jscode2session?appid="+ AppID + "&secret="+ AppSecret + "&js_code=" + JSCODE + "&grant_type=authorization_code";
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
+            request.Method = "GET";
+            request.UserAgent = " Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36 ApiMaxJia/1.0";
+
+
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            Stream myResponseStream = response.GetResponseStream();
+            StreamReader myStreamReader = new StreamReader(myResponseStream, Encoding.GetEncoding("utf-8"));
+            string retString = myStreamReader.ReadToEnd();
+            myStreamReader.Close();
+            myResponseStream.Close();
+
+            var ifno = js.Deserialize<WechatSession>(retString);
+            if (ifno.openid!=null)
+            {
+
+            }
+            else
+            {
+
+            }
+            return ifno.openid;
         }
         #endregion
     }
