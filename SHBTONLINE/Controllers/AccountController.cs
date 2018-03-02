@@ -469,8 +469,9 @@ namespace SHBTONLINE.Controllers
         /// <param name="JSCODE"></param>
         /// <returns></returns>
         [HttpGet]
-        public string GetWechatLoginState(string JSCODE,string LoginName)
+        public JsonResult GetWechatLoginState(string JSCODE,string LoginName)
         {
+            ReturnJson r = new ReturnJson() { s = "ok"};
             var AppID = System.Configuration.ConfigurationSettings.AppSettings["AppID"];
             var AppSecret = System.Configuration.ConfigurationSettings.AppSettings["AppSecret"];
             //实例化一个能够序列化数据的类
@@ -489,15 +490,31 @@ namespace SHBTONLINE.Controllers
             myResponseStream.Close();
 
             var ifno = js.Deserialize<WechatSession>(retString);
-            if (ifno.openid!=null)
+            if (ifno.openid==null)
             {
-
+                r.s = "error";
+                r.r = "微信登录状态获取失败";
             }
             else
             {
+                using (var db=new SHBTONLINEContext())
+                {
 
+                    var query = db.userinfoes.Where(p => p.LoginName == LoginName).FirstOrDefault();
+                    if (query!=null)
+                    {
+                        query.WechatID = ifno.openid;
+                        db.Entry(query).Property(p => p.WechatID).IsModified = true;
+                        var count = db.SaveChanges();
+                        if (count==0)
+                        {
+                            r.s = "error";
+                            r.r = "微信绑定失败";
+                        }
+                    }
+                }
             }
-            return ifno.openid;
+            return Json(r,JsonRequestBehavior.AllowGet);
         }
         #endregion
     }
