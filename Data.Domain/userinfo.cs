@@ -79,6 +79,10 @@ namespace  Data.Domain
         /// </summary>
         public string DOTA2ID { get; set; }
         /// <summary>
+        /// [WechatID]
+        /// </summary>
+        public string WechatID { get; set; }
+        /// <summary>
         /// S币数目
         /// </summary>
         public string SCrrency { get; set; }

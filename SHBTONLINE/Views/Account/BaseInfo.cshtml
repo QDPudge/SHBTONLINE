@@ -40,3 +40,16 @@
     @Html.LabelFor(f => f.Key)：@Model.Key
 
 </div>
+
+<div class="form-display">
+    @Html.LabelFor(f => f.WechatID)：
+    @if (string.IsNullOrEmpty(@Model.WechatID))
+    {
+        <span class="label label-default">尚未绑定</span>
+    }
+    else
+    {
+        <span class="label label-success">已绑定微信</span>
+    }
+
+</div>
