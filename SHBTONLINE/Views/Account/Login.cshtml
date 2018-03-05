@@ -6,7 +6,22 @@
 }
 
 @Scripts.Render("~/bundles/jqueryval")
-<div style="align-content:center;padding-top:10%;padding-left:40%">
+<script src="~/Content/jquery.particleground.js"></script>
+<script src="~/Content/jquery.particleground.min.js"></script>
+
+
+<div id="LSYLSY" width="1280" height="933">
+    <div class="intro">
+    </div>
+    <script>
+        $('#LSYLSY').particleground({
+            dotColor: '#E8DFE8',
+            lineColor: '#133b88'
+        });
+    </script>
+
+</div>
+<div style="align-content:center;padding-top:25%;padding-left:40%">
     <div class="col-md-8">
         <section id="loginForm" role="form">
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -20,26 +35,26 @@
                         @Html.ValidationMessageFor(m => m.LoginName, "", new { @class = "text-danger" })
                     </div>
                 </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                        <br />
-                        @*<label class="checkbox col-md-10">
-                                <input type="checkbox" data-toggle="checkbox" value="" id="checkbox1" required>记住登陆状态
-                            </label>*@
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                            <br />
+                            @*<label class="checkbox col-md-10">
+                                    <input type="checkbox" data-toggle="checkbox" value="" id="checkbox1" required>记住登陆状态
+                                </label>*@
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="登录" class="btn btn-primary btn-lg btn-block" />
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="登录" class="btn btn-primary btn-lg btn-block" />
+                        </div>
                     </div>
-                </div>
-                <p>
-                    @Html.ActionLink("注册", "Register")
-                </p>
+                    <p>
+                        @Html.ActionLink("注册", "Register")
+                    </p>
                     @* 在为密码重置功能启用帐户确认后启用此项
                         <p>
                             @Html.ActionLink("忘记了密码?", "ForgotPassword")
@@ -54,3 +69,4 @@
         </section>
     </div>
 </div>
+

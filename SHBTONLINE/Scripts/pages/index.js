@@ -1,4 +1,5 @@
 ﻿$(function () {
+    debugger;
     autoheight();
     //$("#src").css("width", document.body.clientWidth);
     //$("#src").css("height", document.body.scrollHeight - 60);
@@ -23,6 +24,7 @@ function RefreshFrame(url) {
     }
 }
 function LoadHttpUrl(url) {
+    debugger;
     $.ajax({
         method: 'POST',
         url: SZH.Root + "Web/GetLoginInfo",
@@ -80,6 +82,7 @@ function openIFrame(url, iscache) {
 $(window).bind("resize", autoheight);
 
 function resizeResponse() {
+    debugger;
     if ($(window).width() < (992 - scrollWidth)) {
         if ($('.left-sidebar').hasClass('minified')) {
             $('.left-sidebar').removeClass('minified');
@@ -120,6 +123,8 @@ function getScrollbarWidth () {
  * 自动设定高度
  */
 function autoheight() {
+    debugger;
+
     var minHeight = document.body.clientHeight - $('.top-bar').outerHeight(true)+68;//- $('footer.footer').outerHeight(true)
     //获取滚动条宽度
     var scrollWidth = getScrollbarWidth();
@@ -156,6 +161,27 @@ function Attendance(name) {
             layer.close(index)
         }
     });
+}
+
+function sacrifice(tittle) {
+    layer.open({
+        type: 1,
+        title: false,
+        area: ['533px', '517px'],
+        zIndex: 99999,
+        content: $('#sacrificeSomeOne'),
+        success: function (layero, index) {
+            $("#sacrificeSomeOne").css("display", "block");
+            LoadAttendInfo(name);
+            $("#btnDiv").css("display", "block")
+        },
+        cancel: function (index, layero) {
+            $("#sacrificeSomeOne").css("display", "none");
+            $("#btnDiv").css("display", "none")
+            layer.close(index)
+        }
+    });
+
 }
 //获取登录信息（签到信息）
 function LoadAttendInfo(name) {

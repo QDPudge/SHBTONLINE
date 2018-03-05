@@ -29,7 +29,7 @@ namespace SHBTONLINE.Areas.PersonOperation.Controllers
             {
                 AttendModel model = new AttendModel();
                 //查询人员以及签到日期(条件为签到人员名字与登录名相同)
-                var query = db.AttendanceInfos.Where(p => p.AD_LoginName == Name).Select(p => new 
+                var query = db.AttendanceInfos.Where(p => p.AD_LoginName == Name).Where(p=>p.AD_AttendTime.Value.Month==DateTime.Now.Month).Select(p => new 
                 {
                     AttendTime = p.AD_AttendTime,//个人签到时间集合
                 }).ToList();
