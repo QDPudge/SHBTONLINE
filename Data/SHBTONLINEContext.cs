@@ -39,6 +39,11 @@ namespace Data
 
 
         /// <summary>
+        /// [DOTA2Info]
+        /// </summary>
+        public DbSet<DOTA2Info> DOTA2Info { get; set; }
+
+        /// <summary>
         /// 签到记录
         /// </summary>
         public DbSet<AttendanceInfo> AttendanceInfos { get; set; }
@@ -47,6 +52,7 @@ namespace Data
         {
             modelBuilder.Configurations.Add(new userinfoMap());
             modelBuilder.Configurations.Add(new AttendanceInfoMap());
+            modelBuilder.Configurations.Add(new DOTA2InfoMap());
         }
     }
 }

@@ -171,6 +171,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DOTA2\maxjia.cs" />
     <Compile Include="Models\PUBG\heibox.cs" />
     <Compile Include="Models\PUBG\userinfo.cs" />
     <Compile Include="Models\SystemModel\AccountModel.cs" />
@@ -413,7 +414,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\PersonOperation\Views\Shared\" />
     <Folder Include="Content\Page\" />
-    <Folder Include="Models\DOTA2\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
