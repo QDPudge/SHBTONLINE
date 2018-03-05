@@ -13,8 +13,12 @@
                     <span class="text">欢迎 @SessionManager.Instance.UserInfoSession.userName </span>
                 </a>
             </li>
-            <li><a href="javascript:void(0);" class="js-sub-menu-toggle" onclick="Attendance('@SessionManager.Instance.UserInfoSession.userName')">签到</a></li>
-            <li><a href="javascript:document.getElementById('logoutForm').submit()">注销</a></li>
+            <li><a href="javascript:void(0);" class="js-sub-menu-toggle" onclick="Attendance('@SessionManager.Instance.UserInfoSession.LoginName')">
+                    <i class="layui-icon" style="color: #1E9FFF;">&#xe62d;</i>  签到</a></li>
+            <li><a href="javascript:void(0);" class="js-sub-menu-toggle" onclick="sacrifice('1111')">
+                    <i class="layui-icon" style="color: #f37e7e;">&#xe756;</i>上香</a></li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">
+                    <i class="layui-icon" style="color: #9deaa3;">&#xe61a;</i>  注销</a></li>
         </ul>
     }
 }
@@ -26,12 +30,14 @@ else
         <li>@*@Html.ActionLink("登录", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })*@</li>
         <li>
             <a href="javascript:void(0);" class="js-sub-menu-toggle" onclick="RefreshFrame('/Account/Register')">
-                <span class="text">注册</span>
+                <span class="text">
+                    <i class="layui-icon" style="color: #c29df1">&#xe63c;</i>  注册</span>
             </a>
         </li>
         <li>
             <a href="javascript:void(0);" class="js-sub-menu-toggle" onclick="RefreshFrame('/Account/Login')">
-                <span class="text">登录</span>
+                <span class="text">
+                    <i class="layui-icon" style="color: #d8edfd;">&#xe612;</i>  登录</span>
             </a>
         </li>
     </ul>
