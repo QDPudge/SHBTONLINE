@@ -162,21 +162,22 @@ function Attendance(name) {
         }
     });
 }
-
+//纪念（方法）
 function sacrifice(tittle) {
     layer.open({
         type: 1,
         title: false,
-        area: ['533px', '517px'],
+        area: ['820px', '420px'],
         zIndex: 99999,
         content: $('#sacrificeSomeOne'),
+        scrollbar: false,
         success: function (layero, index) {
-            $("#sacrificeSomeOne").css("display", "block");
+            $("#sacrificeSomeOnetry").css("display", "block");
             LoadAttendInfo(name);
             $("#btnDiv").css("display", "block")
         },
         cancel: function (index, layero) {
-            $("#sacrificeSomeOne").css("display", "none");
+            $("#sacrificeSomeOnetry").css("display", "none");
             $("#btnDiv").css("display", "none")
             layer.close(index)
         }

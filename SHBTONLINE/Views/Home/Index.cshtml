@@ -24,7 +24,6 @@
     <link href="~/Content/layui/css/layui.css" rel="stylesheet" />
     <link href="~/Content/layui/css/layui.mobile.css" rel="stylesheet" />
     <script src="~/Content/layui/layui.all.js"></script>
-    <script src="~/Content/layui/layui.js"></script>
     <script src="~/Content/layui/lay/modules/carousel.js"></script>
     <script src="~/Content/layui/lay/modules/code.js"></script>
     <script src="~/Content/layui/lay/modules/element.js"></script>
@@ -47,7 +46,6 @@
     <script src="~/Scripts/pages/index.js"></script>
 
 
-  
 
 </head>
 <body>
@@ -95,6 +93,11 @@
             background-image: url(../../Content/img/cssimg/qiandao_icon.png);
             background-size: 36px 36px;
             background-repeat: no-repeat;
+        }
+
+        .css1 {
+            margin-left: 5%;
+            margin-top: 5%;
         }
     </style>
     <div class="navbar navbar-inverse navbar-fixed-top top-bar">
@@ -184,15 +187,27 @@
             });
         </script>
     </div>
+    <div id="sacrificeSomeOnetry" style="display:none">
+        <div id="sacrificeSomeOne">
+            <div class="layui-progress layui-progress-big css1" lay-showpercent="true" style="width:80%">
+                <div class="layui-progress-bar" lay-percent="5 / 10"></div>
+            </div>
+            <br>
+            <div class="layui-progress layui-progress-big css1" lay-showpercent="true" style="width:80%">
+                <div class="layui-progress-bar" lay-percent="70%"></div>
+            </div>
+            <script>
+                //注意：折叠面板 依赖 element 模块，否则无法进行功能性操作
+                layui.use('element', function () {
+                    var element = layui.element;
 
-    <div id="sacrificeSomeOne">
-        1111
-
-
+                    //…
+                });
+            </script>
+        </div>
     </div>
 
-
-   @*拍手图标（知乎）*@
+    @*拍手图标（知乎）*@
     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" class="Icon PinIndex-reactionIcon Icon--clap"
          aria-hidden="true" style="fill: rgb(0, 128, 255); height: 22px; width: 22px;">
         <title>
@@ -203,6 +218,6 @@
         </g>
     </svg>
 
-  
+
 </body>
 </html>
