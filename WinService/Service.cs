@@ -10,8 +10,6 @@ using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
-using TY.FrameWork;
-using TY.FrameWork.ORM;
 
 namespace NanJingMonitorDB
 {
