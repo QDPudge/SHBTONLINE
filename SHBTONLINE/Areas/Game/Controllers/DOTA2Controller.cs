@@ -74,7 +74,7 @@ namespace SHBTONLINE.Areas.Game.Controllers
         {
             ReturnJson r = new ReturnJson() {s="ok" };
             List<RankList> result = new List<RankList>();
-            var list = new List<string> {"KDA","伤害","金钱","经验","胜率" };
+            var list = new List<string> {"KDA","每分钟伤害", "每分钟金钱", "每分钟经验", "胜率" };
             int i = 1;
             using (var db=new SHBTONLINEContext())
             {
@@ -100,11 +100,11 @@ namespace SHBTONLINE.Areas.Game.Controllers
                             });
                             result.Add(kdalist);
                             break;
-                        case "伤害":
+                        case "每分钟伤害":
                              i = 1;
                             var items2 = queryall.OrderByDescending(w => w.damage).ToList();
                             var damagelist = new RankList();
-                            damagelist.Name = "伤害";
+                            damagelist.Name = "每分钟伤害";
                             items2.ForEach(pp => {
                                 Rank rank = new Rank()
                                 {
@@ -117,11 +117,11 @@ namespace SHBTONLINE.Areas.Game.Controllers
                             });
                             result.Add(damagelist);
                             break;
-                        case "金钱":
+                        case "每分钟金钱":
                             i = 1;
                             var items3 = queryall.OrderByDescending(w => w.gpm).ToList();
                             var goldlist = new RankList();
-                            goldlist.Name = "金钱";
+                            goldlist.Name = "每分钟金钱";
                             items3.ForEach(pp => {
                                 Rank rank = new Rank()
                                 {
@@ -134,11 +134,11 @@ namespace SHBTONLINE.Areas.Game.Controllers
                             });
                             result.Add(goldlist);
                             break;
-                        case "经验":
+                        case "每分钟经验":
                             i = 1;
                             var items4 = queryall.OrderByDescending(w => w.xpm).ToList();
                             var xpmist = new RankList();
-                            xpmist.Name = "经验";
+                            xpmist.Name = "每分钟经验";
                             items4.ForEach(pp => {
                                 Rank rank = new Rank()
                                 {
