@@ -10,157 +10,163 @@
   </PropertyGroup>
   <ItemGroup>
     <File Include="Areas/Game/Views/CSGO/CSGOIndex.cshtml">
-      <publishTime>01/16/2018 14:41:46</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Areas/Game/Views/DOTA2/DOTA2Index.cshtml">
-      <publishTime>02/01/2018 17:41:25</publishTime>
+      <publishTime>02/07/2018 11:26:23</publishTime>
     </File>
     <File Include="Areas/Game/Views/GTA5/GTA5Index.cshtml">
-      <publishTime>01/16/2018 14:41:51</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Areas/Game/Views/Pubg/PubgIndex.cshtml">
-      <publishTime>02/01/2018 17:48:35</publishTime>
+      <publishTime>02/10/2018 13:02:03</publishTime>
     </File>
     <File Include="Areas/Game/Views/Shared/_Layout.cshtml">
-      <publishTime>01/17/2018 14:02:00</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Areas/Game/Views/web.config">
-      <publishTime>01/15/2018 15:54:59</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Areas/Game/Views/_ViewStart.cshtml">
-      <publishTime>01/17/2018 14:00:09</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
+    </File>
+    <File Include="Areas/PersonOperation/Views/Attendance/AttendanceView.cshtml">
+      <publishTime>02/02/2018 16:57:43</publishTime>
+    </File>
+    <File Include="Areas/PersonOperation/Views/web.config">
+      <publishTime>02/02/2018 16:57:43</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
-      <publishTime>01/12/2018 11:14:47</publishTime>
+      <publishTime>02/02/2018 14:18:27</publishTime>
     </File>
     <File Include="bin/CommonData.dll">
-      <publishTime>02/01/2018 17:48:45</publishTime>
+      <publishTime>02/07/2018 15:36:46</publishTime>
     </File>
     <File Include="bin/Data.dll">
-      <publishTime>02/01/2018 17:48:45</publishTime>
+      <publishTime>03/05/2018 16:49:01</publishTime>
     </File>
     <File Include="bin/Data.Domain.dll">
-      <publishTime>02/01/2018 17:48:45</publishTime>
+      <publishTime>03/05/2018 16:49:00</publishTime>
     </File>
     <File Include="bin/Data.DomainMap.dll">
-      <publishTime>02/01/2018 17:48:45</publishTime>
+      <publishTime>03/05/2018 16:49:01</publishTime>
     </File>
     <File Include="bin/DnsClient.dll">
-      <publishTime>01/29/2018 09:53:51</publishTime>
+      <publishTime>02/02/2018 16:57:31</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
-      <publishTime>01/31/2018 15:14:41</publishTime>
+      <publishTime>02/02/2018 16:57:33</publishTime>
     </File>
     <File Include="bin/EntityFramework.SqlServer.dll">
-      <publishTime>01/31/2018 15:14:41</publishTime>
+      <publishTime>02/02/2018 16:57:32</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
-      <publishTime>01/12/2018 11:14:52</publishTime>
+      <publishTime>02/02/2018 14:18:27</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
-      <publishTime>01/12/2018 11:14:47</publishTime>
+      <publishTime>02/02/2018 14:18:27</publishTime>
     </File>
     <File Include="bin/MongoDB.Bson.dll">
-      <publishTime>01/29/2018 09:53:48</publishTime>
+      <publishTime>02/02/2018 16:57:31</publishTime>
     </File>
     <File Include="bin/MongoDB.Driver.Core.dll">
-      <publishTime>01/29/2018 09:53:54</publishTime>
+      <publishTime>02/02/2018 16:57:32</publishTime>
     </File>
     <File Include="bin/MongoDB.Driver.dll">
-      <publishTime>01/29/2018 09:53:56</publishTime>
+      <publishTime>02/02/2018 16:57:32</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>01/12/2018 11:14:49</publishTime>
+      <publishTime>02/02/2018 14:18:27</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
-      <publishTime>01/12/2018 11:14:51</publishTime>
+      <publishTime>02/02/2018 14:18:29</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
-      <publishTime>01/12/2018 11:14:51</publishTime>
+      <publishTime>02/02/2018 14:18:28</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
-      <publishTime>01/12/2018 11:14:52</publishTime>
+      <publishTime>02/02/2018 14:18:28</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
-      <publishTime>01/12/2018 11:14:52</publishTime>
+      <publishTime>02/02/2018 14:18:28</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
-      <publishTime>01/12/2018 11:14:52</publishTime>
+      <publishTime>02/02/2018 14:18:28</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
-      <publishTime>01/12/2018 11:14:52</publishTime>
+      <publishTime>02/02/2018 14:18:28</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
-      <publishTime>01/12/2018 11:14:52</publishTime>
+      <publishTime>02/02/2018 14:18:28</publishTime>
     </File>
     <File Include="bin/roslyn/System.Collections.Immutable.dll">
-      <publishTime>01/12/2018 11:14:52</publishTime>
+      <publishTime>02/02/2018 14:18:28</publishTime>
     </File>
     <File Include="bin/roslyn/System.Reflection.Metadata.dll">
-      <publishTime>01/12/2018 11:14:52</publishTime>
+      <publishTime>02/02/2018 14:18:28</publishTime>
     </File>
     <File Include="bin/roslyn/vbc.exe">
-      <publishTime>01/12/2018 11:14:52</publishTime>
+      <publishTime>02/02/2018 14:18:29</publishTime>
     </File>
     <File Include="bin/roslyn/VBCSCompiler.exe">
-      <publishTime>01/12/2018 11:14:52</publishTime>
+      <publishTime>02/02/2018 14:18:29</publishTime>
     </File>
     <File Include="bin/roslyn/VBCSCompiler.exe.config">
-      <publishTime>01/12/2018 11:14:52</publishTime>
+      <publishTime>02/02/2018 14:18:29</publishTime>
     </File>
     <File Include="bin/SHBTONLINE.dll">
-      <publishTime>02/01/2018 17:48:46</publishTime>
+      <publishTime>03/06/2018 16:41:35</publishTime>
     </File>
     <File Include="bin/System.Buffers.dll">
-      <publishTime>01/29/2018 09:53:50</publishTime>
+      <publishTime>02/02/2018 16:57:32</publishTime>
     </File>
     <File Include="bin/System.Runtime.InteropServices.RuntimeInformation.dll">
-      <publishTime>01/29/2018 09:53:53</publishTime>
+      <publishTime>02/02/2018 16:57:32</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
-      <publishTime>01/12/2018 11:14:46</publishTime>
+      <publishTime>02/02/2018 14:18:27</publishTime>
     </File>
     <File Include="bin/System.Web.Mvc.dll">
-      <publishTime>01/12/2018 11:14:47</publishTime>
+      <publishTime>02/02/2018 14:18:27</publishTime>
     </File>
     <File Include="bin/System.Web.Optimization.dll">
-      <publishTime>01/12/2018 11:14:46</publishTime>
+      <publishTime>02/02/2018 14:18:28</publishTime>
     </File>
     <File Include="bin/System.Web.Razor.dll">
-      <publishTime>01/12/2018 11:14:46</publishTime>
+      <publishTime>02/02/2018 14:18:28</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Deployment.dll">
-      <publishTime>01/12/2018 11:14:46</publishTime>
+      <publishTime>02/02/2018 14:18:28</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.dll">
-      <publishTime>01/12/2018 11:14:46</publishTime>
+      <publishTime>02/02/2018 14:18:28</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Razor.dll">
-      <publishTime>01/12/2018 11:14:46</publishTime>
+      <publishTime>02/02/2018 14:18:28</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
-      <publishTime>01/12/2018 11:14:48</publishTime>
+      <publishTime>02/02/2018 14:18:28</publishTime>
     </File>
     <File Include="bin/zh-Hans/System.Web.Helpers.resources.dll">
-      <publishTime>01/29/2018 09:53:36</publishTime>
+      <publishTime>02/02/2018 16:57:32</publishTime>
     </File>
     <File Include="bin/zh-Hans/System.Web.Mvc.resources.dll">
-      <publishTime>01/29/2018 09:53:36</publishTime>
+      <publishTime>02/02/2018 16:57:32</publishTime>
     </File>
     <File Include="bin/zh-Hans/System.Web.Optimization.resources.dll">
-      <publishTime>01/29/2018 09:53:36</publishTime>
+      <publishTime>02/02/2018 16:57:32</publishTime>
     </File>
     <File Include="bin/zh-Hans/System.Web.Razor.resources.dll">
-      <publishTime>01/29/2018 09:53:36</publishTime>
+      <publishTime>02/02/2018 16:57:32</publishTime>
     </File>
     <File Include="bin/zh-Hans/System.Web.WebPages.Deployment.resources.dll">
-      <publishTime>01/29/2018 09:53:36</publishTime>
+      <publishTime>02/02/2018 16:57:32</publishTime>
     </File>
     <File Include="bin/zh-Hans/System.Web.WebPages.Razor.resources.dll">
-      <publishTime>01/29/2018 09:53:36</publishTime>
+      <publishTime>02/02/2018 16:57:32</publishTime>
     </File>
     <File Include="bin/zh-Hans/System.Web.WebPages.resources.dll">
-      <publishTime>01/29/2018 09:53:36</publishTime>
+      <publishTime>02/02/2018 16:57:32</publishTime>
     </File>
     <File Include="Content/bootstrap.css">
       <publishTime>01/12/2018 11:14:36</publishTime>
@@ -328,19 +334,22 @@
       <publishTime>01/28/2018 09:59:22</publishTime>
     </File>
     <File Include="Content/chart/t.js">
-      <publishTime>01/30/2018 16:06:35</publishTime>
+      <publishTime>02/02/2018 16:57:31</publishTime>
     </File>
     <File Include="Content/drugs-sh.ico">
-      <publishTime>01/12/2018 15:53:28</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
+    </File>
+    <File Include="Content/img/cssimg/qiandao_icon.png">
+      <publishTime>02/11/2018 10:53:13</publishTime>
     </File>
     <File Include="Content/img/player/clo.jpg">
-      <publishTime>01/26/2018 15:52:23</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/img/player/pudge.png">
-      <publishTime>01/26/2018 15:55:06</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/img/player/RubickLee.png">
-      <publishTime>01/25/2018 11:08:15</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/css/layui.css">
       <publishTime>01/03/2018 02:20:20</publishTime>
@@ -355,133 +364,133 @@
       <publishTime>01/03/2018 02:20:24</publishTime>
     </File>
     <File Include="Content/layui/css/modules/layer/default/icon-ext.png">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/css/modules/layer/default/icon.png">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/css/modules/layer/default/layer.css">
       <publishTime>01/03/2018 02:20:25</publishTime>
     </File>
     <File Include="Content/layui/css/modules/layer/default/loading-0.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/css/modules/layer/default/loading-1.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/css/modules/layer/default/loading-2.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/font/iconfont.eot">
-      <publishTime>01/03/2018 02:20:20</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/font/iconfont.svg">
       <publishTime>01/03/2018 02:20:20</publishTime>
     </File>
     <File Include="Content/layui/font/iconfont.ttf">
-      <publishTime>01/03/2018 02:20:21</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/font/iconfont.woff">
-      <publishTime>01/03/2018 02:20:24</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/0.gif">
-      <publishTime>01/03/2018 02:20:20</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/1.gif">
-      <publishTime>01/03/2018 02:20:21</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/10.gif">
-      <publishTime>01/03/2018 02:20:24</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/11.gif">
-      <publishTime>01/03/2018 02:20:24</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/12.gif">
       <publishTime>01/03/2018 02:20:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/13.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/14.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/15.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/16.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/17.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/18.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/19.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/2.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/20.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/21.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/22.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/23.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/24.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/25.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/26.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/27.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/28.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/29.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/3.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/30.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/31.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/32.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/33.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/34.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/35.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/36.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/37.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/38.gif">
-      <publishTime>01/03/2018 02:20:26</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/layui/images/face/39.gif">
       <publishTime>01/03/2018 02:20:26</publishTime>
@@ -661,7 +670,7 @@
       <publishTime>01/26/2018 08:57:26</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>01/12/2018 11:14:29</publishTime>
+      <publishTime>02/02/2018 14:18:25</publishTime>
     </File>
     <File Include="Content/skplayer/dist/skPlayer.min.js">
       <publishTime>07/10/2017 22:32:26</publishTime>
@@ -676,37 +685,37 @@
       <publishTime>12/07/2017 13:50:53</publishTime>
     </File>
     <File Include="Css/Page/Game/DOTA2Index.css">
-      <publishTime>01/31/2018 09:29:14</publishTime>
+      <publishTime>02/02/2018 16:57:31</publishTime>
     </File>
     <File Include="Css/Page/Game/PubgIndex.css">
-      <publishTime>01/26/2018 16:07:58</publishTime>
+      <publishTime>02/10/2018 10:20:20</publishTime>
     </File>
     <File Include="Css/Page/index.css">
-      <publishTime>01/26/2018 08:57:26</publishTime>
+      <publishTime>02/02/2018 16:57:31</publishTime>
     </File>
     <File Include="Css/Page/UserInfo.css">
-      <publishTime>11/10/2017 16:18:48</publishTime>
+      <publishTime>02/02/2018 16:57:31</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>01/12/2018 11:14:29</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.eot">
-      <publishTime>01/12/2018 11:14:36</publishTime>
+      <publishTime>02/02/2018 14:18:29</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.svg">
       <publishTime>01/12/2018 11:14:36</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.ttf">
-      <publishTime>01/12/2018 11:14:36</publishTime>
+      <publishTime>02/02/2018 14:18:29</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.woff">
-      <publishTime>01/12/2018 11:14:36</publishTime>
+      <publishTime>02/02/2018 14:18:29</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>01/12/2018 11:14:29</publishTime>
+      <publishTime>02/02/2018 14:18:26</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>01/31/2018 15:14:44</publishTime>
+      <publishTime>02/02/2018 16:57:32</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>01/12/2018 11:14:36</publishTime>
@@ -721,7 +730,16 @@
       <publishTime>01/12/2018 11:14:36</publishTime>
     </File>
     <File Include="Scripts/jquery-1.10.2.min.map">
-      <publishTime>01/12/2018 11:14:36</publishTime>
+      <publishTime>02/02/2018 14:18:27</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.11.1.min.js">
+      <publishTime>03/05/2018 15:45:31</publishTime>
+    </File>
+    <File Include="Scripts/jquery.particleground.js">
+      <publishTime>03/05/2018 15:45:31</publishTime>
+    </File>
+    <File Include="Scripts/jquery.particleground.min.js">
+      <publishTime>03/05/2018 15:45:31</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.js">
       <publishTime>01/12/2018 11:14:48</publishTime>
@@ -730,7 +748,7 @@
       <publishTime>01/12/2018 11:14:48</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.unobtrusive.js">
-      <publishTime>01/12/2018 11:14:48</publishTime>
+      <publishTime>02/02/2018 14:18:27</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.unobtrusive.min.js">
       <publishTime>01/12/2018 11:14:48</publishTime>
@@ -739,19 +757,19 @@
       <publishTime>01/12/2018 11:14:47</publishTime>
     </File>
     <File Include="Scripts/pages/Game/DOTA2/DOTA2Index.js">
-      <publishTime>01/30/2018 17:49:26</publishTime>
+      <publishTime>02/27/2018 10:11:34</publishTime>
     </File>
     <File Include="Scripts/pages/Game/Pubg/PubgIndex.js">
-      <publishTime>01/29/2018 17:41:11</publishTime>
+      <publishTime>02/09/2018 09:41:20</publishTime>
     </File>
     <File Include="Scripts/pages/index.js">
-      <publishTime>01/26/2018 09:02:21</publishTime>
+      <publishTime>03/05/2018 15:53:16</publishTime>
     </File>
     <File Include="Scripts/pages/main.js">
-      <publishTime>01/16/2018 16:42:34</publishTime>
+      <publishTime>02/02/2018 14:18:27</publishTime>
     </File>
     <File Include="Scripts/pages/User/UserInfo.js">
-      <publishTime>11/13/2017 17:01:46</publishTime>
+      <publishTime>02/06/2018 17:32:53</publishTime>
     </File>
     <File Include="Scripts/require.js">
       <publishTime>01/30/2018 10:24:45</publishTime>
@@ -763,25 +781,28 @@
       <publishTime>01/12/2018 11:14:48</publishTime>
     </File>
     <File Include="Scripts/_references.js">
-      <publishTime>02/01/2018 17:40:18</publishTime>
+      <publishTime>02/02/2018 16:57:31</publishTime>
     </File>
     <File Include="Views/Account/BaseInfo.cshtml">
-      <publishTime>02/01/2018 16:06:06</publishTime>
+      <publishTime>03/01/2018 10:36:54</publishTime>
+    </File>
+    <File Include="Views/Account/EditUserInfo.cshtml">
+      <publishTime>02/07/2018 14:24:21</publishTime>
     </File>
     <File Include="Views/Account/Login.cshtml">
-      <publishTime>02/01/2018 17:47:11</publishTime>
+      <publishTime>02/02/2018 16:57:31</publishTime>
     </File>
     <File Include="Views/Account/ModifyPassword.cshtml">
-      <publishTime>02/01/2018 16:06:29</publishTime>
+      <publishTime>02/02/2018 16:57:31</publishTime>
     </File>
     <File Include="Views/Account/Register.cshtml">
-      <publishTime>02/01/2018 17:46:23</publishTime>
+      <publishTime>02/06/2018 15:59:07</publishTime>
     </File>
     <File Include="Views/Account/Social.cshtml">
-      <publishTime>02/01/2018 16:06:36</publishTime>
+      <publishTime>02/07/2018 14:37:30</publishTime>
     </File>
     <File Include="Views/Account/UserInfo.cshtml">
-      <publishTime>02/01/2018 17:40:35</publishTime>
+      <publishTime>02/07/2018 14:27:58</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
       <publishTime>01/12/2018 11:14:29</publishTime>
@@ -790,31 +811,31 @@
       <publishTime>01/12/2018 11:14:29</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>02/01/2018 17:41:51</publishTime>
+      <publishTime>03/05/2018 15:45:31</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
-      <publishTime>01/12/2018 11:14:29</publishTime>
+      <publishTime>02/02/2018 14:18:27</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>01/17/2018 17:10:56</publishTime>
+      <publishTime>02/11/2018 11:16:20</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutIndex.cshtml">
-      <publishTime>02/01/2018 17:05:58</publishTime>
+      <publishTime>02/11/2018 11:13:52</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
-      <publishTime>02/01/2018 16:43:28</publishTime>
+      <publishTime>03/05/2018 15:45:31</publishTime>
     </File>
     <File Include="Views/Web.config">
-      <publishTime>01/12/2018 11:14:29</publishTime>
+      <publishTime>02/02/2018 14:18:27</publishTime>
     </File>
     <File Include="Views/Web/Main.cshtml">
-      <publishTime>02/01/2018 17:29:35</publishTime>
+      <publishTime>02/07/2018 10:24:31</publishTime>
     </File>
     <File Include="Views/_ViewStart.cshtml">
-      <publishTime>01/17/2018 17:10:33</publishTime>
+      <publishTime>02/02/2018 14:18:27</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>02/01/2018 17:48:47</publishTime>
+      <publishTime>03/01/2018 17:38:46</publishTime>
     </File>
   </ItemGroup>
 </Project>

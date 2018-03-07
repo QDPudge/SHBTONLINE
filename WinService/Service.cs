@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,101 +41,21 @@ namespace NanJingMonitorDB
         {
             try
             {
-                DateTime now = DateTime.Now;
-                //每天除0-5点不更新数据
-                if (now.Hour >= 6 && now.Hour < 24)
-                {
-                    //调用webService，数据逻辑处理
-                    IList<RelTable> relList = TYDataQueryManager.GetInstance().QueryUseSql<RelTable>("select *  from  RelTable");
-                    List<MonitorPointData> targetList = new List<MonitorPointData>();
-                    //获取要更新数据ID
-                    List<int> idArray = new List<int>();
-                    //取历史的值
-                    for (int i = 0; i <= Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["HistoryDays"]); i++)
-                    {
-                        //当前取值时间（一天）
-                        DateTime dataTime = DateTime.Now.AddDays(-i);
-                        string nowDayStart = dataTime.ToShortDateString() + " 00:00:00";
-                        string nowDayEnd = dataTime.ToShortDateString() + " 06:00:00";
-                        //循环关联表，取单个测点数据
-                        foreach (RelTable relModel in relList)
-                        {
-                            //查找但个测点当前取值天的数据
-                            IList<cjyData> sourseList = TYDataQueryManager.GetInstance().QueryUseSql<cjyData>("select * from cjyData where (IsHas is null or IsHas=0)  and time>'" + nowDayStart + "' and time<'" + nowDayEnd + "' and cjyID=" + relModel.ID + " order by data");
-                            if (sourseList.Count > 0)
-                            {
-                                //取平均值
-                                double dataAvg = 0;
-                                if (sourseList.Count == 1)
-                                {
-                                    dataAvg = sourseList[0].data;
-                                    idArray.Add(sourseList[0].ID);
-                                }
-                                else if (sourseList.Count == 2)
-                                {
-                                    dataAvg = Convert.ToSingle(Math.Round((sourseList[0].data + sourseList[1].data) / 2, 2));
-                                    idArray.Add(sourseList[0].ID);
-                                    idArray.Add(sourseList[1].ID);
-                                }
-                                else
-                                {
-                                    sourseList.ToList().ForEach(z =>
-                                    {
-                                        idArray.Add(z.ID);
-                                    });
-                                    double sum = 0;
-                                    for (int j = 1; j < sourseList.Count - 1; j++)
-                                    {
-                                        sum += sourseList[j].data;
-                                    }
-                                    dataAvg = Convert.ToSingle(Math.Round(sum / (sourseList.Count - 2), 2));
-                                }
-                                //放入参数模板中
-                                MonitorPointData resultModel = new MonitorPointData();
-                                resultModel.MonitorValue = dataAvg;
-                                resultModel.PointId = relModel.PointId;
-                                resultModel.Time = dataTime.ToShortDateString() + " 06:00:00";
-                                targetList.Add(resultModel);
-                            }
-                        }
-                    }
-                    if (targetList.Count > 0)
-                    {
-                        //序列化参数                
-                        JavaScriptSerializer json = new JavaScriptSerializer();
-                        string parme = json.Serialize(targetList);
-                        //调用webservice
-                        string Url = System.Configuration.ConfigurationManager.AppSettings["WebServiceUrl"];
-                        string Ip = System.Configuration.ConfigurationManager.AppSettings["WebServiceIp"];
-                        int Port = Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["WebServicePort"]);
-                        var args = new List<object>();
-                        args.Add(parme);
-                        var webServiceRequest = new WebServiceRequest
-                        {
-                            NameSpace = "TY.LightRail.Web.WebService",
-                            Ip = Ip,
-                            Port = Port,
-                            Url = Url,
-                            MethodName = "NanJingMonitorData",
-                            Args = args.ToArray()
-                        };
-                        var objResponse = webServiceRequest.InvokeWebService();
-                        ResultModel resultData = json.Deserialize<ResultModel>(objResponse.ToString());
-                        if (resultData.s == "ok")
-                        {//成功
-                            string ids = string.Join(",", idArray.ToArray());
-                            //更新数据源数据库
-                            string strMainSql = "update cjyData set IsHas=1 where  ID in (" + ids + ")";
-                            TYDataQueryManager.GetInstance().ExecuteSql(strMainSql);
-                        }
-                        else
-                        {//失败写入日志
-                            LogHelper.error("服务启动错误：调用WebService失败");
-                        }
-                    }
+                //实例化一个能够序列化数据的类
+                string RefreshUrl = System.Configuration.ConfigurationManager.AppSettings["DOTA2URL"];
+                var Url = RefreshUrl;
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
+                request.Method = "GET";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                Stream myResponseStream = response.GetResponseStream();
+                StreamReader myStreamReader = new StreamReader(myResponseStream, Encoding.GetEncoding("utf-8"));
+                string retString = myStreamReader.ReadToEnd();
+                myStreamReader.Close();
+                myResponseStream.Close();
 
+                //var ifno = js.Deserialize<heibox>(retString);
 
-                }
+                //return Json(retString);
             }
             catch (Exception ex)
             {

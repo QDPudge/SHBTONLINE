@@ -1,5 +1,0 @@
-E:\wangtest\SHBTONLINE\Data.Domain\bin\Debug\Data.Domain.dll
-E:\wangtest\SHBTONLINE\Data.Domain\bin\Debug\Data.Domain.pdb
-E:\wangtest\SHBTONLINE\Data.Domain\obj\Debug\Data.Domain.csprojResolveAssemblyReference.cache
-E:\wangtest\SHBTONLINE\Data.Domain\obj\Debug\Data.Domain.dll
-E:\wangtest\SHBTONLINE\Data.Domain\obj\Debug\Data.Domain.pdb

@@ -1,5 +1,0 @@
-E:\wangtest\SHBTONLINE\CommonData\bin\Debug\CommonData.dll
-E:\wangtest\SHBTONLINE\CommonData\bin\Debug\CommonData.pdb
-E:\wangtest\SHBTONLINE\CommonData\obj\Debug\CommonData.csprojResolveAssemblyReference.cache
-E:\wangtest\SHBTONLINE\CommonData\obj\Debug\CommonData.dll
-E:\wangtest\SHBTONLINE\CommonData\obj\Debug\CommonData.pdb
