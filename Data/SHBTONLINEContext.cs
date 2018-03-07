@@ -42,6 +42,10 @@ namespace Data
         /// [DOTA2Info]
         /// </summary>
         public DbSet<DOTA2Info> DOTA2Info { get; set; }
+        /// <summary>
+        /// [PUBGInfo]
+        /// </summary>
+        public DbSet<PUBGInfo> PUBGInfoes { get; set; }
 
         /// <summary>
         /// 签到记录
@@ -52,6 +56,7 @@ namespace Data
         {
             modelBuilder.Configurations.Add(new userinfoMap());
             modelBuilder.Configurations.Add(new AttendanceInfoMap());
+            modelBuilder.Configurations.Add(new PUBGInfoMap());
             modelBuilder.Configurations.Add(new DOTA2InfoMap());
         }
     }

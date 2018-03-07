@@ -4,77 +4,72 @@
 //     对此文件的更改可能会导致不正确的行为，并且如果
 //     重新生成代码，这些更改将会丢失。
 // </auto-generated>
-// <copyright file="userinfo.cs">
+// <copyright file="PUBGInfo.cs">
 //        Copyright(c)2015   rights reserved.
 //        CLR版本：4.0.30319.239
 //        开发组织：李文学@上海同岩土木科技工程有限公司
 //        所属工程：TY.*
-//        生成时间：2018-02-01 08:58
+//        生成时间：2018-03-07 10:34
 // </copyright>
 //------------------------------------------------------------------------------
 
 using System;
 using System.Collections.Generic;
 using Data.Domain;
-using Data.DomainMap;
 
 
 //namespace TM.Data.Models
 namespace  Data.Domain
 {
     /// <summary>
-    /// [userinfo]
+    /// [PUBGInfo]
     /// </summary>
     [Serializable]
-    public partial class userinfo 
+    public partial class PUBGInfo 
     {
         /// <summary>
         /// [ID]
         /// </summary>
         public string ID { get; set; }
         /// <summary>
-        /// [Email]
+        /// [PUBGID]
         /// </summary>
-        public string Email { get; set; }
+        public string PUBGID { get; set; }
         /// <summary>
-        /// [Name]
+        /// [chicken_count]
         /// </summary>
-        public string Name { get; set; }
+        public Nullable<int> chicken_count { get; set; }
         /// <summary>
-        /// [LoginName]
+        /// [KD]
         /// </summary>
-        public string LoginName { get; set; }
+        public Nullable<decimal> KD { get; set; }
         /// <summary>
-        /// [PSW]
+        /// [kill_count]
         /// </summary>
-        public string PSW { get; set; }
+        public Nullable<decimal> kill_count { get; set; }
         /// <summary>
-        /// [MateLoginName]
+        /// [chicken_rate]
         /// </summary>
-        public string MateLoginName { get; set; }
+        public Nullable<decimal> chicken_rate { get; set; }
         /// <summary>
-        /// [MateName]
+        /// [ten_rate]
         /// </summary>
-        public string MateName { get; set; }
+        public Nullable<decimal> ten_rate { get; set; }
         /// <summary>
-        /// [RemainRoll]
+        /// [headshoot_rate]
         /// </summary>
-        public Nullable<int> RemainRoll { get; set; }
+        public Nullable<decimal> headshoot_rate { get; set; }
         /// <summary>
-        /// [PrivateKey]
+        /// [damage]
         /// </summary>
-        public string PrivateKey { get; set; }
+        public Nullable<decimal> damage { get; set; }
         /// <summary>
-        /// [SteamID]
+        /// [livetime]
         /// </summary>
-        public string SteamID { get; set; }
+        public Nullable<decimal> livetime { get; set; }
         /// <summary>
-        /// [PubgID]
+        /// [run]
         /// </summary>
-        public string PubgID { get; set; }
-        /// <summary>
-        /// [DOTA2ID]
-        /// </summary>
-        public string DOTA2ID { get; set; }
+        public Nullable<decimal> run { get; set; }
     }
 }

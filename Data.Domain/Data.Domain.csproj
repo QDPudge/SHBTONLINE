@@ -41,7 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttendanceInfo.cs" />
+    <Compile Include="DOTA2Info.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PUBGInfo.cs" />
     <Compile Include="userinfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

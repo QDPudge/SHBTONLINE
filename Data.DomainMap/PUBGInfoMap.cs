@@ -5,12 +5,12 @@
 //     对此文件的更改可能会导致不正确的行为，并且如果
 //     重新生成代码，这些更改将会丢失。
 // </auto-generated>
-// <copyright file="AttendanceInfo.cs">
+// <copyright file="PUBGInfo.cs">
 //        Copyright(c)2015   rights reserved.
 //        CLR版本：4.0.30319.239
 //        开发组织：李文学@上海同岩土木科技工程有限公司
 //        所属工程：TY.*
-//        生成时间：2018-02-07 15:01
+//        生成时间：2018-03-07 10:34
 // </copyright>
 //------------------------------------------------------------------------------
 
@@ -20,10 +20,10 @@ using Data.Domain;
 using Data.DomainMap;
 
 //namespace TM.Data.Models.Mapping
-namespace Data.DomainMap
-    public class AttendanceInfoMap : EntityTypeConfiguration<AttendanceInfo>
+namespace Data.DomainMap { 
+    public class PUBGInfoMap : EntityTypeConfiguration<PUBGInfo>
     {
-        public AttendanceInfoMap()
+        public PUBGInfoMap()
         {
             // Primary Key
             this.HasKey(t => t.ID);
@@ -31,21 +31,25 @@ namespace Data.DomainMap
             // Properties
             this.Property(t => t.ID)
                 .IsRequired()
+                .IsFixedLength()
                 .HasMaxLength(36);
 
-            this.Property(t => t.AD_Id)
-                .HasMaxLength(20);
-
-            this.Property(t => t.AD_LoginName)
+            this.Property(t => t.PUBGID)
                 .HasMaxLength(100);
 
             // Table & Column Mappings
-            this.ToTable("AttendanceInfo");
+            this.ToTable("PUBGInfo");
             this.Property(t => t.ID).HasColumnName("ID");
-            this.Property(t => t.AD_Id).HasColumnName("AD_Id");
-            this.Property(t => t.AD_AttendTime).HasColumnName("AD_AttendTime");
-            this.Property(t => t.AD_LoginName).HasColumnName("AD_LoginName");
-            this.Property(t => t.Create_Time).HasColumnName("Create_Time");
+            this.Property(t => t.PUBGID).HasColumnName("PUBGID");
+            this.Property(t => t.chicken_count).HasColumnName("chicken_count");
+            this.Property(t => t.KD).HasColumnName("KD");
+            this.Property(t => t.kill_count).HasColumnName("kill_count");
+            this.Property(t => t.chicken_rate).HasColumnName("chicken_rate");
+            this.Property(t => t.ten_rate).HasColumnName("ten_rate");
+            this.Property(t => t.headshoot_rate).HasColumnName("headshoot_rate");
+            this.Property(t => t.damage).HasColumnName("damage");
+            this.Property(t => t.livetime).HasColumnName("livetime");
+            this.Property(t => t.run).HasColumnName("run");
         }
     }
 }
