@@ -167,7 +167,7 @@ function sacrifice(tittle) {
     layer.open({
         type: 1,
         title: false,
-        area: ['820px', '420px'],
+        area: ['810px', '620px'],
         zIndex: 99999,
         content: $('#sacrificeSomeOne'),
         scrollbar: false,
