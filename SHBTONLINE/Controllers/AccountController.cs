@@ -250,6 +250,62 @@ namespace SHBTONLINE.Controllers
             // 如果我们进行到这一步时某个地方出错，则重新显示表单
             return View(model);
         }
+        [HttpPost]
+        [AllowAnonymous]
+        public JsonResult MobileRegister(RegisterViewModel model)
+        {
+            ReturnJson r = new ReturnJson() { s="ok"};
+            if (ModelState.IsValid)
+            {
+                var query = db.userinfoes.Where(p => p.LoginName == model.LoginName);
+                if (query.Count() > 0)
+                {
+                    r.s = "error";
+                    r.r = "注册失败，账号已被注册过。";
+                }
+                var query2 = db.userinfoes.Where(p => p.LoginName == model.LoginName);
+                if (query2.Count() > 0)
+                {
+                    r.s = "error";
+                    r.r = "该邮箱已被注册过";
+                }
+                if (query2.Count() == 0 && query.Count() == 0)
+                {
+                    try
+                    {
+                        userinfo mode = new userinfo()
+                        {
+                            ID = Guid.NewGuid().ToString(),
+                            Email = model.Email,
+                            LoginName = model.LoginName,
+                            Name = model.userName,
+                            PSW = model.Password,
+                            DOTA2ID = model.DOTA2ID,
+                            PubgID = model.PubgID,
+                            PrivateKey = Guid.NewGuid().ToString()
+                        };
+                        var bty = HashCode.EncryptWithMD5(model.Password);
+                        mode.PSW = bty;
+                        db.userinfoes.Add(mode);
+                        db.SaveChanges();
+                    }
+                    catch (Exception ex)
+                    {
+                        r.s = "error";
+                        r.r = "注册失败" + ex.Message;
+                    }
+                    //ModelState.AddModelError("", "注册失败，未知错误，请联系管理员。");
+                }
+            }
+            else
+            {
+
+                r.s = "error";
+                r.r = "注册失败，请检查邮箱格式是否正确并表单填写完整";
+            }
+            // 如果我们进行到这一步时某个地方出错，则重新显示表单
+            return Json(r);
+        }
         /// <summary>
         /// 个人信息页
         /// </summary>
@@ -265,6 +321,7 @@ namespace SHBTONLINE.Controllers
                 DOTA2ID=p.DOTA2ID,
                 PubgID=p.PubgID,
                 IMG=p.IMG,
+                WechatID=p.WechatID,
                 Key = p.PrivateKey
             }).First();
             return View(query);
@@ -330,6 +387,7 @@ namespace SHBTONLINE.Controllers
                 DOTA2ID=p.DOTA2ID,
                 PubgID=p.PubgID,
                 IMG=p.IMG,
+                WechatID=p.WechatID,
                 Key=p.PrivateKey
             }).First();
             return PartialView(query);

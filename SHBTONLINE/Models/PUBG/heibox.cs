@@ -17,7 +17,7 @@ namespace SHBTONLINE.Models.PUBG
     {
         public List<calendar> calendar { get; set; }
 
-        public List<career> career { get; set; }
+        public career career { get; set; }
 
         public List<match> matches { get; set; }
 

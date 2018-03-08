@@ -41,9 +41,9 @@
             // serviceInstaller1
             // 
             this.serviceInstaller1.DelayedAutoStart = true;
-            this.serviceInstaller1.Description = "长福高速监控状态更新系统";
-            this.serviceInstaller1.DisplayName = "TY.CFGS.UpdateVideoState";
-            this.serviceInstaller1.ServiceName = "TY.CFGS.UpdateVideoState";
+            this.serviceInstaller1.Description = "SHBT服务";
+            this.serviceInstaller1.DisplayName = "SHBT.Service";
+            this.serviceInstaller1.ServiceName = "SHBT.Service";
             this.serviceInstaller1.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             this.serviceInstaller1.AfterInstall += new System.Configuration.Install.InstallEventHandler(this.serviceInstaller1_AfterInstall);
             // 

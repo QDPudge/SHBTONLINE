@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.DomainMap", "Data.Doma
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "服务", "服务", "{7FDC5686-DF9A-4388-985B-5FBD08EAA4DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinService", "..\..\2017长福高速项目\trunk\src\CFGS\TY.YPGS.VideoWinService2\WinService.csproj", "{0C13DAB6-60EF-4FAE-B5B9-421881BA3614}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinService", "WinService\WinService.csproj", "{0C13DAB6-60EF-4FAE-B5B9-421881BA3614}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

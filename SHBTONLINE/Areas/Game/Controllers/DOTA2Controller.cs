@@ -1,4 +1,5 @@
-﻿using Data;
+﻿using CommonData;
+using Data;
 using Data.Domain;
 using SHBTONLINE.Areas.Game.Models.DOTAModel;
 using SHBTONLINE.Models.DOTA2;
@@ -64,6 +65,127 @@ namespace SHBTONLINE.Areas.Game.Controllers
             //var ifno = js.Deserialize<heibox>(retString);
 
             return Json(retString);
+        }
+        /// <summary>
+        /// 获取排名
+        /// </summary>
+        /// <returns></returns>
+        public JsonResult GetRanking()
+        {
+            ReturnJson r = new ReturnJson() {s="ok" };
+            List<RankList> result = new List<RankList>();
+            var list = new List<string> {"KDA","每分钟伤害", "每分钟金钱", "每分钟经验", "胜率" };
+            int i = 1;
+            using (var db=new SHBTONLINEContext())
+            {
+                var queryall = db.DOTA2Info.ToList();
+                var player = queryall.Select(p => p.DOTA2ID).ToList();
+                var userinfo = db.userinfoes.Where(p => player.Contains(p.DOTA2ID)).ToList();
+                list.ForEach(p => {
+                    switch (p)
+                    {
+                        case "KDA":
+                            var items = queryall.OrderByDescending(w => w.kda).ToList();
+                            var kdalist= new RankList();
+                            kdalist.Name = "KDA";
+                            items.ForEach(pp => {
+                                Rank rank = new Rank()
+                                {
+                                    Value=pp.kda.ToString(),
+                                    Sort=i
+                                };
+                                i++;
+                                var user = userinfo.Find(w => w.DOTA2ID == pp.DOTA2ID);
+                                rank.Owner = user.Name;
+                                rank.Avatar = user.IMG;
+                                kdalist.list.Add(rank);
+                            });
+                            result.Add(kdalist);
+                            break;
+                        case "每分钟伤害":
+                             i = 1;
+                            var items2 = queryall.OrderByDescending(w => w.damage).ToList();
+                            var damagelist = new RankList();
+                            damagelist.Name = "每分钟伤害";
+                            items2.ForEach(pp => {
+                                Rank rank = new Rank()
+                                {
+                                    Value = pp.damage.ToString(),
+                                    Sort = i
+                                };
+                                i++;
+                                var user = userinfo.Find(w => w.DOTA2ID == pp.DOTA2ID);
+                                rank.Owner = user.Name;
+                                rank.Avatar = user.IMG;
+                                damagelist.list.Add(rank);
+                            });
+                            result.Add(damagelist);
+                            break;
+                        case "每分钟金钱":
+                            i = 1;
+                            var items3 = queryall.OrderByDescending(w => w.gpm).ToList();
+                            var goldlist = new RankList();
+                            goldlist.Name = "每分钟金钱";
+                            items3.ForEach(pp => {
+                                Rank rank = new Rank()
+                                {
+                                    Value = pp.gpm.ToString(),
+                                    Sort = i
+                                };
+                                i++;
+                                var user = userinfo.Find(w => w.DOTA2ID == pp.DOTA2ID);
+                                rank.Owner = user.Name;
+                                rank.Avatar = user.IMG;
+                                goldlist.list.Add(rank);
+                            });
+                            result.Add(goldlist);
+                            break;
+                        case "每分钟经验":
+                            i = 1;
+                            var items4 = queryall.OrderByDescending(w => w.xpm).ToList();
+                            var xpmist = new RankList();
+                            xpmist.Name = "每分钟经验";
+                            items4.ForEach(pp => {
+                                Rank rank = new Rank()
+                                {
+                                    Value = pp.xpm.ToString(),
+                                    Sort = i
+                                };
+                                i++;
+                                var user = userinfo.Find(w => w.DOTA2ID == pp.DOTA2ID);
+                                rank.Owner = user.Name;
+                                rank.Avatar = user.IMG;
+                                xpmist.list.Add(rank);
+                            });
+                            result.Add(xpmist);
+                            break;
+                        case "胜率":
+                            i = 1;
+                            var items5 = queryall.OrderByDescending(w => w.win_rate).ToList();
+                            var winlist = new RankList();
+                            winlist.Name = "胜率";
+                            items5.ForEach(pp => {
+                                Rank rank = new Rank()
+                                {
+                                    Value = pp.win_rate.ToString(),
+                                    Sort = i
+                                };
+                                i++;
+                                var user = userinfo.Find(w => w.DOTA2ID == pp.DOTA2ID);
+                                rank.Owner = user.Name;
+                                rank.Avatar = user.IMG;
+                                winlist.list.Add(rank);
+                            });
+                            result.Add(winlist);
+                            break;
+                        default:break;
+                    }
+
+                });
+
+            }
+            r.r = result;
+            return Json(r);
         }
 
         #region 服务调用接口
@@ -158,5 +280,7 @@ namespace SHBTONLINE.Areas.Game.Controllers
             }
         }
         #endregion
+
+        
     }
 }
