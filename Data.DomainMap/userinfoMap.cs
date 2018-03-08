@@ -89,6 +89,9 @@ namespace Data.DomainMap
             this.Property(t => t.DOTA2ID).HasColumnName("DOTA2ID");
             this.Property(t => t.WechatID).HasColumnName("WechatID");            
             this.Property(t => t.SCrrency).HasColumnName("SCrrency");
+            ///上香次数（每个人相关次数）
+            this.Property(t => t.sacrifNum).HasColumnName("sacrifNum");
+
         }
     }
 }

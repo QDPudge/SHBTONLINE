@@ -92,5 +92,18 @@ namespace SHBTONLINE.Areas.PersonOperation.Controllers
                 }
             }
         }
+
+        public JsonResult GetsacrifInfo(string Name)
+        {
+            using (var db = new SHBTONLINEContext())
+            {
+                //计数xk+wyh（被上香次数）
+                var xkcount = db.AttendanceInfos.Where(p => p.sacrificeName == "xk").Count();
+                var wyhcount = db.AttendanceInfos.Where(p => p.sacrificeName == "xk").Count();
+                //返回计算出来的数值（上香次数
+                return Json(xkcount);
+
+            }
+        }
     }
 }
