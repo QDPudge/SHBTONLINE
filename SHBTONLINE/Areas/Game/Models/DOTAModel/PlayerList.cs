@@ -31,6 +31,7 @@ namespace SHBTONLINE.Areas.Game.Models.DOTAModel
     {
         public string Value { get; set; }
         public string Owner { get; set; }
+        public string Avatar { get; set; }
         public int Sort { get; set; }
     }
 }

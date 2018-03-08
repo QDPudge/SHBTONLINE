@@ -114,7 +114,9 @@ namespace SHBTONLINE.Areas.Game.Controllers
                                     Sort = i
                                 };
                                 i++;
-                                rank.Owner = userinfo.Find(w => w.PubgID == pp.PUBGID).Name;
+                                var user = userinfo.Find(w => w.PubgID == pp.PUBGID);
+                                rank.Owner = user.Name;
+                                rank.Avatar = user.IMG;
                                 kdalist.list.Add(rank);
                             });
                             result.Add(kdalist);
@@ -133,7 +135,9 @@ namespace SHBTONLINE.Areas.Game.Controllers
                                     Sort = i
                                 };
                                 i++;
-                                rank.Owner = userinfo.Find(w => w.PubgID == pp.PUBGID).Name;
+                                var user = userinfo.Find(w => w.PubgID == pp.PUBGID);
+                                rank.Owner = user.Name;
+                                rank.Avatar = user.IMG;
                                 damagelist.list.Add(rank);
                             });
                             result.Add(damagelist);
@@ -152,7 +156,9 @@ namespace SHBTONLINE.Areas.Game.Controllers
                                     Sort = i
                                 };
                                 i++;
-                                rank.Owner = userinfo.Find(w => w.PubgID == pp.PUBGID).Name;
+                                var user = userinfo.Find(w => w.PubgID == pp.PUBGID);
+                                rank.Owner = user.Name;
+                                rank.Avatar = user.IMG;
                                 goldlist.list.Add(rank);
                             });
                             result.Add(goldlist);
@@ -171,7 +177,9 @@ namespace SHBTONLINE.Areas.Game.Controllers
                                     Sort = i
                                 };
                                 i++;
-                                rank.Owner = userinfo.Find(w => w.PubgID == pp.PUBGID).Name;
+                                var user = userinfo.Find(w => w.PubgID == pp.PUBGID);
+                                rank.Owner = user.Name;
+                                rank.Avatar = user.IMG;
                                 xpmist.list.Add(rank);
                             });
                             result.Add(xpmist);
@@ -190,7 +198,9 @@ namespace SHBTONLINE.Areas.Game.Controllers
                                     Sort = i
                                 };
                                 i++;
-                                rank.Owner = userinfo.Find(w => w.PubgID == pp.PUBGID).Name;
+                                var user = userinfo.Find(w => w.PubgID == pp.PUBGID);
+                                rank.Owner = user.Name;
+                                rank.Avatar = user.IMG;
                                 winlist.list.Add(rank);
                             });
                             result.Add(winlist);
@@ -209,7 +219,9 @@ namespace SHBTONLINE.Areas.Game.Controllers
                                     Sort = i
                                 };
                                 i++;
-                                rank.Owner = userinfo.Find(w => w.PubgID == pp.PUBGID).Name;
+                                var user = userinfo.Find(w => w.PubgID == pp.PUBGID);
+                                rank.Owner = user.Name;
+                                rank.Avatar = user.IMG;
                                 headlist.list.Add(rank);
                             });
                             result.Add(headlist);
@@ -228,7 +240,9 @@ namespace SHBTONLINE.Areas.Game.Controllers
                                     Sort = i
                                 };
                                 i++;
-                                rank.Owner = userinfo.Find(w => w.PubgID == pp.PUBGID).Name;
+                                var user = userinfo.Find(w => w.PubgID == pp.PUBGID);
+                                rank.Owner = user.Name;
+                                rank.Avatar = user.IMG;
                                 damagelist1.list.Add(rank);
                             });
                             result.Add(damagelist1);
@@ -247,7 +261,9 @@ namespace SHBTONLINE.Areas.Game.Controllers
                                     Sort = i
                                 };
                                 i++;
-                                rank.Owner = userinfo.Find(w => w.PubgID == pp.PUBGID).Name;
+                                var user = userinfo.Find(w => w.PubgID == pp.PUBGID);
+                                rank.Owner = user.Name;
+                                rank.Avatar = user.IMG;
                                 timelist.list.Add(rank);
                             });
                             result.Add(timelist);
@@ -266,7 +282,9 @@ namespace SHBTONLINE.Areas.Game.Controllers
                                     Sort = i
                                 };
                                 i++;
-                                rank.Owner = userinfo.Find(w => w.PubgID == pp.PUBGID).Name;
+                                var user = userinfo.Find(w => w.PubgID == pp.PUBGID);
+                                rank.Owner = user.Name;
+                                rank.Avatar = user.IMG;
                                 runlist.list.Add(rank);
                             });
                             result.Add(runlist);

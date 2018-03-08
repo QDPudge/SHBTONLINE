@@ -95,7 +95,9 @@ namespace SHBTONLINE.Areas.Game.Controllers
                                     Sort=i
                                 };
                                 i++;
-                                rank.Owner = userinfo.Find(w => w.DOTA2ID == pp.DOTA2ID).Name;
+                                var user = userinfo.Find(w => w.DOTA2ID == pp.DOTA2ID);
+                                rank.Owner = user.Name;
+                                rank.Avatar = user.IMG;
                                 kdalist.list.Add(rank);
                             });
                             result.Add(kdalist);
@@ -112,7 +114,9 @@ namespace SHBTONLINE.Areas.Game.Controllers
                                     Sort = i
                                 };
                                 i++;
-                                rank.Owner = userinfo.Find(w => w.DOTA2ID == pp.DOTA2ID).Name;
+                                var user = userinfo.Find(w => w.DOTA2ID == pp.DOTA2ID);
+                                rank.Owner = user.Name;
+                                rank.Avatar = user.IMG;
                                 damagelist.list.Add(rank);
                             });
                             result.Add(damagelist);
@@ -129,7 +133,9 @@ namespace SHBTONLINE.Areas.Game.Controllers
                                     Sort = i
                                 };
                                 i++;
-                                rank.Owner = userinfo.Find(w => w.DOTA2ID == pp.DOTA2ID).Name;
+                                var user = userinfo.Find(w => w.DOTA2ID == pp.DOTA2ID);
+                                rank.Owner = user.Name;
+                                rank.Avatar = user.IMG;
                                 goldlist.list.Add(rank);
                             });
                             result.Add(goldlist);
@@ -146,7 +152,9 @@ namespace SHBTONLINE.Areas.Game.Controllers
                                     Sort = i
                                 };
                                 i++;
-                                rank.Owner = userinfo.Find(w => w.DOTA2ID == pp.DOTA2ID).Name;
+                                var user = userinfo.Find(w => w.DOTA2ID == pp.DOTA2ID);
+                                rank.Owner = user.Name;
+                                rank.Avatar = user.IMG;
                                 xpmist.list.Add(rank);
                             });
                             result.Add(xpmist);
@@ -163,7 +171,9 @@ namespace SHBTONLINE.Areas.Game.Controllers
                                     Sort = i
                                 };
                                 i++;
-                                rank.Owner = userinfo.Find(w => w.DOTA2ID == pp.DOTA2ID).Name;
+                                var user = userinfo.Find(w => w.DOTA2ID == pp.DOTA2ID);
+                                rank.Owner = user.Name;
+                                rank.Avatar = user.IMG;
                                 winlist.list.Add(rank);
                             });
                             result.Add(winlist);

@@ -321,6 +321,7 @@ namespace SHBTONLINE.Controllers
                 DOTA2ID=p.DOTA2ID,
                 PubgID=p.PubgID,
                 IMG=p.IMG,
+                WechatID=p.WechatID,
                 Key = p.PrivateKey
             }).First();
             return View(query);
