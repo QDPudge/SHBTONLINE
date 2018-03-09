@@ -85,7 +85,7 @@ namespace  Data.Domain
         /// <summary>
         /// S币数目
         /// </summary>
-        public string SCrrency { get; set; }
+        public int SCrrency { get; set; }
         /// <summary>
         /// 上香次数
         /// </summary>
