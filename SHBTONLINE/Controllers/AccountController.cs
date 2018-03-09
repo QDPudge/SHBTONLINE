@@ -98,6 +98,7 @@ namespace SHBTONLINE.Controllers
                     key= query[0].PrivateKey,
                     sb= query[0].SCrrency,
                     name= query[0].Name,
+                    card=query[0].Card_bg,
                     wechatid=string.IsNullOrEmpty(query[0].WechatID)?false:true
                 };
             }
@@ -376,6 +377,36 @@ namespace SHBTONLINE.Controllers
                     r.s = "error";
                     return Json(r);
                 }
+        }
+        /// <summary>
+        /// 修改个人资料
+        /// </summary>
+        /// <param name="mode"></param>
+        /// <returns></returns>
+        public JsonResult MobileSaveUserEdit(EditUserInfo mode)
+        {
+            ReturnJson r = new ReturnJson() { s = "ok", r = "修改成功！" };
+            var querypsw = db.userinfoes.Where(p => p.LoginName == mode.LoginName).FirstOrDefault();
+            try
+            {
+                querypsw.DOTA2ID = mode.DOTA2ID;
+                querypsw.PubgID = mode.PubgID;
+                querypsw.Email = mode.Email;
+                querypsw.Name = mode.userName;
+                db.userinfoes.Attach(querypsw);
+                db.Entry(querypsw).Property(x => x.DOTA2ID).IsModified = true;
+                db.Entry(querypsw).Property(x => x.PubgID).IsModified = true;
+                db.Entry(querypsw).Property(x => x.Email).IsModified = true;
+                db.Entry(querypsw).Property(x => x.Name).IsModified = true;
+                db.SaveChanges();
+                return Json(r);
+            }
+            catch (Exception ex)
+            {
+                r.r = "修改失败，" + ex.Message;
+                r.s = "error";
+                return Json(r);
+            }
         }
         /// <summary>
         /// 个人信息页

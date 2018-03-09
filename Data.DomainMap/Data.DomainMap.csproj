@@ -51,6 +51,8 @@
   <ItemGroup>
     <Compile Include="AttendanceInfoMap.cs" />
     <Compile Include="DOTA2InfoMap.cs" />
+    <Compile Include="GoodsinfoMap.cs" />
+    <Compile Include="GoodsListMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PUBGInfoMap.cs" />
     <Compile Include="userinfoMap.cs" />

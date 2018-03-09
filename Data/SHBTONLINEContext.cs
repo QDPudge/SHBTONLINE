@@ -46,6 +46,14 @@ namespace Data
         /// [PUBGInfo]
         /// </summary>
         public DbSet<PUBGInfo> PUBGInfoes { get; set; }
+        /// <summary>
+        /// [Goodsinfo]
+        /// </summary>
+        public DbSet<Goodsinfo> Goodsinfoes { get; set; }
+        /// <summary>
+        /// [GoodsList]
+        /// </summary>
+        public DbSet<GoodsList> GoodsLists { get; set; }
 
         /// <summary>
         /// 签到记录
@@ -56,6 +64,8 @@ namespace Data
         {
             modelBuilder.Configurations.Add(new userinfoMap());
             modelBuilder.Configurations.Add(new AttendanceInfoMap());
+            modelBuilder.Configurations.Add(new GoodsinfoMap());
+            modelBuilder.Configurations.Add(new GoodsListMap());
             modelBuilder.Configurations.Add(new PUBGInfoMap());
             modelBuilder.Configurations.Add(new DOTA2InfoMap());
         }
