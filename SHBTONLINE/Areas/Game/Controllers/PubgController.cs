@@ -366,12 +366,12 @@ namespace SHBTONLINE.Areas.Game.Controllers
                             querypubg.chicken_count = Convert.ToInt32(ifno.result.career.overview[1].value);
                             querypubg.KD = Convert.ToDecimal(ifno.result.career.overview[3].value);
                             querypubg.kill_count = Convert.ToDecimal(ifno.result.career.overview[4].value);
-                            querypubg.chicken_rate = Convert.ToInt32(ifno.result.career.overview[5].value.Replace("%", ""));
-                            querypubg.ten_rate = Convert.ToInt32(ifno.result.career.overview[6].value.Replace("%", ""));
-                            querypubg.headshoot_rate = Convert.ToInt32(ifno.result.career.overview[7].value.Replace("%", ""));
-                            querypubg.damage = Convert.ToInt32(ifno.result.career.overview[10].value);
-                            querypubg.livetime = Convert.ToInt32(ifno.result.career.overview[11].value.Replace(" min", ""));
-                            querypubg.run = Convert.ToInt32(ifno.result.career.overview[12].value.Replace(" km", ""));
+                            querypubg.chicken_rate = Convert.ToDecimal(ifno.result.career.overview[5].value.Replace("%", ""));
+                            querypubg.ten_rate = Convert.ToDecimal(ifno.result.career.overview[6].value.Replace("%", ""));
+                            querypubg.headshoot_rate = Convert.ToDecimal(ifno.result.career.overview[7].value.Replace("%", ""));
+                            querypubg.damage = Convert.ToDecimal(ifno.result.career.overview[10].value);
+                            querypubg.livetime = Convert.ToDecimal(ifno.result.career.overview[11].value.Replace(" min", ""));
+                            querypubg.run = Convert.ToDecimal(ifno.result.career.overview[12].value.Replace(" km", ""));
                             db.Entry<PUBGInfo>(querypubg).State = System.Data.Entity.EntityState.Modified;
                         }
 

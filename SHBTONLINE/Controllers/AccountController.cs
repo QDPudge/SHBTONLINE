@@ -13,6 +13,7 @@ using System.Web.Script.Serialization;
 using System.Net;
 using System.IO;
 using System.Text;
+using System.Drawing;
 
 namespace SHBTONLINE.Controllers
 {
@@ -574,6 +575,39 @@ namespace SHBTONLINE.Controllers
             }
             return Json(r,JsonRequestBehavior.AllowGet);
         }
+        #endregion
+
+        #region 特殊接口
+        /// <summary>
+        /// 获取图片
+        /// </summary>
+        /// <param name="src"></param>
+        /// <returns></returns>
+        public  void GetImage(string src)
+        {
+            try
+            {
+                WebRequest myrequest = WebRequest.Create(src);//前台js传的path，可以是远程服务器上的，也可以是本地的
+                WebResponse myresponse = myrequest.GetResponse();
+                Stream imgstream = myresponse.GetResponseStream();
+                System.Drawing.Image img = System.Drawing.Image.FromStream(imgstream);
+                MemoryStream ms = new MemoryStream();
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                Response.AddHeader("Content-Length", ms.Length.ToString());
+                Response.Clear();
+                Response.ContentType = "image/jpeg";
+
+                Response.BinaryWrite(ms.ToArray());
+                Response.OutputStream.Flush();
+                Response.OutputStream.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         #endregion
     }
 }
