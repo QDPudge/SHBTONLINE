@@ -42,6 +42,11 @@ namespace  Data.Domain
         /// </summary>
         public string LoginName { get; set; }
         /// <summary>
+        /// [Card_bg]
+        /// </summary>
+        public string Card_bg { get; set; }
+        
+        /// <summary>
         /// [PSW]
         /// </summary>
         public string PSW { get; set; }

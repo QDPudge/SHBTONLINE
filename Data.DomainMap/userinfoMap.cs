@@ -51,6 +51,9 @@ namespace Data.DomainMap
             this.Property(t => t.MateName)
                 .HasMaxLength(200);
 
+            this.Property(t => t.Card_bg)
+                .HasMaxLength(200);            
+
             this.Property(t => t.IMG)
                 .HasMaxLength(200);
             
@@ -85,6 +88,7 @@ namespace Data.DomainMap
             this.Property(t => t.IMG).HasColumnName("IMG");            
             this.Property(t => t.PubgID).HasColumnName("PubgID");
             this.Property(t => t.DOTA2ID).HasColumnName("DOTA2ID");
+            this.Property(t => t.Card_bg).HasColumnName("Card_bg");
             this.Property(t => t.WechatID).HasColumnName("WechatID");         
             ///上香次数（每个人相关次数）
             this.Property(t => t.sacrifNum).HasColumnName("sacrifNum");
