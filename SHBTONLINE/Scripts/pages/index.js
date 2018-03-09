@@ -182,8 +182,13 @@ function sacrifice(tittle) {
             layer.close(index)
         }
     });
-
 }
+
+function SendsacrificeInfo(name)
+{
+    alert(name);
+}
+
 //获取登录信息（签到信息）
 function LoadAttendInfo(name) {
     $.ajax({

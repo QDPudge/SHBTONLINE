@@ -46,5 +46,9 @@ namespace Data.Domain
         /// [Create_Time]
         /// </summary>
         public Nullable<System.DateTime> Create_Time { get; set; }
+        /// <summary>
+        /// 上香对象名称
+        /// </summary>
+        public string sacrificeName { get; set; }
     }
 }

@@ -45,7 +45,10 @@ namespace Data.DomainMap
             this.Property(t => t.AD_Id).HasColumnName("AD_Id");
             this.Property(t => t.AD_AttendTime).HasColumnName("AD_AttendTime");
             this.Property(t => t.AD_LoginName).HasColumnName("AD_LoginName");
+            //上香对象名称
+            this.Property(t => t.sacrificeName).HasColumnName("sacrificeName");
             this.Property(t => t.Create_Time).HasColumnName("Create_Time");
+
         }
     }
 }
