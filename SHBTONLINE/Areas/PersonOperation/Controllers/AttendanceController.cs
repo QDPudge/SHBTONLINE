@@ -69,7 +69,7 @@ namespace SHBTONLINE.Areas.PersonOperation.Controllers
                             //db.Entry(model).State= System.Data.Entity.EntityState.Added;
                             //签到给S币
                             //s币数据的计算[判断方法]建议改掉S币数据类型
-                            userinfo.SCrrency = userinfo.SCrrency == null ? "0" : (int.Parse(userinfo.SCrrency) + 1).ToString();
+                            userinfo.SCrrency = userinfo.SCrrency+1;
                             db.userinfoes.Attach(userinfo);
                             db.Entry(userinfo).Property(x => x.SCrrency).IsModified = true;
                             db.SaveChanges();
