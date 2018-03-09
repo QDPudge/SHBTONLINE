@@ -70,8 +70,6 @@ namespace Data.DomainMap
             
             this.Property(t => t.DOTA2ID)
                 .HasMaxLength(200);
-            this.Property(t => t.SCrrency)
-                .HasMaxLength(100);
             // Table & Column Mappings
             this.ToTable("userinfo");
             this.Property(t => t.ID).HasColumnName("ID");
@@ -87,8 +85,7 @@ namespace Data.DomainMap
             this.Property(t => t.IMG).HasColumnName("IMG");            
             this.Property(t => t.PubgID).HasColumnName("PubgID");
             this.Property(t => t.DOTA2ID).HasColumnName("DOTA2ID");
-            this.Property(t => t.WechatID).HasColumnName("WechatID");            
-            this.Property(t => t.SCrrency).HasColumnName("SCrrency");
+            this.Property(t => t.WechatID).HasColumnName("WechatID");         
             ///上香次数（每个人相关次数）
             this.Property(t => t.sacrifNum).HasColumnName("sacrifNum");
 

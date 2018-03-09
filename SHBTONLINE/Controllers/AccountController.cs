@@ -223,7 +223,9 @@ namespace SHBTONLINE.Controllers
                             PSW = model.Password,
                             DOTA2ID=model.DOTA2ID,
                             PubgID=model.PubgID,
-                            PrivateKey = Guid.NewGuid().ToString()
+                            PrivateKey = Guid.NewGuid().ToString(),
+                            SCrrency=0,
+                            sacrifNum=0
                         };
                         var bty = HashCode.EncryptWithMD5(model.Password);
                         mode.PSW = bty;
@@ -283,7 +285,9 @@ namespace SHBTONLINE.Controllers
                             PSW = model.Password,
                             DOTA2ID = model.DOTA2ID,
                             PubgID = model.PubgID,
-                            PrivateKey = Guid.NewGuid().ToString()
+                            PrivateKey = Guid.NewGuid().ToString(),
+                            SCrrency = 0,
+                            sacrifNum = 0
                         };
                         var bty = HashCode.EncryptWithMD5(model.Password);
                         mode.PSW = bty;
