@@ -10,31 +10,28 @@
 <script src="~/Content/jquery.particleground.min.js"></script>
 
 
-<div id="LSYLSY" width="1280" height="933">
-    <div class="intro">
-    </div>
-    <script>
-        $('#LSYLSY').particleground({
-            dotColor: '#E8DFE8',
-            lineColor: '#133b88'
-        });
-    </script>
+@*<div id="LSYLSY" width="1280" height="933">
+        <div class="intro">
+        </div>
+        align-content:center;padding-top:25%;padding-left:40%;height:930px
 
-</div>
-<div style="align-content:center;padding-top:25%;padding-left:40%">
-    <div class="col-md-8">
-        <section id="loginForm" role="form">
-            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    </div>*@
+
+<div id="LSYLSY" style="width:100%;height:928px;">
+    <div>
+        <div style="margin-top: -600px;margin-left: 400px;" >
+            <section id="loginForm" role="form">
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
-                @Html.AntiForgeryToken()
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="form-group">
-                    @Html.LabelFor(m => m.LoginName, new { @class = "col-md-2 control-label login-field" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.LoginName, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.LoginName, "", new { @class = "text-danger" })
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.LoginName, new { @class = "col-md-2 control-label login-field" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.LoginName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.LoginName, "", new { @class = "text-danger" })
+                        </div>
                     </div>
-                </div>
                     <div class="form-group">
                         @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
                         <div class="col-md-10">
@@ -42,8 +39,8 @@
                             @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                             <br />
                             @*<label class="checkbox col-md-10">
-                                    <input type="checkbox" data-toggle="checkbox" value="" id="checkbox1" required>记住登陆状态
-                                </label>*@
+                                <input type="checkbox" data-toggle="checkbox" value="" id="checkbox1" required>记住登陆状态
+                            </label>*@
                         </div>
                     </div>
 
@@ -52,21 +49,16 @@
                             <input type="submit" value="登录" class="btn btn-primary btn-lg btn-block" />
                         </div>
                     </div>
-                    <p>
-                        @Html.ActionLink("注册", "Register")
-                    </p>
-                    @* 在为密码重置功能启用帐户确认后启用此项
-                        <p>
-                            @Html.ActionLink("忘记了密码?", "ForgotPassword")
-                        </p>*@
-            }
+                }
 
-        </section>
+            </section>
+        </div>
     </div>
-    <div class="col-md-4">
-        <section id="socialLoginForm">
-            @*@Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })*@
-        </section>
+    <script>
+        $('#LSYLSY').particleground({
+            dotColor: '#03203a',
+            lineColor: '#2127a7'
+        });
+    </script>
     </div>
-</div>
 

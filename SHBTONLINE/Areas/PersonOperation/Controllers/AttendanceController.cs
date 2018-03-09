@@ -115,6 +115,7 @@ namespace SHBTONLINE.Areas.PersonOperation.Controllers
                         {
                             ID = Guid.NewGuid().ToString(),
                             AD_LoginName = loginname,
+                            //因为公用一张表所以考勤时间记为空
                             AD_AttendTime = null,
                             sacrificeName = Name,
                             Create_Time = DateTime.Now
