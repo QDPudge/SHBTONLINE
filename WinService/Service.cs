@@ -54,12 +54,12 @@ namespace NanJingMonitorDB
                 string RefreshUrl2 = System.Configuration.ConfigurationManager.AppSettings["PUBGURL"];
                 var Url2 = RefreshUrl2;
                 HttpWebRequest request2 = (HttpWebRequest)WebRequest.Create(Url);
-                request.Method = "GET";
+                request2.Method = "GET";
                 HttpWebResponse response2 = (HttpWebResponse)request2.GetResponse();
                 Stream myResponseStream2 = response2.GetResponseStream();
                 StreamReader myStreamReader2 = new StreamReader(myResponseStream2, Encoding.GetEncoding("utf-8"));
-                string retString2= myStreamReader.ReadToEnd();
-                myStreamReader.Close();
+                string retString2= myStreamReader2.ReadToEnd();
+                myStreamReader2.Close();
                 myResponseStream.Close();
 
                 //var ifno = js.Deserialize<heibox>(retString);
@@ -69,30 +69,6 @@ namespace NanJingMonitorDB
             catch (Exception ex)
             {
                 LogHelper.error("服务启动错误：" + ex.Message);
-            }
-        }
-        private void VideoSrv(object sender, System.Timers.ElapsedEventArgs e)
-        {
-            try
-            {
-                //获取页面刷新地址
-                string RefreshUrl = System.Configuration.ConfigurationManager.AppSettings["SmsRefreshUrl"]; 
-                if (string.IsNullOrEmpty(RefreshUrl))
-                {
-                    //记录错误日志
-                    LogHelper.error("ConfigError：未配置通道刷新页面地址！");
-                    return;
-                }
-
-                //更新通道状态
-                ProcessStartInfo proc = new ProcessStartInfo();
-                proc.FileName = RefreshUrl;
-                proc.WindowStyle = ProcessWindowStyle.Hidden;
-                Process.Start(RefreshUrl);
-            }
-            catch
-            {
-                LogHelper.error("更新监控视频在线状态失败！");
             }
         }
     }

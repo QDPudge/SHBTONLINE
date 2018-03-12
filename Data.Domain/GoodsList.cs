@@ -38,7 +38,7 @@ namespace  Data.Domain
         /// <summary>
         /// [Type]
         /// </summary>
-        public Nullable<int> Type { get; set; }
+        public string Type { get; set; }
         /// <summary>
         /// [Cost1]
         /// </summary>
@@ -51,6 +51,10 @@ namespace  Data.Domain
         /// [Level]
         /// </summary>
         public Nullable<int> Level { get; set; }
+        /// <summary>
+        /// [LevelName]
+        /// </summary>
+        public string LevelName { get; set; }
         /// <summary>
         /// [Comm]
         /// </summary>
