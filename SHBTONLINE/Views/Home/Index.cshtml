@@ -99,6 +99,23 @@
             margin-left: 8%;
             margin-top: 2%;
         }
+
+        .qiandao {
+            text-align: center;
+            background-color: #2FAA00;
+            height: 50px;
+            margin-bottom: 20px;
+        }
+
+            .qiandao:hover {
+                background-color: #5f8252;
+            }
+
+        .calendar_month_span {
+            font-size: 25px;
+            text-align: center;
+            font-family: Microsoft Yahei;
+        }
     </style>
     <div class="navbar navbar-inverse navbar-fixed-top top-bar">
         <div class="container">
@@ -158,18 +175,14 @@
                         <h2 class="layui-colla-title">人员签到情况</h2>
                         <div class="rich_media">
                             <div id="page-content">
-                                <div style="text-align: center;background-color: #2FAA00;height: 50px;margin-bottom: 20px;">
-                                    <span style="cursor: pointer;font-weight: 600;font-size: 20px;color: #fff;height: 50px;line-height: 50px;">每日签到</span>
-                                    <input type="hidden" id="userId" value="${user.id }" />
-                                </div>
+                            
                                 <div class="container-fluid">
                                     <div class="row-fluid" id="calendar">
-
                                     </div>
-                                    <div id="btnDiv">
-                                        <div class="row-fluid text-center">
-                                            <span id="sing_for_number" class="btn btn-default" onclick="javascript: SaveAttendInfo('@SessionManager.Instance.UserInfoSession.LoginName');">签到</span>
-                                        </div>
+
+                                    <div class="qiandao" onclick="javascript: SaveAttendInfo('@SessionManager.Instance.UserInfoSession.LoginName');">
+                                        <span style="cursor: pointer;font-weight: 600;font-size: 20px;color: #fff;height: 50px;line-height: 50px;">每日签到</span>
+                                        <input type="hidden" id="userId" value="${user.id }" />
                                     </div>
                                 </div>
                             </div>
@@ -178,14 +191,7 @@
                 </div>
             </div>
         </div>
-        <script>
-            //注意：折叠面板 依赖 element 模块，否则无法进行功能性操作
-            layui.use('element', function () {
-                var element = layui.element;
 
-                //…
-            });
-        </script>
     </div>
     <div id="sacrificeSomeOnetry" style="display:none">
         <div id="sacrificeSomeOne">
@@ -194,30 +200,20 @@
             @*<h2 style="margin-left:5px;margin-top:5px"> 上香 </h2>*@
             <hr />
             <blockquote class="layui-elem-quote layui-quote-nm" style="width:90%;margin:10px">
-                @*上香流程其相关内容:
-                    <br />
-                    1.每人每天只能上香三次。
-                    <br />
-                    2.上香满三次可以获得S币+1。
-                    <br />
-                    3.上香作为对战队人员的思念和缅怀，禁止恶意上香。*@
-
                 <img src="~/Content/img/cssimg/guize.PNG" style="padding-left:10%" />
             </blockquote>
-
             <hr />
-
-
             <blockquote class="layui-elem-quote layui-quote-nm" style="width:90%;margin:10px;height:158px">
-                <div class="layui-progress layui-progress-big css1" lay-showpercent="true" style="width:80%">
-                    <div class="layui-progress-bar" lay-percent="5 / 10"></div>
+                @*进度条*@
+                <div class="layui-progress layui-progress-big css1" lay-showpercent="true" style="width:80%" lay-filter="xkpercent">
+                    <div class="layui-progress-bar" lay-percent="0%"></div>
                 </div>
 
-                <div  style="margin-bottom:2px;margin-top:5px; width:693px">
+                <div style="margin-bottom:2px;margin-top:5px; width:693px">
                     <p class="layui-col-md3" style="width:130px; text-align:center;font-size:15px;font-family:sans-serif;padding-top: 5px;padding-left: 30px;">大 可 神：</p>
 
                     <div class="layui-col-md1">
-                        <button class="layui-btn layui-btn-sm" onclick="javascript:SendsacrificeInfo('xk')">上香</button>
+                        <button class="layui-btn layui-btn-sm site-xkpercent-active" data-type="setxkPercent">上香</button>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" class="Icon PinIndex-reactionIcon Icon--clap"
                          aria-hidden="true" style="fill: rgb(92, 97, 103); height: 22px; width: 22px;">
@@ -229,16 +225,16 @@
                         </g>
                     </svg>
                 </div>
-                <div class="layui-progress layui-progress-big css1" lay-showpercent="true" style="width:80%">
-                    <div class="layui-progress-bar" lay-percent="70%"></div>
+                <div class="layui-progress layui-progress-big css1" lay-showpercent="true" style="width:80%" lay-filter="wyhpercent">
+                    <div class="layui-progress-bar" lay-percent="0%"></div>
                 </div>
 
                 <div class="layui-col-md9" style="margin-bottom:2px;margin-top:5px;width:693px">
                     <p class="layui-col-md3" style="width:130px; text-align:center;font-size:15px;font-family:sans-serif;padding-top: 5px;padding-left: 30px;">窝 儿:</p>
                     <div class="layui-col-md1">
-                        <button class="layui-btn layui-btn-sm" onclick="javascript:SendsacrificeInfo('wyh')">上香</button>
+                        <button class="layui-btn layui-btn-sm  site-wyhpercent-active" data-type="setwyhPercent">上香</button>
                     </div>
-                    <div class="layui-col-md3" >
+                    <div class="layui-col-md3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" class="Icon PinIndex-reactionIcon Icon--clap"
                              aria-hidden="true" style="fill: rgb(92, 97, 103); height: 22px; width: 22px;">
                             <title>
@@ -251,20 +247,51 @@
                     </div>
                 </div>
             </blockquote>
-            <script>
-                //注意：折叠面板 依赖 element 模块，否则无法进行功能性操作
-                layui.use('element', function () {
-                    var element = layui.element;
 
-                    //…
-                });
-            </script>
         </div>
+        <script>
+            //注意：折叠面板 依赖 element 模块，否则无法进行功能性操作
+            layui.use('element', function () {
+                element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+                var active = {
+                    setxkPercent: function () {
+                        $.ajax({
+                            type: 'POST',
+                            data: { Name: 'xk' },
+                            url: "/PersonOperation/Attendance/GetsacrifInfo",
+                            async: false,
+                            success: function (data) {
+                                element.progress('xkpercent', data + '%')
+                            }
+
+                        })
+                    },
+                    //更新进度
+                    setwyhPercent: function () {
+                        $.ajax({
+                            type: 'POST',
+                            data: { Name: 'wyh' },
+                            url: "/PersonOperation/Attendance/GetsacrifInfo",
+                            async: false,
+                            success: function (data) {
+                                element.progress('wyhpercent', data + '%')
+                            }
+
+                        })
+                    }
+                };
+
+                $('.site-xkpercent-active').on('click', function () {
+                    var othis = $(this), type = $(this).data('type');
+                    active[type] ? active[type].call(this, othis) : '';
+                });
+                $('.site-wyhpercent-active').on('click', function () {
+                    var othis = $(this), type = $(this).data('type');
+                    active[type] ? active[type].call(this, othis) : '';
+                });
+
+            });
+        </script>
     </div>
-
-    @*拍手图标（知乎）*@
-
-
-
 </body>
 </html>

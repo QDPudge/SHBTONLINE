@@ -163,7 +163,7 @@ function Attendance(name) {
     });
 }
 //纪念（方法）
-function sacrifice(tittle) {
+function sacrifice() {
     layer.open({
         type: 1,
         title: false,
@@ -172,8 +172,31 @@ function sacrifice(tittle) {
         content: $('#sacrificeSomeOne'),
         scrollbar: false,
         success: function (layero, index) {
+            debugger;
+            $.ajax({
+                type: 'POST',
+                data: { Name: 'xk' },
+                url: "/PersonOperation/Attendance/GetsacrifInfo",
+                async: false,
+                success: function (data) {
+                    debugger;
+                    element.progress('xkpercent', data + '%')
+                }
+
+            });
+            $.ajax({
+                type: 'POST',
+                data: { Name: 'wyh' },
+                url: "/PersonOperation/Attendance/GetsacrifInfo",
+                async: false,
+                success: function (data) {
+                    debugger;
+                    element.progress('wyhpercent', data + '%')
+                }
+
+            })
+
             $("#sacrificeSomeOnetry").css("display", "block");
-            LoadAttendInfo(name);
             $("#btnDiv").css("display", "block")
         },
         cancel: function (index, layero) {
@@ -182,11 +205,6 @@ function sacrifice(tittle) {
             layer.close(index)
         }
     });
-}
-
-function SendsacrificeInfo(name)
-{
-    alert(name);
 }
 
 //获取登录信息（签到信息）

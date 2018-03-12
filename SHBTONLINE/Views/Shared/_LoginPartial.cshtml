@@ -15,8 +15,13 @@
             </li>
             <li><a href="javascript:void(0);" class="js-sub-menu-toggle" onclick="Attendance('@SessionManager.Instance.UserInfoSession.LoginName')">
                     <i class="layui-icon" style="color: #1E9FFF;">&#xe62d;</i>  签到</a></li>
-            <li><a href="javascript:void(0);" class="js-sub-menu-toggle" onclick="sacrifice('1111')">
+            
+            @if (SessionManager.Instance.UserInfoSession.LoginName == "nahua105" || SessionManager.Instance.UserInfoSession.userName == "王尔卡")
+             {
+            <li><a href="javascript:void(0);" class="js-sub-menu-toggle" onclick="sacrifice()">
+                    
                     <i class="layui-icon" style="color: #f37e7e;">&#xe756;</i>上香</a></li>
+             }
             <li><a href="javascript:document.getElementById('logoutForm').submit()">
                     <i class="layui-icon" style="color: #9deaa3;">&#xe61a;</i>  注销</a></li>
         </ul>
