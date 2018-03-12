@@ -144,16 +144,26 @@ function autoheight() {
 }
 //加载表格数据
 function Attendance(name) {
+    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+        var x = "333px";
+        var y = "339px";
+    }
+    else {
+        var x = '533px';
+        var y = '517px';
+    }
     layer.open({
         type: 1,
         title: false,
-        area: ['533px', '517px'],
+        area: [x, y],
+        //style: 'position:fixed; bottom:0; left:0; width:100%; height:150px; padding:10px 0; border:none;',
         zIndex: 99999,
         content: $('#XXS'), 
         success: function (layero, index) {
             $("#XXS").css("display", "block");
             LoadAttendInfo(name);
-            $("#btnDiv").css("display","block")
+            $("#btnDiv").css("display", "block")
+            
         },
         cancel: function (index, layero) {
             $("#XXS").css("display", "none");
@@ -172,7 +182,6 @@ function sacrifice() {
         content: $('#sacrificeSomeOne'),
         scrollbar: false,
         success: function (layero, index) {
-            debugger;
             $.ajax({
                 type: 'POST',
                 data: { Name: 'xk' },
@@ -216,9 +225,25 @@ function LoadAttendInfo(name) {
         async: false,
         success: function (signList) {
             //获取当前时间
-            var current = new Date();
-            var str = calUtil.drawCal(current.getFullYear(), current.getMonth() + 1, signList);
-            $("#calendar").html(str);
+            if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                debugger;
+                //手机访问
+                var type = 1;
+                alert(type);
+                var current = new Date();
+                var str = calUtil.drawCal(current.getFullYear(), current.getMonth() + 1, signList, type);
+                $("#calendar").html(str);
+            }
+            else {
+                //网页访问
+                var type = 2;
+                alert(type);
+                var current = new Date();
+                var str = calUtil.drawCal(current.getFullYear(), current.getMonth() + 1, signList, type);
+                $("#calendar").html(str);
+            }
+            debugger;
+
         }
     });
 }
@@ -296,7 +321,7 @@ var calUtil = {
         });
         return signed;
     },
-    drawCal: function (iYear, iMonth, signList) {
+    drawCal: function (iYear, iMonth, signList,type) {
         var currentYearMonth = iYear + "年" + iMonth + "月";
         var myMonth = calUtil.bulidCal(iYear, iMonth);
         var htmls = new Array();
@@ -305,7 +330,12 @@ var calUtil = {
         htmls.push("<div class='calendar_month_span'>" + currentYearMonth + "</div>");
         htmls.push("</div>");
         htmls.push("<div class='sign' id='sign_cal'>");
-        htmls.push("<table class='table'>");
+        if (type == 1) {
+            htmls.push("<table class='table2'>");
+        }
+        else {
+            htmls.push("<table class='table'>");
+        }
         htmls.push("<tr>");
         htmls.push("<th>" + myMonth[0][0] + "</th>");
         htmls.push("<th>" + myMonth[0][1] + "</th>");
@@ -321,9 +351,20 @@ var calUtil = {
             for (d = 0; d < 7; d++) {
                 var ifHasSigned = calUtil.ifHasSigned(signList, myMonth[w][d]);
                 if (ifHasSigned) {
-                    htmls.push("<td class='on'>" + (!isNaN(myMonth[w][d]) ? myMonth[w][d] : " ") + "</td>");
+                    //判断页面中的浏览方式
+                    if (type == 1) {
+                        htmls.push("<td style='padding-top:3px;padding-bottom:2px;border-top: 1px solid #dddddd;' class='onphone'>" + (!isNaN(myMonth[w][d]) ? myMonth[w][d] : " ") + "</td>");
+
+                    } else {
+                        htmls.push("<td class='on'>" + (!isNaN(myMonth[w][d]) ? myMonth[w][d] : " ") + "</td>");
+                    }
                 } else {
-                    htmls.push("<td>" + (!isNaN(myMonth[w][d]) ? myMonth[w][d] : " ") + "</td>");
+                    if (type == 1) {
+                        htmls.push("<td  style='padding-top:3px;padding-bottom:2px;border-top: 1px solid #dddddd;'  >" + (!isNaN(myMonth[w][d]) ? myMonth[w][d] : " ") + "</td>");
+                    }
+                    else {
+                        htmls.push("<td  >" + (!isNaN(myMonth[w][d]) ? myMonth[w][d] : " ") + "</td>");
+                    }
                 }
             }
             htmls.push("</tr>");
