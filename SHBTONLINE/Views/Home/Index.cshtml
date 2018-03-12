@@ -83,18 +83,23 @@
     </script>
     <style>
         .rich_media {
-            width: 500px;
+            width: auto;
             margin-left: auto;
             margin-right: auto;
             padding: 20px;
         }
-
+        /*网页上的签到样式*/
         .on {
             background-image: url(../../Content/img/cssimg/qiandao_icon.png);
             background-size: 36px 36px;
             background-repeat: no-repeat;
         }
-
+        /*手机端签到样式*/
+                .onphone {
+            background-image: url(../../Content/img/cssimg/qiandao_icon.png);
+            background-size:18px 18px;
+            background-repeat: no-repeat;
+        }
         .css1 {
             margin-left: 8%;
             margin-top: 2%;
@@ -116,8 +121,11 @@
             text-align: center;
             font-family: Microsoft Yahei;
         }
+        .table2 {
+            width:270px;
+        }
     </style>
-    <div class="navbar navbar-inverse navbar-fixed-top top-bar">
+    <div class="navbar navbar-inverse navbar-fixed-top top-bar  layui-col-xs12  layui-col-md12">
         <div class="container">
             <div class="navbar-header">
 
@@ -129,7 +137,7 @@
 
                 @Html.ActionLink("苏赫巴托", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse navbar-left">
+            <div class="navbar-collapse collapse navbar-left" >
                 <ul class="nav navbar-nav">
                     <li>
                         <a href="javascript:void(0);" class="js-sub-menu-toggle" onclick="RefreshFrame('/Game/Pubg/PubgIndex')">
@@ -180,7 +188,7 @@
                                     <div class="row-fluid" id="calendar">
                                     </div>
 
-                                    <div class="qiandao" onclick="javascript: SaveAttendInfo('@SessionManager.Instance.UserInfoSession.LoginName');">
+                                    <div class="qiandao" style="min-width:270px;" onclick="javascript: SaveAttendInfo('@SessionManager.Instance.UserInfoSession.LoginName');">
                                         <span style="cursor: pointer;font-weight: 600;font-size: 20px;color: #fff;height: 50px;line-height: 50px;">每日签到</span>
                                         <input type="hidden" id="userId" value="${user.id }" />
                                     </div>
