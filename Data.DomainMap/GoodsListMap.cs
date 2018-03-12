@@ -42,6 +42,10 @@ namespace Data.DomainMap {
             this.Property(t => t.IMG)
                 .HasMaxLength(200);
 
+
+            this.Property(t => t.Type)
+                .HasMaxLength(200);
+
             // Table & Column Mappings
             this.ToTable("GoodsList");
             this.Property(t => t.ID).HasColumnName("ID");

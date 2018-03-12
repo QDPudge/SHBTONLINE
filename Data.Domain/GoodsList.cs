@@ -38,7 +38,7 @@ namespace  Data.Domain
         /// <summary>
         /// [Type]
         /// </summary>
-        public Nullable<int> Type { get; set; }
+        public string Type { get; set; }
         /// <summary>
         /// [Cost1]
         /// </summary>
