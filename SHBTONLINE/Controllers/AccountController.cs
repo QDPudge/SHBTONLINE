@@ -642,7 +642,23 @@ namespace SHBTONLINE.Controllers
                 throw ex;
             }
         }
-
+        public JsonResult GetCardInfo(string LoginName)
+        {
+            ReturnJson r = new ReturnJson() { s = "ok" };
+            var querypsw = db.userinfoes.Where(p => p.LoginName == LoginName).Select(p => new {
+                loginname = p.LoginName,
+                avatar = p.IMG,
+                dota2id = p.DOTA2ID,
+                pubgid = p.PubgID,
+                key = p.PrivateKey,
+                sb = p.SCrrency,
+                name = p.Name,
+                card = p.Card_bg,
+                wechatid = string.IsNullOrEmpty(p.WechatID) ? false : true
+            }).FirstOrDefault();
+            r.r = querypsw;
+            return Json(r);
+        }
         #endregion
     }
 }

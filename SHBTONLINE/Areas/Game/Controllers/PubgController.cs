@@ -115,9 +115,12 @@ namespace SHBTONLINE.Areas.Game.Controllers
                                 };
                                 i++;
                                 var user = userinfo.Find(w => w.PubgID == pp.PUBGID);
-                                rank.Owner = user.Name;
-                                rank.Avatar = user.IMG;
-                                kdalist.list.Add(rank);
+                                if (user!=null)
+                                {
+                                    rank.Owner = user.Name;
+                                    rank.Avatar = user.IMG;
+                                    kdalist.list.Add(rank);
+                                }
                             });
                             result.Add(kdalist);
                             break;
@@ -136,9 +139,12 @@ namespace SHBTONLINE.Areas.Game.Controllers
                                 };
                                 i++;
                                 var user = userinfo.Find(w => w.PubgID == pp.PUBGID);
-                                rank.Owner = user.Name;
-                                rank.Avatar = user.IMG;
-                                damagelist.list.Add(rank);
+                                if (user != null)
+                                {
+                                    rank.Owner = user.Name;
+                                    rank.Avatar = user.IMG;
+                                    damagelist.list.Add(rank);
+                                }
                             });
                             result.Add(damagelist);
                             break;
@@ -157,9 +163,12 @@ namespace SHBTONLINE.Areas.Game.Controllers
                                 };
                                 i++;
                                 var user = userinfo.Find(w => w.PubgID == pp.PUBGID);
-                                rank.Owner = user.Name;
-                                rank.Avatar = user.IMG;
-                                goldlist.list.Add(rank);
+                                if (user != null)
+                                {
+                                    rank.Owner = user.Name;
+                                    rank.Avatar = user.IMG;
+                                    goldlist.list.Add(rank);
+                                }
                             });
                             result.Add(goldlist);
                             break;
@@ -178,9 +187,13 @@ namespace SHBTONLINE.Areas.Game.Controllers
                                 };
                                 i++;
                                 var user = userinfo.Find(w => w.PubgID == pp.PUBGID);
-                                rank.Owner = user.Name;
-                                rank.Avatar = user.IMG;
-                                xpmist.list.Add(rank);
+
+                                if (user != null)
+                                {
+                                    rank.Owner = user.Name;
+                                    rank.Avatar = user.IMG;
+                                    xpmist.list.Add(rank);
+                                }
                             });
                             result.Add(xpmist);
                             break;
@@ -199,9 +212,12 @@ namespace SHBTONLINE.Areas.Game.Controllers
                                 };
                                 i++;
                                 var user = userinfo.Find(w => w.PubgID == pp.PUBGID);
-                                rank.Owner = user.Name;
-                                rank.Avatar = user.IMG;
-                                winlist.list.Add(rank);
+                                if (user != null)
+                                {
+                                    rank.Owner = user.Name;
+                                    rank.Avatar = user.IMG;
+                                    winlist.list.Add(rank);
+                                }
                             });
                             result.Add(winlist);
                             break;
@@ -219,10 +235,14 @@ namespace SHBTONLINE.Areas.Game.Controllers
                                     Sort = i
                                 };
                                 i++;
-                                var user = userinfo.Find(w => w.PubgID == pp.PUBGID);
-                                rank.Owner = user.Name;
-                                rank.Avatar = user.IMG;
-                                headlist.list.Add(rank);
+
+                                    var user = userinfo.Find(w => w.PubgID == pp.PUBGID);
+                                if (user != null)
+                                {
+                                    rank.Owner = user.Name;
+                                    rank.Avatar = user.IMG;
+                                    headlist.list.Add(rank);
+                                }
                             });
                             result.Add(headlist);
                             break;
@@ -241,9 +261,12 @@ namespace SHBTONLINE.Areas.Game.Controllers
                                 };
                                 i++;
                                 var user = userinfo.Find(w => w.PubgID == pp.PUBGID);
-                                rank.Owner = user.Name;
-                                rank.Avatar = user.IMG;
-                                damagelist1.list.Add(rank);
+                                if (user != null)
+                                {
+                                    rank.Owner = user.Name;
+                                    rank.Avatar = user.IMG;
+                                    damagelist1.list.Add(rank);
+                                }
                             });
                             result.Add(damagelist1);
                             break;
@@ -262,9 +285,13 @@ namespace SHBTONLINE.Areas.Game.Controllers
                                 };
                                 i++;
                                 var user = userinfo.Find(w => w.PubgID == pp.PUBGID);
-                                rank.Owner = user.Name;
-                                rank.Avatar = user.IMG;
-                                timelist.list.Add(rank);
+
+                                if (user != null)
+                                {
+                                    rank.Owner = user.Name;
+                                    rank.Avatar = user.IMG;
+                                    timelist.list.Add(rank);
+                                }
                             });
                             result.Add(timelist);
                             break;
@@ -283,9 +310,12 @@ namespace SHBTONLINE.Areas.Game.Controllers
                                 };
                                 i++;
                                 var user = userinfo.Find(w => w.PubgID == pp.PUBGID);
-                                rank.Owner = user.Name;
-                                rank.Avatar = user.IMG;
-                                runlist.list.Add(rank);
+                                if (user != null)
+                                {
+                                    rank.Owner = user.Name;
+                                    rank.Avatar = user.IMG;
+                                    runlist.list.Add(rank);
+                                }
                             });
                             result.Add(runlist);
                             break;
