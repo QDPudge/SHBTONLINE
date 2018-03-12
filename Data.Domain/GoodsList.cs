@@ -52,6 +52,10 @@ namespace  Data.Domain
         /// </summary>
         public Nullable<int> Level { get; set; }
         /// <summary>
+        /// [LevelName]
+        /// </summary>
+        public string LevelName { get; set; }
+        /// <summary>
         /// [Comm]
         /// </summary>
         public string Comm { get; set; }

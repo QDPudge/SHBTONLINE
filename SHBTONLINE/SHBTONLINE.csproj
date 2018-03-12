@@ -163,6 +163,7 @@
     <Compile Include="Areas\PersonOperation\Models\Attendance\AttendModel.cs" />
     <Compile Include="Areas\PersonOperation\PersonOperationAreaRegistration.cs" />
     <Compile Include="Areas\Store\Controllers\StoreController.cs" />
+    <Compile Include="Areas\Store\Models\StoreItems.cs" />
     <Compile Include="Areas\Store\StoreAreaRegistration.cs" />
     <Compile Include="Common\CookieHelper.cs" />
     <Compile Include="Common\HashCode.cs" />
@@ -419,7 +420,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\PersonOperation\Views\Shared\" />
-    <Folder Include="Areas\Store\Models\" />
     <Folder Include="Areas\Store\Views\Shared\" />
     <Folder Include="Areas\Store\Views\Store\" />
     <Folder Include="Content\Page\" />
