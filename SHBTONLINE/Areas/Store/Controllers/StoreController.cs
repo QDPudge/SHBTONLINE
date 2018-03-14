@@ -26,7 +26,7 @@ namespace SHBTONLINE.Areas.Store.Controllers
             ReturnJson r = new ReturnJson() { s = "ok" };
             using (var db = new SHBTONLINEContext())
             {
-                var items = db.GoodsLists.ToList();
+                var items = db.GoodsLists.AsNoTracking().ToList();
                 r.r = items;
             }
             return Json(r);

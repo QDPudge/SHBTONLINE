@@ -66,6 +66,7 @@ namespace SHBTONLINE.Areas.Game.Controllers
 
             return Json(retString);
         }
+        #region 小程序调用
         /// <summary>
         /// 获取排名
         /// </summary>
@@ -187,6 +188,38 @@ namespace SHBTONLINE.Areas.Game.Controllers
             r.r = result;
             return Json(r);
         }
+
+        public JsonResult GetMatch(string match)
+        {
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            var Url = " https://api.maxjia.com/api/match/detail/?match_id=" + match + "&max_id=1496154&game_type=dota2&imei=3561560774657824&os_type=Android&os_version=7.0&version=4.2.0&lang=zh-cn";
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
+            request.Method = "GET";
+            request.Referer = " http://api.maxjia.com/";
+            request.UserAgent = " Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36 ApiMaxJia/1.0";
+            //request.ContentLength = Encoding.UTF8.GetByteCount(postDataStr);
+            //CookieContainer cookies = new CookieContainer();
+            //Cookie cookie = new Cookie ();
+            //cookie.Domain= "hkey=f9c7e56369a53a415e65b11140ec192a";
+            //Cookie cookie2 = new Cookie();
+            //cookie2.Domain = "pkey=MTUwMzUwNTIzNS4yNF83NjcwNDVwYXlkcWN2YXpucGh6d2Nj";
+            //cookies.Add(cookie);
+            //request.CookieContainer = cookies;
+            request.Headers.Add("Cookie: phone_num=0004060705030200070604;pkey=MTQ3Mjc0NzE5Ny45MzE1NzY0MjMxNjc1XzFxY2R3cnVtb3FobXJjcmxm;maxid=1496154 Connection: Keep - Alive  Accept - Encoding: gzip");
+            request.Host = "api.maxjia.com";
+
+
+
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            Stream myResponseStream = response.GetResponseStream();
+            StreamReader myStreamReader = new StreamReader(myResponseStream, Encoding.GetEncoding("utf-8"));
+            string retString = myStreamReader.ReadToEnd();
+            myStreamReader.Close();
+            myResponseStream.Close();
+
+            return Json(retString);
+        }
+        #endregion
 
         #region 服务调用接口
         [HttpGet]
