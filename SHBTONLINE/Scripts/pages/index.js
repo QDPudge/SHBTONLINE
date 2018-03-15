@@ -188,7 +188,6 @@ function sacrifice() {
                 url: "/PersonOperation/Attendance/GetsacrifInfo",
                 async: false,
                 success: function (data) {
-                    debugger;
                     element.progress('xkpercent', data + '%')
                 }
 
@@ -199,7 +198,6 @@ function sacrifice() {
                 url: "/PersonOperation/Attendance/GetsacrifInfo",
                 async: false,
                 success: function (data) {
-                    debugger;
                     element.progress('wyhpercent', data + '%')
                 }
 
@@ -226,10 +224,8 @@ function LoadAttendInfo(name) {
         success: function (signList) {
             //获取当前时间
             if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-                debugger;
                 //手机访问
                 var type = 1;
-                alert(type);
                 var current = new Date();
                 var str = calUtil.drawCal(current.getFullYear(), current.getMonth() + 1, signList, type);
                 $("#calendar").html(str);
@@ -237,12 +233,10 @@ function LoadAttendInfo(name) {
             else {
                 //网页访问
                 var type = 2;
-                alert(type);
                 var current = new Date();
                 var str = calUtil.drawCal(current.getFullYear(), current.getMonth() + 1, signList, type);
                 $("#calendar").html(str);
             }
-            debugger;
 
         }
     });
