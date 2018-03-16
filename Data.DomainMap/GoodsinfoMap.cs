@@ -44,6 +44,9 @@ namespace Data.DomainMap {
             this.Property(t => t.LoginName)
                 .HasMaxLength(200);
 
+            this.Property(t => t.Type)
+                .HasMaxLength(200);            
+
             this.Property(t => t.Name)
                 .HasMaxLength(200);
 
@@ -52,6 +55,7 @@ namespace Data.DomainMap {
             this.Property(t => t.ID).HasColumnName("ID");
             this.Property(t => t.GoodsID).HasColumnName("GoodsID");
             this.Property(t => t.GoodsName).HasColumnName("GoodsName");
+            this.Property(t => t.Type).HasColumnName("Type");            
             this.Property(t => t.LoginName).HasColumnName("LoginName");
             this.Property(t => t.Name).HasColumnName("Name");
             this.Property(t => t.RewardDate).HasColumnName("RewardDate");
