@@ -44,6 +44,10 @@ namespace  Data.Domain
         /// </summary>
         public string LoginName { get; set; }
         /// <summary>
+        /// [Type]
+        /// </summary>
+        public string Type { get; set; }
+        /// <summary>
         /// [Name]
         /// </summary>
         public string Name { get; set; }
