@@ -380,6 +380,7 @@
     <Content Include="Areas\PersonOperation\Views\Attendance\AttendanceView.cshtml" />
     <Content Include="Areas\PersonOperation\Views\web.config" />
     <Content Include="Areas\Store\Views\web.config" />
+    <Content Include="Areas\Store\Views\Store\ShopView.cshtml" />
     <None Include="Properties\PublishProfiles\DD.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -429,7 +430,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\PersonOperation\Views\Shared\" />
     <Folder Include="Areas\Store\Views\Shared\" />
-    <Folder Include="Areas\Store\Views\Store\" />
     <Folder Include="Content\Page\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
