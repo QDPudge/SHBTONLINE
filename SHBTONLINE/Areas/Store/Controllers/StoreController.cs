@@ -11,8 +11,11 @@ namespace SHBTONLINE.Areas.Store.Controllers
 {
     public class StoreController : Controller
     {
-        // GET: Store/Store
-        public ActionResult Index()
+        /// <summary>
+        /// 商城页面
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult ShopView()
         {
             return View();
         }
