@@ -1,0 +1,145 @@
+﻿
+@{
+    ViewBag.Title = "ShopView";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+<head>
+    <!-- Enable zoom
+    ======================================	 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Install fonts
+    ======================================	 -->
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900' rel='stylesheet' type='text/css'>
+
+    <!-- Ico font
+    =======================================	 -->
+    <link rel="stylesheet" href="~/Css/icofont.css">
+
+    <!-- Animate css
+    =======================================	 -->
+    <link rel="stylesheet" href="~/Css/animate.min.css">
+
+    <!-- Venobox css
+    =========================================	 -->
+    <link rel="stylesheet" href="~/Css/js/venobox/venobox.css">
+
+    <!-- Camera Slider
+    =======================================	 -->
+    <link rel="stylesheet" href="~/Css/camera.css">
+
+    <!-- Ui min css
+    =======================================	 -->
+    <link rel="stylesheet" href="~/Css/jquery-ui.min.css">
+
+    <!-- Owl Carousel Theme
+    =======================================	 -->
+    <link rel="stylesheet" href="~/Css/owl.theme.default.min.css">
+
+    <!-- Owl carousel
+    =======================================	 -->
+    <link rel="stylesheet" href="~/Css/owl.carousel.min.css">
+
+    <!-- Slick carousel Theme
+    =======================================	 -->
+    <link rel="stylesheet" href="~/Css/slick-theme.css">
+
+    <!-- Slick css
+    =======================================	 -->
+    <link rel="stylesheet" href="~/Css/slick.css">
+
+    <!-- Mean Menu
+    =======================================	 -->
+    <link rel="stylesheet" href="~/Css/meanmenu.min.css">
+
+    <!-- Uikit Min css
+    =======================================	 -->
+    <link rel="stylesheet" href="~/Css/uikit.min.css">
+
+    <!-- Bootstrap css
+    =======================================	 -->
+    <link rel="stylesheet" href="~/Css/bootstrap.min.css">
+
+    <!-- Style css/Base css/Main css 
+    =======================================	 -->
+    <link rel="stylesheet" href="~/Css/style.css">
+</head>
+<style>
+    .brad-crumb::before {
+        background: rgb(189, 209, 183);
+
+    }
+
+    </style>
+<div class="brad-crumb">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xs-12">
+                <img src="~/Content/img/background/duibiao.png" style="width:141px; height:141px;margin-bottom:60px" />
+                <div class="bread-crumb-inner-container">
+                  
+
+                    <div class="breadcrumb-title">
+                        <h3>S H B T 商城</h3>
+                    </div>
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active">Men</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="row xs-middle">
+        <div class="col-md-4 col-sm-6">
+            <div class="single-product">
+                <div class="single-product-image">
+                    <figure>
+                        <img src="~/Content/img/background/wanshiquanzhang.png" alt="popular-products" style="margin-left:30px">
+                    </figure>
+                </div>
+                <div class="single-product-hover-item">
+                    <div class="single-product-hover-item-inner-area">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    @*页面上悬浮的点击事件*@
+                                    <i class="icofont icofont-shopping-cart" onclick="alert('购买')"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    @*页面上悬浮的点击事件*@
+                                    <i class="icofont icofont-heart" onclick="alert('喜欢')"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    @*页面上悬浮的点击事件*@
+                                    <i class="icofont icofont-exchange" onclick="alert('不知道干啥用的')"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#inline-content" class="venoboxinline" data-title="clothing" data-gall="gall-frame" data-type="inline">
+                                    <i class="icofont icofont-expand"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="single-product-bottom-bar">
+                    <h5>
+                        <a href="#">万世权杖</a>
+                    </h5>
+                    <ul>
+                        <li>$99.00</li>
+                        <li><p>$99.00</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
