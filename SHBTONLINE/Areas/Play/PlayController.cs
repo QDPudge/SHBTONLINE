@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CommonData;
+using Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,5 +15,18 @@ namespace SHBTONLINE.Areas.Play
         {
             return View();
         }
+
+        public JsonResult GetPlays()
+        {
+            ReturnJson r = new ReturnJson() { s = "ok" };
+            using (var db = new SHBTONLINEContext())
+            {
+                var queryall = db.Plays.Where(p=>p.Status=="未开始").ToList();
+
+                r.r = queryall;
+            }
+            return Json(r);
+        }
+
     }
 }
