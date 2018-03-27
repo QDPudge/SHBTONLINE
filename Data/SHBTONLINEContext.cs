@@ -42,6 +42,10 @@ namespace Data
         /// </summary>
         public DbSet<Play> Plays { get; set; }
         /// <summary>
+        /// [PlayItem]
+        /// </summary>
+        public DbSet<PlayItem> PlayItems { get; set; }
+        /// <summary>
         /// [GoodsList]
         /// </summary>
         public DbSet<GoodsList> GoodsLists { get; set; }
@@ -58,6 +62,7 @@ namespace Data
             modelBuilder.Configurations.Add(new GoodsinfoMap());
             modelBuilder.Configurations.Add(new GoodsListMap());
             modelBuilder.Configurations.Add(new PUBGInfoMap());
+            modelBuilder.Configurations.Add(new PlayItemMap());
             modelBuilder.Configurations.Add(new DOTA2InfoMap());
             modelBuilder.Configurations.Add(new PlayMap());
         }

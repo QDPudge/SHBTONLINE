@@ -45,6 +45,7 @@
     <Compile Include="Goodsinfo.cs" />
     <Compile Include="GoodsList.cs" />
     <Compile Include="Play.cs" />
+    <Compile Include="PlayItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PUBGInfo.cs" />
     <Compile Include="userinfo.cs" />

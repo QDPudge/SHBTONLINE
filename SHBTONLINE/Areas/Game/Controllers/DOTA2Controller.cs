@@ -37,7 +37,7 @@ namespace SHBTONLINE.Areas.Game.Controllers
         {
             //实例化一个能够序列化数据的类
             JavaScriptSerializer js = new JavaScriptSerializer();
-            var Url = "https://api.maxjia.com/api/player/summary/?steam_id=" + ID + "&game_type=dota2&max_id=1496154&imei=356156077945624&os_type=Android&os_version=7.0&version=4.1.5&lang=zh-cn";
+            var Url = "https://api.maxjia.com/api/player/summary/?steam_id=" + ID + "&game_type=dota2&max_id=&imei=356156077945624&os_type=Android&os_version=7.0&version=4.1.5&lang=zh-cn";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
             request.Method = "GET";
             request.Referer = " http://api.maxjia.com/";
@@ -50,7 +50,7 @@ namespace SHBTONLINE.Areas.Game.Controllers
             //cookie2.Domain = "pkey=MTUwMzUwNTIzNS4yNF83NjcwNDVwYXlkcWN2YXpucGh6d2Nj";
             //cookies.Add(cookie);
             //request.CookieContainer = cookies;
-            request.Headers.Add("Cookie: phone_num=0004060705030200070604;pkey=MTQ3Mjc0NzE5Ny45MzE1NzY0MjMxNjc1XzFxY2R3cnVtb3FobXJjcmxm;maxid=1496154 Connection: Keep - Alive  Accept - Encoding: gzip");
+            request.Headers.Add("Cookie: phone_num=0006070300040101040800;pkey=MTUyMTkwOTU4My43MTE3NjIxNTAwNTkxXzFhbWhzZXp1Z2RwY3lybG93;maxid=8789444; Connection: Keep - Alive  Accept - Encoding: gzip");
             request.Host = "api.maxjia.com";
 
 
@@ -192,7 +192,7 @@ namespace SHBTONLINE.Areas.Game.Controllers
         public JsonResult GetMatch(string match)
         {
             JavaScriptSerializer js = new JavaScriptSerializer();
-            var Url = " https://api.maxjia.com/api/match/detail/?match_id=" + match + "&max_id=1496154&game_type=dota2&imei=3561560774657824&os_type=Android&os_version=7.0&version=4.2.0&lang=zh-cn";
+            var Url = " https://api.maxjia.com/api/match/detail/?match_id=" + match + "&max_id=8789444&game_type=dota2&imei=3561560774657824&os_type=Android&os_version=7.0&version=4.2.0&lang=zh-cn";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
             request.Method = "GET";
             request.Referer = " http://api.maxjia.com/";
@@ -205,7 +205,7 @@ namespace SHBTONLINE.Areas.Game.Controllers
             //cookie2.Domain = "pkey=MTUwMzUwNTIzNS4yNF83NjcwNDVwYXlkcWN2YXpucGh6d2Nj";
             //cookies.Add(cookie);
             //request.CookieContainer = cookies;
-            request.Headers.Add("Cookie: phone_num=0004060705030200070604;pkey=MTQ3Mjc0NzE5Ny45MzE1NzY0MjMxNjc1XzFxY2R3cnVtb3FobXJjcmxm;maxid=1496154 Connection: Keep - Alive  Accept - Encoding: gzip");
+            request.Headers.Add("Cookie: phone_num=0006070300040101040800;pkey=MTUyMTkwOTU4My43MTE3NjIxNTAwNTkxXzFhbWhzZXp1Z2RwY3lybG93;maxid=8789444; Connection: Keep - Alive  Accept - Encoding: gzip");
             request.Host = "api.maxjia.com";
 
 
@@ -230,7 +230,7 @@ namespace SHBTONLINE.Areas.Game.Controllers
         public JsonResult GetMatchList(string DOTA2ID,string start, string end)
         {
             JavaScriptSerializer js = new JavaScriptSerializer();
-            var Url = " https://api.maxjia.com/api/player/matches/?steam_id=" + DOTA2ID + "&offset="+ start + "&limit="+end+"&max_id=1496154&game_type=dota2&imei=356156077945624&os_type=Android&os_version=7.0&version=4.2.0&lang=zh-cn";
+            var Url = " https://api.maxjia.com/api/player/matches/?steam_id=" + DOTA2ID + "&offset="+ start + "&limit="+end+ "&max_id=8789444&game_type=dota2&imei=356156077945624&os_type=Android&os_version=7.0&version=4.2.0&lang=zh-cn";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
             request.Method = "GET";
             request.Referer = " http://api.maxjia.com/";
@@ -243,7 +243,7 @@ namespace SHBTONLINE.Areas.Game.Controllers
             //cookie2.Domain = "pkey=MTUwMzUwNTIzNS4yNF83NjcwNDVwYXlkcWN2YXpucGh6d2Nj";
             //cookies.Add(cookie);
             //request.CookieContainer = cookies;
-            request.Headers.Add("Cookie: phone_num=0004060705030200070604;pkey=MTQ3Mjc0NzE5Ny45MzE1NzY0MjMxNjc1XzFxY2R3cnVtb3FobXJjcmxm;maxid=1496154 Connection: Keep - Alive  Accept - Encoding: gzip");
+            request.Headers.Add("Cookie: phone_num=0006070300040101040800;pkey=MTUyMTkwOTU4My43MTE3NjIxNTAwNTkxXzFhbWhzZXp1Z2RwY3lybG93;maxid=8789444; Connection: Keep - Alive  Accept - Encoding: gzip");
             request.Host = "api.maxjia.com";
 
 
@@ -271,7 +271,7 @@ namespace SHBTONLINE.Areas.Game.Controllers
 
                 //实例化一个能够序列化数据的类
                 JavaScriptSerializer js = new JavaScriptSerializer();
-                var Url = "https://api.maxjia.com/api/player/summary/?steam_id=" + p + "&game_type=dota2&max_id=&imei=356156077945624&os_type=Android&os_version=7.0&version=4.1.5&lang=zh-cn";
+                var Url = "https://api.maxjia.com/api/player/summary/?steam_id=" + p + "&game_type=dota2&max_id=8789444&imei=356156077945624&os_type=Android&os_version=7.0&version=4.1.5&lang=zh-cn";
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
                 request.Method = "GET";
                 request.Referer = " http://api.maxjia.com/";
@@ -284,7 +284,7 @@ namespace SHBTONLINE.Areas.Game.Controllers
                 //cookie2.Domain = "pkey=MTUwMzUwNTIzNS4yNF83NjcwNDVwYXlkcWN2YXpucGh6d2Nj";
                 //cookies.Add(cookie);
                 //request.CookieContainer = cookies;
-                request.Headers.Add("Cookie: phone_num=0004060705030200070604;pkey=MTQ3Mjc0NzE5Ny45MzE1NzY0MjMxNjc1XzFxY2R3cnVtb3FobXJjcmxm; Connection: Keep - Alive  Accept - Encoding: gzip");
+                request.Headers.Add("Cookie: phone_num=0006070300040101040800;pkey=MTUyMTkwOTU4My43MTE3NjIxNTAwNTkxXzFhbWhzZXp1Z2RwY3lybG93;maxid=8789444; Connection: Keep - Alive  Accept - Encoding: gzip");
                 request.Host = "api.maxjia.com";
 
 

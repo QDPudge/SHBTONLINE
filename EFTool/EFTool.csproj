@@ -60,19 +60,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\DOTA2Info.cs" />
-    <Compile Include="Models\Goodsinfo.cs" />
-    <Compile Include="Models\GoodsList.cs" />
-    <Compile Include="Models\Mapping\DOTA2InfoMap.cs" />
-    <Compile Include="Models\Mapping\GoodsinfoMap.cs" />
-    <Compile Include="Models\Mapping\GoodsListMap.cs" />
-    <Compile Include="Models\Mapping\PlayMap.cs" />
-    <Compile Include="Models\Mapping\PUBGInfoMap.cs" />
-    <Compile Include="Models\Mapping\userinfoMap.cs" />
-    <Compile Include="Models\Play.cs" />
-    <Compile Include="Models\PUBGInfo.cs" />
-    <Compile Include="Models\SHBTONLINEContext.cs" />
-    <Compile Include="Models\userinfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

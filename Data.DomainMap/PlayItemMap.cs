@@ -5,12 +5,10 @@
 //     对此文件的更改可能会导致不正确的行为，并且如果
 //     重新生成代码，这些更改将会丢失。
 // </auto-generated>
-// <copyright file="Play.cs">
+// <copyright file="PlayItem.cs">
 //        Copyright(c)2015   rights reserved.
 //        CLR版本：4.0.30319.239
-//        开发组织：李文学@上海同岩土木科技工程有限公司
-//        所属工程：TY.*
-//        生成时间：2018-03-23 09:42
+//        生成时间：2018-03-26 13:36
 // </copyright>
 //------------------------------------------------------------------------------
 
@@ -20,10 +18,10 @@ using Data.Domain;
 using Data.DomainMap;
 
 //namespace TM.Data.Models.Mapping
-namespace Data.DomainMap
-    public class PlayMap : EntityTypeConfiguration<Play>
+namespace Data.DomainMap { 
+    public class PlayItemMap : EntityTypeConfiguration<PlayItem>
     {
-        public PlayMap()
+        public PlayItemMap()
         {
             // Primary Key
             this.HasKey(t => t.ID);
@@ -34,24 +32,26 @@ namespace Data.DomainMap
                 .IsFixedLength()
                 .HasMaxLength(36);
 
-            this.Property(t => t.Name)
-                .HasMaxLength(300);
-
-            this.Property(t => t.ParentID)
+            this.Property(t => t.PlayID)
+                .IsRequired()
                 .IsFixedLength()
                 .HasMaxLength(36);
 
-            this.Property(t => t.Status)
+            this.Property(t => t.Loginname)
+                .HasMaxLength(50);
+
+            this.Property(t => t.State)
                 .HasMaxLength(50);
 
             // Table & Column Mappings
-            this.ToTable("Play");
+            this.ToTable("PlayItem");
             this.Property(t => t.ID).HasColumnName("ID");
-            this.Property(t => t.Name).HasColumnName("Name");
-            this.Property(t => t.Odds).HasColumnName("Odds");
-            this.Property(t => t.ParentID).HasColumnName("ParentID");
-            this.Property(t => t.OffTime).HasColumnName("OffTime");
-            this.Property(t => t.Status).HasColumnName("Status");
+            this.Property(t => t.PlayID).HasColumnName("PlayID");
+            this.Property(t => t.Get).HasColumnName("Get");            
+            this.Property(t => t.Loginname).HasColumnName("Loginname");
+            this.Property(t => t.Cost1).HasColumnName("Cost1");
+            this.Property(t => t.CreateTime).HasColumnName("CreateTime");
+            this.Property(t => t.State).HasColumnName("State");
         }
     }
 }
