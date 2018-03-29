@@ -37,5 +37,9 @@ namespace  Data.Domain
         /// [Status]
         /// </summary>
         public string Status { get; set; }
+        /// <summary>
+        /// Results
+        /// </summary>
+        public string Results { get; set; }
     }
 }

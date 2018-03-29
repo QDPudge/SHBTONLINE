@@ -36,6 +36,7 @@ namespace SHBTONLINE.Areas.Play.Models
         /// [Status]
         /// </summary>
         public string Status { get; set; }
+        public string Results { get; set; }
         /// <summary>
         /// 子选项
         /// </summary>
@@ -46,6 +47,57 @@ namespace SHBTONLINE.Areas.Play.Models
     {
         public string PlayID { get; set; }
         public string Loginname { get; set; }
+        public string Name { get; set; }
         public int Cost { get; set; }
     }
+    public class ViewHistory
+    {
+        public string Result { get; set; }
+        public List<History> list { get; set; }
+    }
+    public class History
+    {
+        /// <summary>
+        /// [ID]
+        /// </summary>
+        public string ID { get; set; }
+        /// <summary>
+        /// [PlayID]
+        /// </summary>
+        public string PlayID { get; set; }
+        /// <summary>
+        /// [Loginname]
+        /// </summary>
+        public string Loginname { get; set; }
+        public string Name { get; set; }
+        /// <summary>
+        /// [Cost1]
+        /// </summary>
+        public Nullable<int> Cost1 { get; set; }
+        /// <summary>
+        /// [Get]
+        /// </summary>
+        public Nullable<int> Get { get; set; }
+
+        /// <summary>
+        /// [CreateTime]
+        /// </summary>
+        public Nullable<System.DateTime> CreateTime { get; set; }
+        /// <summary>
+        /// [State]
+        /// </summary>
+        public string State { get; set; }
+    }
+    public class AddPlay
+    {
+        public string Name { get; set; }
+        public List<AddPlayItem> Items { get; set; } 
+    }
+    public class AddPlayItem
+    {
+        public string Name { get; set; }
+        public float Odds { get; set; }
+        public DateTime OffTime { get; set; }
+    }
+
 }

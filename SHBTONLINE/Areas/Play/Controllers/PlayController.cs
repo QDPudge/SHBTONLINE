@@ -17,6 +17,10 @@ namespace SHBTONLINE.Areas.Play.Controllers
         {
             return View();
         }
+        /// <summary>
+        /// 获取今日所有赛事
+        /// </summary>
+        /// <returns></returns>
         public JsonResult GetPlays()
         {
             ReturnJson r = new ReturnJson() {s="ok" };
@@ -30,8 +34,9 @@ namespace SHBTONLINE.Areas.Play.Controllers
                     Odds=p.Odds,
                     OffTime=p.OffTime,
                     ParentID=p.ParentID,
-                    Status=p.Status
-                }).ToList();
+                    Status=p.Status,
+                    Results=p.Results
+                }).OrderBy(p=>p.OffTime).ToList();
                 parent.ForEach(w => {
                     w.child= db.Plays.Where(p => p.ParentID == w.ID).Select(p => new PlayForm
                     {
@@ -40,13 +45,19 @@ namespace SHBTONLINE.Areas.Play.Controllers
                         Odds = p.Odds,
                         OffTime = p.OffTime,
                         ParentID = p.ParentID,
-                        Status = p.Status
+                        Status = p.Status,
+                        Results=p.Results
                     }).ToList();
                 });
                 r.r = parent;
             }
             return Json(r);
         }
+        /// <summary>
+        /// 购买
+        /// </summary>
+        /// <param name="mode"></param>
+        /// <returns></returns>
         public JsonResult BuyPlays(BuyPlayForm mode)
         {
             ReturnJson r = new ReturnJson() { s = "ok" };
@@ -96,7 +107,11 @@ namespace SHBTONLINE.Areas.Play.Controllers
             }      
             return Json(r);
         }
-        public JsonResult GetSbRank()
+        /// <summary>
+        /// 获取胜利排名
+        /// </summary>
+        /// <returns></returns>
+        public JsonResult GetWinRank()
         {
             Dictionary<string, int> count = new Dictionary<string, int>();
             ReturnJson r = new ReturnJson() { s = "ok" };
@@ -111,5 +126,119 @@ namespace SHBTONLINE.Areas.Play.Controllers
             }
             return Json(r);
         }
+        /// <summary>
+        /// 获取营收排行
+        /// </summary>
+        /// <returns></returns>
+        public JsonResult GetSBRank()
+        {
+            Dictionary<string, int> count = new Dictionary<string, int>();
+            ReturnJson r = new ReturnJson() { s = "ok" };
+            using (var db = new SHBTONLINEContext())
+            {
+                var parent = db.PlayItems.GroupBy(p => p.Loginname).ToList();
+                parent.ForEach(p => {
+                    var sb = p.Select(w => w.Get).ToList();
+                    int sbcount = 0;
+                    for (int i=0;i<sb.Count;i++)
+                    {
+                        if (sb[i]!=null)
+                        {
+                            sbcount = sbcount + (int)sb[i];
+                        }
+                    }
+                    count.Add(p.Key, sbcount);
+                });
+                r.r = count.OrderByDescending(p => p.Value);
+            }
+            return Json(r);
+        }
+        /// <summary>
+        /// 获取历史
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
+        public JsonResult GetHistory(string ID)
+        {
+            ViewHistory his = new ViewHistory();
+            ReturnJson r = new ReturnJson() { s = "ok" };
+            using (var db = new SHBTONLINEContext())
+            {
+                var play = db.Plays.Where(p => p.ID == ID).First();
+                his.Result = play.Results;
+                List<History> hiss = new List<History>();
+               var parent = db.PlayItems.Where(p=>p.PlayID==ID).ToList();
+                parent.ForEach(p => {
+
+                    History item = new History()
+                    {
+                        Cost1=p.Cost1,
+                        CreateTime=p.CreateTime,
+                        Get=p.Get,
+                        ID=p.ID,
+                        Loginname=p.Loginname,
+                        PlayID=p.PlayID,
+                        State=p.State
+                    };
+                    item.Name = db.userinfoes.Where(w => w.LoginName == item.Loginname).First().Name;
+                    hiss.Add(item);
+                });
+
+                his.list = hiss;
+                r.r = his;
+            }
+            return Json(r);
+        }
+        /// <summary>
+        /// 比赛结束设置
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <param name="Result"></param>
+        /// <returns></returns>
+        public JsonResult MatchFinish(string ID,string Result)
+        {
+            ReturnJson r = new ReturnJson() { s = "ok" };
+            using (var db = new SHBTONLINEContext())
+            {
+                try
+                {
+                    var play = db.Plays.Where(p => p.ID == ID).First();
+                    var query = db.PlayItems.Where(p => p.PlayID == ID).ToList();
+                    query.ForEach(p => {
+                        if (Result == "win")
+                        {
+                            p.Get = (int)play.Odds;
+                        }
+                        else
+                        {
+                            p.Get = 0;
+                        }
+                        db.PlayItems.Attach(p);
+                        db.Entry(p).Property(w => w.Get).IsModified = true;
+                        var queryuser = db.userinfoes.Where(w => w.LoginName == p.Loginname).First();
+                        queryuser.SCrrency += (int)p.Get;
+                        db.userinfoes.Attach(queryuser);
+                        db.Entry(p).Property(w => w.Get).IsModified = true;
+                    });
+                    db.SaveChanges();
+
+                }
+                catch (Exception ex)
+                {
+                    r.s = "error";
+                    r.r = ex.Message;
+                }
+                return Json(r);
+            }
+        }
+
+        //public JsonResult AddMatch(AddPlay form)
+        //{
+        //    Plays play = new Plays()
+        //    {
+
+        //    };
+        //}
+
     }
 }
