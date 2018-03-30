@@ -36,7 +36,7 @@ namespace SHBTONLINE.Areas.Play.Controllers
                     ParentID=p.ParentID,
                     Status=p.Status,
                     Results=p.Results
-                }).OrderBy(p=>p.OffTime).ToList();
+                }).OrderByDescending(p=>p.OffTime).ToList();
                 parent.ForEach(w => {
                     w.child= db.Plays.Where(p => p.ParentID == w.ID).Select(p => new PlayForm
                     {
@@ -72,11 +72,11 @@ namespace SHBTONLINE.Areas.Play.Controllers
                         r.r = "比赛未开始或已结束";
                     }
                     var buyitems = db.PlayItems.Where(p => p.Loginname == mode.Loginname && p.PlayID == mode.PlayID).ToList();
-                    if (buyitems.Count > 0)
-                    {
-                        r.s = "error";
-                        r.r = "单个条目无法重复购买";
-                    }
+                    //if (buyitems.Count > 0)
+                    //{
+                    //    r.s = "error";
+                    //    r.r = "单个条目无法重复购买";
+                    //}
                     PlayItem item = new PlayItem()
                     {
                         ID = Guid.NewGuid().ToString(),
@@ -108,7 +108,7 @@ namespace SHBTONLINE.Areas.Play.Controllers
             return Json(r);
         }
         /// <summary>
-        /// 获取胜利排名
+        /// 获取胜利排名【生涯】
         /// </summary>
         /// <returns></returns>
         public JsonResult GetWinRank()
@@ -119,15 +119,17 @@ namespace SHBTONLINE.Areas.Play.Controllers
             {
                 var parent = db.PlayItems.GroupBy(p => p.Loginname).ToList();
                 parent.ForEach(p => {
-                    var raw = p.Select(w => w.State == "成功").Count();
-                    count.Add(p.Key, raw);
+                    var raw = p.Where(w => w.State == "成功").GroupBy(w => w.PlayID).Count();
+
+                    var queryemp = db.userinfoes.Where(w => w.LoginName == p.Key).First().Name;
+                    count.Add(queryemp, raw);
                 });
                 r.r = count.OrderByDescending(p=>p.Value);
             }
             return Json(r);
         }
         /// <summary>
-        /// 获取营收排行
+        /// 获取营收排行【生涯】
         /// </summary>
         /// <returns></returns>
         public JsonResult GetSBRank()
@@ -136,18 +138,49 @@ namespace SHBTONLINE.Areas.Play.Controllers
             ReturnJson r = new ReturnJson() { s = "ok" };
             using (var db = new SHBTONLINEContext())
             {
-                var parent = db.PlayItems.GroupBy(p => p.Loginname).ToList();
+                var parent = db.PlayItems.Where(p=>p.Get!=null).GroupBy(p => p.Loginname).ToList();
                 parent.ForEach(p => {
-                    var sb = p.Select(w => w.Get).ToList();
+                    var sb = p.ToList();
                     int sbcount = 0;
                     for (int i=0;i<sb.Count;i++)
                     {
                         if (sb[i]!=null)
                         {
-                            sbcount = sbcount + (int)sb[i];
+                            sbcount = sbcount + (int)sb[i].Get-(int)sb[i].Cost1;
                         }
                     }
-                    count.Add(p.Key, sbcount);
+                    var queryemp = db.userinfoes.Where(w => w.LoginName == p.Key).First().Name;
+                    count.Add(queryemp, sbcount);
+                });
+                r.r = count.OrderByDescending(p => p.Value);
+            }
+            return Json(r);
+        }       
+        /// <summary>
+                 /// 获取营收排行【今日】
+                 /// </summary>
+                 /// <returns></returns>
+        public JsonResult GetSBRank2()
+        {
+            Dictionary<string, int> count = new Dictionary<string, int>();
+            ReturnJson r = new ReturnJson() { s = "ok" };
+            var now = DateTime.Now.Date;
+            var tomorrow = now.AddDays(1);
+            using (var db = new SHBTONLINEContext())
+            {
+                var parent = db.PlayItems.Where(p => p.Get != null&&p.CreateTime>= now&&p.CreateTime<tomorrow).GroupBy(p => p.Loginname).ToList();
+                parent.ForEach(p => {
+                    var sb = p.ToList();
+                    int sbcount = 0;
+                    for (int i = 0; i < sb.Count; i++)
+                    {
+                        if (sb[i] != null)
+                        {
+                            sbcount = sbcount + (int)sb[i].Get - (int)sb[i].Cost1;
+                        }
+                    }
+                    var queryemp = db.userinfoes.Where(w => w.LoginName == p.Key).First().Name;
+                    count.Add(queryemp, sbcount);
                 });
                 r.r = count.OrderByDescending(p => p.Value);
             }
@@ -198,27 +231,42 @@ namespace SHBTONLINE.Areas.Play.Controllers
         public JsonResult MatchFinish(string ID,string Result)
         {
             ReturnJson r = new ReturnJson() { s = "ok" };
-            using (var db = new SHBTONLINEContext())
+            using (var db = new SHBTONLINEContext()) 
             {
                 try
                 {
                     var play = db.Plays.Where(p => p.ID == ID).First();
                     var query = db.PlayItems.Where(p => p.PlayID == ID).ToList();
-                    query.ForEach(p => {
+                    if (Result == "win")
+                    {
+                        play.Results = "中奖";
+                    }
+                    else
+                    {
+                        play.Results = "失败";
+                    }
+                    query.ForEach(p =>
+                    {
                         if (Result == "win")
                         {
-                            p.Get = (int)play.Odds;
+                            p.Get = (int)play.Odds * (p.Cost1 / 3);
+                            p.State = "已结算";
+                            var queryuser = db.userinfoes.Where(w => w.LoginName == p.Loginname).First();
+                            queryuser.SCrrency += (int)p.Get;
+                            db.userinfoes.Attach(queryuser);
+                            db.Entry(queryuser).Property(w => w.SCrrency).IsModified = true;
                         }
                         else
                         {
-                            p.Get = 0;
+                            p.Get = 0 - p.Cost1;
+                            p.State = "已结算";
                         }
                         db.PlayItems.Attach(p);
                         db.Entry(p).Property(w => w.Get).IsModified = true;
-                        var queryuser = db.userinfoes.Where(w => w.LoginName == p.Loginname).First();
-                        queryuser.SCrrency += (int)p.Get;
-                        db.userinfoes.Attach(queryuser);
-                        db.Entry(p).Property(w => w.Get).IsModified = true;
+
+                        db.Plays.Attach(play);
+                        db.Entry(play).Property(w => w.Results).IsModified = true;
+
                     });
                     db.SaveChanges();
 
@@ -239,6 +287,36 @@ namespace SHBTONLINE.Areas.Play.Controllers
 
         //    };
         //}
+        public ActionResult MatchManage()
+        {
+            return View();
+        }
+        [HttpGet]
+        public JsonResult GetMatchManageList(int page,int limit)
+        {
+            uiPlayManage r = new uiPlayManage();
+            r.code = 0;
+            r.msg = "";
+            using (var db = new SHBTONLINEContext())
+            {
+                var query = db.Plays.Where(p => p.Results == "未开赛" || p.Results == "进行中").Select(p => new PlayManage
+                {
+                    ID = p.ID,
+                    Name = p.Name,
+                    Odds = p.Odds,
+                    OffTime = p.OffTime,
+                    ParentID = p.ParentID,
 
+                    Results = p.Results,
+                    Status = p.Status
+                });
+                r.count = query.Count();
+                r.data = query
+                    .OrderBy(p=>p.OffTime)
+                .Skip(page * (page - 1))
+                .Take(limit).ToList();
+                return Json(r,JsonRequestBehavior.AllowGet);
+            }
+        }
     }
 }

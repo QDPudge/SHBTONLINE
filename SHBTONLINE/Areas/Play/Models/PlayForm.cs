@@ -99,5 +99,53 @@ namespace SHBTONLINE.Areas.Play.Models
         public float Odds { get; set; }
         public DateTime OffTime { get; set; }
     }
+    public class uiPlayManage
+    {
+        public int code { get; set; }
+        public string msg { get; set; }
+        public int count { get; set; }
+        public List<PlayManage> data { get; set; }
+    }
+    public class PlayManage
+    {
+        /// <summary>
+        /// [ID]
+        /// </summary>
+        public string ID { get; set; }
+        /// <summary>
+        /// [Name]
+        /// </summary>
+        public string Name { get; set; }
+        /// <summary>
+        /// [Odds]
+        /// </summary>
+        public Nullable<double> Odds { get; set; }
+        /// <summary>
+        /// [ParentID]
+        /// </summary>
+        public string ParentID { get; set; }
+        /// <summary>
+        /// [OffTime]
+        /// </summary>
+        public Nullable<System.DateTime> OffTime { get; set; }
 
+        /// <summary>
+        /// [OffTime]
+        /// </summary>
+        public string OffTimeDis { get { return OffTime.HasValue ? OffTime.Value.ToString("yyyy/MM/dd HH:mm") : ""; } }
+        /// <summary>
+        /// [Status]
+        /// </summary>
+        public string Status { get; set; }
+        public string Results { get; set; }
+        public string OP
+        {
+            get
+            {
+                    return string.Format("<a href='javascript:void(0)' onClick =\"GO('{0}','win');\" class=\"btn btn-primary datagrid-row-btn\" >win</a>", this.ID) + string.Format("<a href='javascript:void(0)' onClick =\"GO('{0}','fail');\" class=\"btn btn-primary datagrid-row-btn\" >fail</a>", this.ID);
+
+
+            }
+        }
+    }
 }

@@ -385,6 +385,7 @@
     <Content Include="Areas\Store\Views\web.config" />
     <Content Include="Areas\Store\Views\Store\ShopView.cshtml" />
     <Content Include="Areas\Play\Views\web.config" />
+    <Content Include="Areas\Play\Views\Play\MatchManage.cshtml" />
     <None Include="Properties\PublishProfiles\DD.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -433,7 +434,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\PersonOperation\Views\Shared\" />
-    <Folder Include="Areas\Play\Views\Play\" />
     <Folder Include="Areas\Play\Views\Shared\" />
     <Folder Include="Areas\Store\Views\Shared\" />
     <Folder Include="Content\Page\" />
