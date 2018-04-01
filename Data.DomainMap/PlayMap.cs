@@ -32,6 +32,9 @@ namespace Data.DomainMap
             this.Property(t => t.Status)
                 .HasMaxLength(50);
 
+            this.Property(t => t.Results)
+                .HasMaxLength(50);
+                        
             // Table & Column Mappings
             this.ToTable("Play");
             this.Property(t => t.ID).HasColumnName("ID");
@@ -40,6 +43,7 @@ namespace Data.DomainMap
             this.Property(t => t.ParentID).HasColumnName("ParentID");
             this.Property(t => t.OffTime).HasColumnName("OffTime");
             this.Property(t => t.Status).HasColumnName("Status");
+            this.Property(t => t.Results).HasColumnName("Results");            
         }
     }
 }

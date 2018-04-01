@@ -15,8 +15,6 @@
 // <copyright file="<#= efHost.EntityContainer.Name #>.cs">
 //        Copyright(c)2015  rights reserved.
 //        CLR版本：4.0.30319.239
-//        开发组织：李文学@上海同岩土木科技工程有限公司
-//        所属工程：TM.*
 //        生成时间：<#= DateTime.Now.ToString("yyyy-MM-dd HH:mm") #>
 // </copyright>
 //------------------------------------------------------------------------------

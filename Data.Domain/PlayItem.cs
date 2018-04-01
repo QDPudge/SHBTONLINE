@@ -4,65 +4,55 @@
 //     对此文件的更改可能会导致不正确的行为，并且如果
 //     重新生成代码，这些更改将会丢失。
 // </auto-generated>
-// <copyright file="GoodsList.cs">
+// <copyright file="PlayItem.cs">
 //        Copyright(c)2015   rights reserved.
 //        CLR版本：4.0.30319.239
-//        开发组织：李文学@上海同岩土木科技工程有限公司
-//        所属工程：TY.*
-//        生成时间：2018-03-23 09:42
+//        生成时间：2018-03-26 13:36
 // </copyright>
 //------------------------------------------------------------------------------
 
 using System;
 using System.Collections.Generic;
 using Data.Domain;
-using Data.DomainMap;
 
 
 //namespace TM.Data.Models
 namespace  Data.Domain
 {
     /// <summary>
-    /// [GoodsList]
+    /// [PlayItem]
     /// </summary>
     [Serializable]
-    public partial class GoodsList 
+    public partial class PlayItem 
     {
         /// <summary>
         /// [ID]
         /// </summary>
         public string ID { get; set; }
         /// <summary>
-        /// [Name]
+        /// [PlayID]
         /// </summary>
-        public string Name { get; set; }
+        public string PlayID { get; set; }
         /// <summary>
-        /// [Type]
+        /// [Loginname]
         /// </summary>
-        public string Type { get; set; }
+        public string Loginname { get; set; }
         /// <summary>
         /// [Cost1]
         /// </summary>
         public Nullable<int> Cost1 { get; set; }
         /// <summary>
-        /// [Cost2]
+        /// [Get]
         /// </summary>
-        public Nullable<int> Cost2 { get; set; }
+        public Nullable<int> Get { get; set; }
+        
         /// <summary>
-        /// [LevelName]
+        /// [CreateTime]
         /// </summary>
-        public string LevelName { get; set; }
+        public Nullable<System.DateTime> CreateTime { get; set; }
         /// <summary>
-        /// [Level]
+        /// [State]
         /// </summary>
-        public Nullable<int> Level { get; set; }
-        /// <summary>
-        /// [Comm]
-        /// </summary>
-        public string Comm { get; set; }
-        /// <summary>
-        /// [IMG]
-        /// </summary>
-        public string IMG { get; set; }
+        public string State { get; set; }
     }
 }

@@ -65,16 +65,17 @@ namespace SHBTONLINE.Areas.PersonOperation.Controllers
                                 AD_AttendTime = DateTime.Now,
                                 Create_Time = DateTime.Now
                             };
+                            //var queryattendline=db.AttendanceInfos.
                             db.AttendanceInfos.Add(model);
                             //db.Entry(model).State= System.Data.Entity.EntityState.Added;
                             //签到给S币
                             //s币数据的计算[判断方法]建议改掉S币数据类型
-                            userinfo.SCrrency = userinfo.SCrrency+1;
+                            userinfo.SCrrency = userinfo.SCrrency+2;
                             db.userinfoes.Attach(userinfo);
                             db.Entry(userinfo).Property(x => x.SCrrency).IsModified = true;
                             db.SaveChanges();
                             tran.Commit();
-                            ReturnJson r = new ReturnJson() { s = "ok", r = "签到完成，获得S币+1s！" };
+                            ReturnJson r = new ReturnJson() { s = "ok", r = "签到完成，获得S币+2s！" };
                             return Json(r);
                         }
                         else

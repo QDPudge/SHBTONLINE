@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "MatchManage";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+
+
+<table id="demo" lay-filter="test">
+
+
+</table>
+<script>
+layui.use('table', function(){
+  var table = layui.table;
+
+  //第一个实例
+  table.render({
+    elem: '#demo'
+    ,height: 315
+    , url: 'GetMatchManageList' //数据接口
+    ,page: true //开启分页
+    ,cols: [[ //表头
+      {field: 'ID', title: 'ID', width:80}
+      ,{field: 'Name', title: '名称', width:300}
+      ,{field: 'Odds', title: '奖金', width:80}
+      ,{field: 'OffTimeDis', title: '截止时间', width:150}
+      ,{field: 'Status', title: '状态', width: 80}
+      ,{field: 'Results', title: '结果', width: 80,}
+      , { field: 'OP', title: '操作', width: 120 }
+    ]]
+  });
+
+});
+
+function GO(ID,R) {
+    $.ajax({
+        method: "POST",
+        url: "MatchFinish",
+        data: {
+            ID: ID,
+            Result:R
+        },
+        success: function (data) {
+            if(data.s=="ok"){
+                alert("ok");
+            } else {
+                alert("error");
+            }
+        }
+
+    });
+}
+</script>
