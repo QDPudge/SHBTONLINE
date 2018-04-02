@@ -5,10 +5,9 @@
 }
 
 
-<table id="demo" lay-filter="test">
+<table id="demo" lay-filter="test"></table>
 
-
-</table>
+<table id="demo2" lay-filter="test"></table>
 <script>
 layui.use('table', function(){
   var table = layui.table;
@@ -26,6 +25,19 @@ layui.use('table', function(){
       ,{field: 'OffTimeDis', title: '截止时间', width:150}
       ,{field: 'Status', title: '状态', width: 80}
       ,{field: 'Results', title: '结果', width: 80,}
+      , { field: 'OP', title: '操作', width: 120 }
+    ]]
+  });
+
+  table.render({
+      elem: '#demo2'
+    , height: 315
+    , url: 'GetNewMatchInfo' //数据接口
+    , page: true //开启分页
+    , cols: [[ //表头
+      { field: 'Name', title: '名称', width: 300 }
+      , { field: 'OffTimeDis', title: '截止时间', width: 150 }
+      , { field: 'Status', title: '状态', width: 80 }
       , { field: 'OP', title: '操作', width: 120 }
     ]]
   });
@@ -50,4 +62,7 @@ function GO(ID,R) {
 
     });
 }
+function GO2(Name,P1,P2,Time) {
+    window.open('AddMatch?Name=' + Name + "&P1=" + P1 + "&P2=" + P2 + "&Time=" + Time);
+};
 </script>

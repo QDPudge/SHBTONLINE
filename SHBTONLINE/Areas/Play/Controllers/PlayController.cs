@@ -1,12 +1,17 @@
 ﻿using CommonData;
 using Data;
 using Data.Domain;
+using Newtonsoft.Json;
 using SHBTONLINE.Areas.Play.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 
 namespace SHBTONLINE.Areas.Play.Controllers
 {
@@ -294,7 +299,7 @@ namespace SHBTONLINE.Areas.Play.Controllers
         [HttpGet]
         public JsonResult GetMatchManageList(int page,int limit)
         {
-            uiPlayManage r = new uiPlayManage();
+            GridData<PlayManage> r = new GridData<PlayManage>();
             r.code = 0;
             r.msg = "";
             using (var db = new SHBTONLINEContext())
@@ -317,6 +322,75 @@ namespace SHBTONLINE.Areas.Play.Controllers
                 .Take(limit).ToList();
                 return Json(r,JsonRequestBehavior.AllowGet);
             }
+        }
+
+        [HttpGet]
+        public JsonResult GetNewMatchInfo(int page, int limit)
+        {
+            //实例化一个能够序列化数据的类
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            var start = 0;
+            var end = 30;
+            for (var i=1;i<page;i++)
+            {
+                start = +30;
+                end = +30;
+            }
+            
+            var Url = "https://api.maxjia.com/api/bets/get_all_category/3/?&offset="+start+"&limit="+end+"&bet_type=all&max_id=8789444&game_type=dota2&imei=356156077945624&os_type=Android&os_version=7.0&version=4.2.1&lang=zh-cn";
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
+            request.Method = "GET";
+            request.Referer = " http://api.maxjia.com/";
+            request.UserAgent = " Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36 ApiMaxJia/1.0";
+            request.Headers.Add("Cookie: phone_num=0006070300040101040800;pkey=MTUyMTkwOTU4My43MTE3NjIxNTAwNTkxXzFhbWhzZXp1Z2RwY3lybG93;maxid=8789444; Connection: Keep - Alive  Accept - Encoding: gzip");
+            request.Host = "api.maxjia.com";
+
+
+
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            Stream myResponseStream = response.GetResponseStream();
+            StreamReader myStreamReader = new StreamReader(myResponseStream, Encoding.GetEncoding("utf-8"));
+            string retString = myStreamReader.ReadToEnd();
+            myStreamReader.Close();
+            myResponseStream.Close();
+            List<MatchForm> list = new List<MatchForm>();
+            var ifno = js.Deserialize<MatchList>(retString);
+            ifno.Result.ForEach(p => {
+                MatchForm form = new MatchForm()
+                {
+                    Name=p.team1_info.tag+" VS "+p.team2_info.tag+"【"+p.title+"】",
+                    Status=p.progress_desc,
+                    Player1=p.team1_info.tag,
+                    Player2= p.team2_info.tag
+                };
+                long jsTimeStamp =Convert.ToInt64( p.end_bid_time);
+                System.DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime(new System.DateTime(1970, 1, 1)); // 当地时区
+                form.OffTime  = startTime.AddMilliseconds(jsTimeStamp*1000);
+
+                list.Add(form);
+            });
+            GridData<MatchForm> r = new GridData<MatchForm>();
+            r.count = list.Count();
+            r.data = list;
+            //var result= JsonConvert.SerializeObject(ifno.Result);
+
+            return Json(r, JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult AddMatch(string Name,string P1,string P2,DateTime Time)
+        {
+            AddMatchForm form = new AddMatchForm()
+            {
+                Name = Name,
+                P1 = P1,
+                P2 = P2,
+                Time=Time
+            };
+            return View(form);
+        }
+        public JsonResult SaveAddMatch(AddMatchForm form)
+        {
+            ReturnJson r = new ReturnJson();
+            return Json(r);
         }
     }
 }

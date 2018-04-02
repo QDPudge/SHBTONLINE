@@ -383,7 +383,13 @@ namespace SHBTONLINE.Areas.Game.Controllers
                             info.chicken_count = Convert.ToInt32(ifno.result.career.overview[1].value);
                             info.KD = Convert.ToDecimal(ifno.result.career.overview[3].value);
                             info.kill_count = Convert.ToDecimal(ifno.result.career.overview[4].value);
-                            info.chicken_rate = Convert.ToDecimal(ifno.result.career.overview[5].value.Replace("%",""));
+                            if (ifno.result.career.overview[5].value=="-") {
+                                info.chicken_rate = 0;
+                            }
+                            else
+                            {
+                                info.chicken_rate = Convert.ToDecimal(ifno.result.career.overview[5].value.Replace("%", ""));
+                            }
                             info.ten_rate = Convert.ToDecimal(ifno.result.career.overview[6].value.Replace("%", ""));
                             info.headshoot_rate = Convert.ToDecimal(ifno.result.career.overview[7].value.Replace("%", ""));
                             info.damage = Convert.ToDecimal(ifno.result.career.overview[10].value);
@@ -396,7 +402,14 @@ namespace SHBTONLINE.Areas.Game.Controllers
                             querypubg.chicken_count = Convert.ToInt32(ifno.result.career.overview[1].value);
                             querypubg.KD = Convert.ToDecimal(ifno.result.career.overview[3].value);
                             querypubg.kill_count = Convert.ToDecimal(ifno.result.career.overview[4].value);
-                            querypubg.chicken_rate = Convert.ToDecimal(ifno.result.career.overview[5].value.Replace("%", ""));
+                            if (ifno.result.career.overview[5].value == "-")
+                            {
+                                querypubg.chicken_rate = 0;
+                            }
+                            else
+                            {
+                                querypubg.chicken_rate = Convert.ToDecimal(ifno.result.career.overview[5].value.Replace("%", ""));
+                            }
                             querypubg.ten_rate = Convert.ToDecimal(ifno.result.career.overview[6].value.Replace("%", ""));
                             querypubg.headshoot_rate = Convert.ToDecimal(ifno.result.career.overview[7].value.Replace("%", ""));
                             querypubg.damage = Convert.ToDecimal(ifno.result.career.overview[10].value);

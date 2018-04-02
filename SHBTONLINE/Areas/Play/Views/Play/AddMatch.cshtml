@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "AddMatch";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+@model  SHBTONLINE.Areas.Play.Models.AddMatchForm
+@using (Ajax.BeginForm("SaveAddMatch", "Play", new AjaxOptions() { OnBegin = "", OnSuccess = "funcOk", OnFailure = "funcFial" }, new { @class = "form-horizontal" }))
+{
+    @Html.TextBoxFor(p=>p.Name)
+    @Html.TextBoxFor(p => p.P1)
+    @Html.TextBoxFor(p => p.P2)
+    <select name="Sec">
+        <option value="胜负">胜负</option>
+        <option value="NBA大小分">NBA大小分</option>
+        <option value="领先4分">领先4分</option>
+        @*<option value="胜负">胜负</option>
+        <option value="胜负">胜负</option>*@
+    </select>
+           <div class="form-btn-group bottom-action text-center">
+                    <button type="submit" class="btn btn-primary" id="Save">保 存</button>
+                    <button type="button" class="btn btn-danger" onclick="javascript: SZH.CloseDialog(null, 'dlg_AddAppraiseDutyRecord');">取 消</button>
+                </div>
+
+}
+
