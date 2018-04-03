@@ -165,6 +165,7 @@
     <Compile Include="Areas\PersonOperation\Models\Attendance\AttendModel.cs" />
     <Compile Include="Areas\PersonOperation\PersonOperationAreaRegistration.cs" />
     <Compile Include="Areas\Play\Controllers\PlayController.cs" />
+    <Compile Include="Areas\Play\Models\MatchList.cs" />
     <Compile Include="Areas\Play\Models\PlayForm.cs" />
     <Compile Include="Areas\Play\PlayAreaRegistration.cs" />
     <Compile Include="Areas\Store\Controllers\StoreController.cs" />
@@ -386,6 +387,7 @@
     <Content Include="Areas\Store\Views\Store\ShopView.cshtml" />
     <Content Include="Areas\Play\Views\web.config" />
     <Content Include="Areas\Play\Views\Play\MatchManage.cshtml" />
+    <Content Include="Areas\Play\Views\Play\AddMatch.cshtml" />
     <None Include="Properties\PublishProfiles\DD.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

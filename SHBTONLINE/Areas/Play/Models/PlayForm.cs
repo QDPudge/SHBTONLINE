@@ -99,12 +99,12 @@ namespace SHBTONLINE.Areas.Play.Models
         public float Odds { get; set; }
         public DateTime OffTime { get; set; }
     }
-    public class uiPlayManage
+    public class GridData<T>
     {
         public int code { get; set; }
         public string msg { get; set; }
         public int count { get; set; }
-        public List<PlayManage> data { get; set; }
+        public List<T> data { get; set; }
     }
     public class PlayManage
     {
