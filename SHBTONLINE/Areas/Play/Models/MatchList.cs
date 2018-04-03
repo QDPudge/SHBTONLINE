@@ -83,6 +83,10 @@ namespace SHBTONLINE.Areas.Play.Models
         public string Name { get; set; }
         public string P1 { get; set; }
         public string P2 { get; set; }
+        public double? Odds1 { get; set; }
+        public double? Odds2 { get; set; }
+        public double? Odds3 { get; set; }
+        public double? Odds4 { get; set; }
         public string Sec { get; set; }
         public DateTime Time { get; set; }
     }

@@ -9,12 +9,35 @@
     @Html.TextBoxFor(p=>p.Name)
     @Html.TextBoxFor(p => p.P1)
     @Html.TextBoxFor(p => p.P2)
+    @Html.TextBoxFor(p => p.Time)
+    <table>
+        <tr>
+            <td>1            </td>
+            <td>    @Html.TextBoxFor(p => p.Odds1)</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>
+                @Html.TextBoxFor(p => p.Odds2)</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>
+                @Html.TextBoxFor(p => p.Odds3)</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>
+                @Html.TextBoxFor(p => p.Odds4)
+            </td>
+        </tr>
+    </table>
     <select name="Sec">
-        <option value="胜负">胜负</option>
         <option value="NBA大小分">NBA大小分</option>
+        <option value="足球大小球">足球大小球</option>
+        <option value="十杀">十杀</option>
         <option value="领先4分">领先4分</option>
-        @*<option value="胜负">胜负</option>
-        <option value="胜负">胜负</option>*@
+        <option value="一血">一血</option>
     </select>
            <div class="form-btn-group bottom-action text-center">
                     <button type="submit" class="btn btn-primary" id="Save">保 存</button>

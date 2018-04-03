@@ -263,7 +263,7 @@ namespace SHBTONLINE.Areas.Play.Controllers
                         }
                         else
                         {
-                            p.Get = 0 - p.Cost1;
+                            p.Get = 0;
                             p.State = "已结算";
                         }
                         db.PlayItems.Attach(p);
@@ -390,6 +390,163 @@ namespace SHBTONLINE.Areas.Play.Controllers
         public JsonResult SaveAddMatch(AddMatchForm form)
         {
             ReturnJson r = new ReturnJson();
+            using (var db=new SHBTONLINEContext()) {
+                Data.Domain.Play play = new Data.Domain.Play()
+                {
+                    ID = Guid.NewGuid().ToString(),
+                    Name = form.Name,
+                    OffTime = form.Time.AddMinutes(10),
+                    Status = "正常",
+                };
+                db.Plays.Add(play);
+                Data.Domain.Play item1 = new Data.Domain.Play() {
+                    ID = Guid.NewGuid().ToString(),
+                    Name=form.P1 + "胜利",
+                    Odds =form.Odds1,
+                    OffTime = form.Time.AddMinutes(10),
+                    Results="进行中",
+                    Status="正常",
+                    ParentID=play.ID
+                };
+                db.Plays.Add(item1);
+                Data.Domain.Play item2 = new Data.Domain.Play()
+                {
+                    ID = Guid.NewGuid().ToString(),
+                    Name = form.P2 + "胜利",
+                    Odds = form.Odds2,
+                    OffTime = form.Time.AddMinutes(10),
+                    Results = "进行中",
+                    Status = "正常",
+                    ParentID = play.ID
+                };
+                db.Plays.Add(item2);
+                switch (form.Sec)
+                {
+                    case "NBA大小分":
+                        Data.Domain.Play item3 = new Data.Domain.Play()
+                        {
+                            ID = Guid.NewGuid().ToString(),
+                            Name = "总分大于225",
+                            Odds = form.Odds1,
+                            OffTime = form.Time.AddMinutes(10),
+                            Results = "进行中",
+                            Status = "正常",
+                            ParentID = play.ID
+                        };
+                        db.Plays.Add(item3);
+                        Data.Domain.Play item4 = new Data.Domain.Play()
+                        {
+                            ID = Guid.NewGuid().ToString(),
+                            Name = "总分小于225",
+                            Odds = form.Odds2,
+                            OffTime = form.Time.AddMinutes(10),
+                            Results = "进行中",
+                            Status = "正常",
+                            ParentID = play.ID
+                        };
+                        db.Plays.Add(item4);
+                        break;
+                    case "足球大小球":
+                        Data.Domain.Play item13 = new Data.Domain.Play()
+                        {
+                            ID = Guid.NewGuid().ToString(),
+                            Name = "总得分大于3",
+                            Odds = form.Odds1,
+                            OffTime = form.Time.AddMinutes(10),
+                            Results = "进行中",
+                            Status = "正常",
+                            ParentID = play.ID
+                        };
+                        db.Plays.Add(item13);
+                        Data.Domain.Play item14 = new Data.Domain.Play()
+                        {
+                            ID = Guid.NewGuid().ToString(),
+                            Name = "总得分小于于3",
+                            Odds = form.Odds2,
+                            OffTime = form.Time.AddMinutes(10),
+                            Results = "进行中",
+                            Status = "正常",
+                            ParentID = play.ID
+                        };
+                        db.Plays.Add(item14);
+                        break;
+                        
+                    case "十杀":
+                        Data.Domain.Play item5 = new Data.Domain.Play()
+                        {
+                            ID = Guid.NewGuid().ToString(),
+                            Name = form.P1 + "十杀",
+                            Odds = form.Odds3,
+                            OffTime = form.Time.AddMinutes(10),
+                            Results = "进行中",
+                            Status = "正常",
+                            ParentID = play.ID
+                        };
+                        db.Plays.Add(item5);
+                        Data.Domain.Play item6 = new Data.Domain.Play()
+                        {
+                            ID = Guid.NewGuid().ToString(),
+                            Name = form.P2 + "十杀",
+                            Odds = form.Odds4,
+                            OffTime = form.Time.AddMinutes(10),
+                            Results = "进行中",
+                            Status = "正常",
+                            ParentID = play.ID
+                        };
+                        db.Plays.Add(item6);
+                        break;
+                    case "一血":
+                        Data.Domain.Play item11 = new Data.Domain.Play()
+                        {
+                            ID = Guid.NewGuid().ToString(),
+                            Name = form.P1 + "一血",
+                            Odds = form.Odds3,
+                            OffTime = form.Time.AddMinutes(10),
+                            Results = "进行中",
+                            Status = "正常",
+                            ParentID = play.ID
+                        };
+                        db.Plays.Add(item11);
+                        Data.Domain.Play item12 = new Data.Domain.Play()
+                        {
+                            ID = Guid.NewGuid().ToString(),
+                            Name = form.P2 + "一血",
+                            Odds = form.Odds4,
+                            OffTime = form.Time.AddMinutes(10),
+                            Results = "进行中",
+                            Status = "正常",
+                            ParentID = play.ID
+                        };
+                        db.Plays.Add(item12);
+                        break;
+                    case "领先4分":
+                        Data.Domain.Play item7 = new Data.Domain.Play()
+                        {
+                            ID = Guid.NewGuid().ToString(),
+                            Name = form.P1 + "胜利",
+                            Odds = form.Odds3,
+                            OffTime = form.Time.AddMinutes(10),
+                            Results = "进行中",
+                            Status = "正常",
+                            ParentID = play.ID
+                        };
+                        db.Plays.Add(item7);
+                        Data.Domain.Play item8 = new Data.Domain.Play()
+                        {
+                            ID = Guid.NewGuid().ToString(),
+                            Name = form.P2 + "胜利",
+                            Odds = form.Odds4,
+                            OffTime = form.Time.AddMinutes(10),
+                            Results = "进行中",
+                            Status = "正常",
+                            ParentID = play.ID
+                        };
+                        db.Plays.Add(item8);
+                        break;
+                }
+                db.SaveChanges();
+            }
+
             return Json(r);
         }
     }
