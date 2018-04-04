@@ -92,6 +92,15 @@ namespace  Data.Domain
         /// </summary>
         public int SCrrency { get; set; }
         /// <summary>
+        /// 积分数目
+        /// </summary>
+        public int Points { get; set; }
+        /// <summary>
+        /// RMB数目
+        /// </summary>
+        public int RMB { get; set; }
+        
+        /// <summary>
         /// 上香次数
         /// </summary>
         public int sacrifNum { get; set; }

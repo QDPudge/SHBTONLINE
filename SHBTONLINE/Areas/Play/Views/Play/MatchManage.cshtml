@@ -5,13 +5,13 @@
 }
 
 
-<table id="demo" lay-filter="test"></table>
+<table id="demo" ></table>
 
-<table id="demo2" lay-filter="test"></table>
+<table id="demo2"></table>
 <script>
 layui.use('table', function(){
   var table = layui.table;
-
+  var laypage = layui.laypage;
   //第一个实例
   table.render({
     elem: '#demo'
@@ -31,15 +31,26 @@ layui.use('table', function(){
 
   table.render({
       elem: '#demo2'
-    , height: 315
+    , height: 500
     , url: 'GetNewMatchInfo' //数据接口
-    , page: true //开启分页
+        , page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+            layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+            ,curr: 1 //设定初始在第 5 页
+      , groups: 1 //只显示 1 个连续页码
+      , first: false //不显示首页
+      , last: false //不显示尾页
+
+        }
     , cols: [[ //表头
       { field: 'Name', title: '名称', width: 300 }
       , { field: 'OffTimeDis', title: '截止时间', width: 150 }
       , { field: 'Status', title: '状态', width: 80 }
       , { field: 'OP', title: '操作', width: 120 }
     ]]
+  });
+  laypage.render({
+      elem: '#demo2'
+, count: 10 //数据总数  
   });
 
 });

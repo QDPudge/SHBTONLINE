@@ -73,6 +73,9 @@ namespace Data.DomainMap
             this.Property(t => t.RemainRoll).HasColumnName("RemainRoll");
             this.Property(t => t.PrivateKey).HasColumnName("PrivateKey");
             this.Property(t => t.SteamID).HasColumnName("SteamID");
+            this.Property(t => t.SCrrency).HasColumnName("SCrrency");
+            this.Property(t => t.Points).HasColumnName("Points");
+            this.Property(t => t.RMB).HasColumnName("RMB");
             this.Property(t => t.IMG).HasColumnName("IMG");            
             this.Property(t => t.PubgID).HasColumnName("PubgID");
             this.Property(t => t.DOTA2ID).HasColumnName("DOTA2ID");

@@ -92,16 +92,44 @@ namespace SHBTONLINE.Areas.Play.Controllers
                     };
                     item.Cost1 = Convert.ToInt32(mode.Cost * 3);
                     var queryuser = db.userinfoes.Where(p => p.LoginName == mode.Loginname).FirstOrDefault();
+                    if (queryuser.SCrrency < 3)
+                    {
+                        if (queryuser.Points<300)
+                        {
+                            r.s = "error";
+                            r.r = "兜里空空如也";
+                            return Json(r);
+                        }
+                        else
+                        {
+                            queryuser.Points = queryuser.Points - Convert.ToInt32(item.Cost1)*100;
+                            if (queryuser.Points < 0)
+                            {
+                                r.s = "error";
+                                r.r = "你买太多了，兄弟";
+                                return Json(r);
+                            }
+                            else
+                            {
+                                item.Cost2 = (item.Cost1) * 100;
+                                item.Cost1 = 0;
+                                r.s = "error";
+                                r.r = "已经使用积分购买，花费" + item.Cost2+"积分";
+                            }
+                        }
+                    }
                     queryuser.SCrrency = queryuser.SCrrency - Convert.ToInt32(item.Cost1);
-                    if (queryuser.SCrrency<0)
+
+                    if (queryuser.SCrrency < 0)
                     {
                         r.s = "error";
-                        r.r = "兜里空空如也";
+                        r.r = "你买太多了，兄弟";
                         return Json(r);
                     }
                     db.PlayItems.Add(item);
                     db.userinfoes.Attach(queryuser);
                     db.Entry(queryuser).Property(p => p.SCrrency).IsModified = true;
+                    db.Entry(queryuser).Property(p => p.Points).IsModified = true;
                     db.SaveChanges();
                 }
                 catch(Exception ex)
@@ -130,6 +158,23 @@ namespace SHBTONLINE.Areas.Play.Controllers
                     count.Add(queryemp, raw);
                 });
                 r.r = count.OrderByDescending(p=>p.Value);
+            }
+            return Json(r);
+        }
+        /// <summary>
+        /// 获取积分排名【生涯】
+        /// </summary>
+        /// <returns></returns>
+        public JsonResult GetPointRank()
+        {
+            ReturnJson r = new ReturnJson() { s = "ok" };
+            using (var db = new SHBTONLINEContext())
+            {
+                var query = db.userinfoes.OrderByDescending(p => p.Points).Select(p => new {
+                    Name = p.Name,
+                    Points = p.Points
+                });
+                r.r = query.ToList();
             }
             return Json(r);
         }
@@ -211,9 +256,11 @@ namespace SHBTONLINE.Areas.Play.Controllers
                     History item = new History()
                     {
                         Cost1=p.Cost1,
-                        CreateTime=p.CreateTime,
+                        Cost2 = p.Cost2,
+                        CreateTime =p.CreateTime,
                         Get=p.Get,
-                        ID=p.ID,
+                        Get2 = p.Get2,
+                        ID =p.ID,
                         Loginname=p.Loginname,
                         PlayID=p.PlayID,
                         State=p.State
@@ -255,11 +302,14 @@ namespace SHBTONLINE.Areas.Play.Controllers
                         if (Result == "win")
                         {
                             p.Get = (int)play.Odds * (p.Cost1 / 3);
+                            p.Get2 = (int)play.Odds * (p.Cost2 / 3);
                             p.State = "已结算";
                             var queryuser = db.userinfoes.Where(w => w.LoginName == p.Loginname).First();
                             queryuser.SCrrency += (int)p.Get;
+                            queryuser.Points += (int)p.Get2;
                             db.userinfoes.Attach(queryuser);
                             db.Entry(queryuser).Property(w => w.SCrrency).IsModified = true;
+                            db.Entry(queryuser).Property(w => w.Points).IsModified = true;
                         }
                         else
                         {
@@ -268,6 +318,7 @@ namespace SHBTONLINE.Areas.Play.Controllers
                         }
                         db.PlayItems.Attach(p);
                         db.Entry(p).Property(w => w.Get).IsModified = true;
+                        db.Entry(p).Property(w => w.Get2).IsModified = true;
 
                         db.Plays.Attach(play);
                         db.Entry(play).Property(w => w.Results).IsModified = true;
@@ -549,5 +600,39 @@ namespace SHBTONLINE.Areas.Play.Controllers
 
             return Json(r);
         }
+        /// <summary>
+        /// 获取RMB排名【生涯】
+        /// </summary>
+        /// <returns></returns>
+        public JsonResult GetRMBRank()
+        {
+            ReturnJson r = new ReturnJson() { s = "ok" };
+            using (var db = new SHBTONLINEContext())
+            {
+                var query = db.userinfoes.OrderByDescending(p => p.RMB).Select(p => new {
+                    Name=p.Name,
+                    RMB=p.RMB
+                });
+                r.r = query.ToList();
+            }
+            return Json(r);
+        }
+        #region 服务用连接
+        public void UpdatePoint() {
+            using (var db = new SHBTONLINEContext())
+            {
+                var query = db.userinfoes.OrderByDescending(p => p.RMB).ToList();
+                query.ForEach(p => {
+                    if (p.Points<3000) {
+                        p.Points += 3000;
+                        db.userinfoes.Attach(p);
+                        db.Entry(p).Property(w => w.Points).IsModified = true;
+                    }
+                });
+                db.SaveChanges();
+            }
+        }
+        #endregion
+
     }
 }

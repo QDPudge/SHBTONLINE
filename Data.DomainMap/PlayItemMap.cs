@@ -47,9 +47,11 @@ namespace Data.DomainMap {
             this.ToTable("PlayItem");
             this.Property(t => t.ID).HasColumnName("ID");
             this.Property(t => t.PlayID).HasColumnName("PlayID");
-            this.Property(t => t.Get).HasColumnName("Get");            
+            this.Property(t => t.Get).HasColumnName("Get");
+            this.Property(t => t.Get2).HasColumnName("Get2");
             this.Property(t => t.Loginname).HasColumnName("Loginname");
             this.Property(t => t.Cost1).HasColumnName("Cost1");
+            this.Property(t => t.Cost2).HasColumnName("Cost2");
             this.Property(t => t.CreateTime).HasColumnName("CreateTime");
             this.Property(t => t.State).HasColumnName("State");
         }

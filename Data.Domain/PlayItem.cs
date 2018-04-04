@@ -42,10 +42,18 @@ namespace  Data.Domain
         /// </summary>
         public Nullable<int> Cost1 { get; set; }
         /// <summary>
+        /// [Cost2]
+        /// </summary>
+        public Nullable<int> Cost2 { get; set; }
+        /// <summary>
         /// [Get]
         /// </summary>
         public Nullable<int> Get { get; set; }
-        
+
+        /// <summary>
+        /// [Get2]
+        /// </summary>
+        public Nullable<int> Get2 { get; set; }
         /// <summary>
         /// [CreateTime]
         /// </summary>
